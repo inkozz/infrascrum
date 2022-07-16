@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Brion",
+      "firstname": "Benjamin"
+    },
+    {
+      "id": 2,
+      "name": "Ladriere",
+      "firstname": "Alex"
+    },
+    {
+      "id": 3,
+      "name": "Simo Rico",
+      "firstname": "Olivia"
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "name": "Projet 1",
+      "dateB": "23 Jan, 2023",
+      "dateE": "1 April, 2022",
+      "status": "Dans les temps",
+      "idUser": 1,
+      "idTask": 1
+    },
+    {
+      "id": 2,
+      "name": "Projet 2",
+      "dateB": "23 Jan, 2023",
+      "dateE": "1 April, 2022",
+      "status": "En retard",
+      "idUser": 1,
+      "idTask": 1
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Tache 1",
+      "dateB": "26 Mai, 2022",
+      "dateE": "3 Juin, 2022",
+      "status": "En cours",
+      "idProject": 1,
+      "idUser": 1
+    },
+    {
+      "id": 2,
+      "name": "Tache 2",
+      "dateB": "26 Mai, 2022",
+      "dateE": "3 Juin, 2022",
+      "status": "Priorité",
+      "idProject": 1,
+      "idUser": 1
+    }
+  ],
+
+  "tampon": [
+    {
+      "idUser": 1,
+      "idProject": 1,
+      "update": "Il y a 2j"
+    }
+  ]
+}

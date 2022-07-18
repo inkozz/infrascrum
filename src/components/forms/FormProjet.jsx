@@ -1,8 +1,6 @@
 import Select from 'react-select';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
 
-const FormProjet = () => {
+const FormProjet = ({ formik }) => {
   const options = [
     { value: 'priori', label: 'Urgent' },
     { value: 'impo', label: 'Important' },
@@ -11,32 +9,6 @@ const FormProjet = () => {
 
   const MyComponent = () => <Select options={options} />;
 
-  const formik = useFormik({
-    initialValues: {
-      logo: '',
-      NameProjet: '',
-      Describe: '',
-      StartDate: '',
-      EndDate: '',
-      Priority: '',
-    },
-    validationSchema: Yup.object({
-      NameProjet: Yup.string(),
-      Describe: Yup.string()
-        .required()
-        .max(50, 'Le titre doit faire maximum 50 caractères'),
-      StartDate: Yup.date(),
-      EndDate: Yup.date(),
-      Priority: Yup.array().min(1),
-    }),
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
-
-  const buttonQuiAfficheLesDonnesDuFormulaire = () => {
-    console.log(formik.values);
-  };
   return (
     <div className="w-full bg-slate-200 flex flex-col justify-center sm:py-12">
       <div className="relative sm:max-w-xl sm:mx-auto">
@@ -134,7 +106,8 @@ const FormProjet = () => {
                 <button
                   type="submit"
                   className="bg-primary hover:bg-gray-800 p-2 mt-4 w-48 rounded text-white"
-                  onClick={buttonQuiAfficheLesDonnesDuFormulaire}>
+                  // onClick={buttonQuiAfficheLesDonnesDuFormulaire}
+                >
                   Enregistrer
                 </button>
                 {/* </div> */}

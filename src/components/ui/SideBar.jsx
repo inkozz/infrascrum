@@ -61,7 +61,9 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="tasks" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink
+              to="home/taches"
+              className={({ isActive }) => (isActive ? 'active' : '')}>
               {isExpand && 'Taches'}
             </NavLink>
           </li>

@@ -1,8 +1,8 @@
-import TasksList from './TasksList';
+import TasksCard from './TasksCard';
 
 const Tasks = ({ data }) => (
   <div>
-    {data && data.map((element) => <TasksList key={element.id} task={element} />)}
+    {data && data.map((element) => <TasksCard key={element.id} task={element} />)}
   </div>
 );
 

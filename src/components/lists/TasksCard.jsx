@@ -1,4 +1,4 @@
-const TasksList = ({ task }) => {
+const TasksCard = ({ task }) => {
   console.log(task);
   return (
     <div className="border-b border-gray-400">
@@ -18,4 +18,4 @@ const TasksList = ({ task }) => {
   );
 };
 
-export default TasksList;
+export default TasksCard;

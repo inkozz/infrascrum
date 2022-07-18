@@ -1,8 +1,8 @@
-import ProjectsList from './ProjectsList';
+import ProjectsCard from './ProjectsCard';
 
 const Projects = ({ data }) => (
   <div>
-    {data && data.map((element) => <ProjectsList key={element.id} project={element} />)}
+    {data && data.map((element) => <ProjectsCard key={element.id} project={element} />)}
   </div>
 );
 

@@ -28,42 +28,21 @@ const ProfilePage = () => {
     <card className="flex flex-col max-w-6xl mx-auto space-y-4 ">
       <div className="bg-primary rounded-3xl py-6 p-3">
         <div>
-          <h1 className="text-2xl text-white text-center">Name</h1>
-          <h2 className="text-white text-center">Firstname</h2>;
+          <h1 className="text-2xl text-white text-center">Bonjour,</h1>
+          <h2 className="text-white text-center">User</h2>
         </div>
       </div>
       <div className="flex justify-between space-x-5">
         <div className="bg-yellow-500 rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Projets</h2>
-          <div className="bg-blue-300 w-52 h-72 m-8 static rounded-lg mx-auto ">
-            <div className="bg-white w-52 h-72 mt-2 hover:m-0 absolute rounded-lg shadow-lg hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
-              <p className="text-sm font-semibold text-gray-700 m-4 leading-6">
-                {projects && <Projects data={projects} />}
-              </p>
-
-              <span className="m-4 text-sm flex">Dernière modification :</span>
-              <span className="m-4 text-sm flex hover:border-b-1 hover:border-primary">
-                Il y a 2 jours
-              </span>
-            </div>
-          </div>
+          {projects && <Projects data={projects} />}
         </div>
         <div className="bg-primary rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Taches</h2>
-          <div className="bg-blue-300 w-52 h-72 m-8 static rounded-lg mx-auto ">
-            <div className="bg-white w-52 h-72 mt-2 hover:m-0 absolute rounded-lg shadow-lg hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
-              <p className="text-sm font-semibold text-gray-700 m-4 leading-6">
-                {tasks && !isFetching && <Tasks data={tasks} />}
-              </p>
-              <span className="m-4 text-sm flex">Dernière modification :</span>
-              <span className="m-4 text-sm flex hover:border-b-1 hover:border-primary">
-                Il y a 2 jours
-              </span>
-            </div>
-          </div>
+          {tasks && !isFetching && <Tasks data={tasks} />}
         </div>
         <div className="hidden md:inline-block bg-purple-500 rounded-lg py-6 w-full p-3">
-          card 4
+          <h2 className="m-4 text-3xl font-bold text-center">Terminé</h2>
         </div>
       </div>
       <div className=" md:hidden bg-purple-500 rounded-lg py-6 w-full p-3">card 4</div>

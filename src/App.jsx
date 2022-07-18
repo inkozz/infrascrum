@@ -8,6 +8,7 @@ import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
+import ProjectsPage from './pages/ProjectsPage';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -58,7 +59,15 @@ const App = () => {
                   }
                 />
                 <Route path="/home/taches" element={<Header />} />
-                <Route path="/home/projets" element={<Header />} />
+                <Route
+                  path="/home/projets"
+                  element={
+                    <>
+                      <Header />
+                      <ProjectsPage />
+                    </>
+                  }
+                />
               </Routes>
             </main>
           </div>

@@ -1,14 +1,18 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import LoginForm from './components/forms/LoginForm';
 import Header from './components/ui/Header';
 import FormUser from './components/forms/FormUser';
 import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
+
 import ProjectsPage from './pages/ProjectsPage';
+
+import FormProjet from './components/forms/FormProjet';
+import AddLogin from './pages/AddLogin';
+
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -30,7 +34,7 @@ const App = () => {
             <Sidebar />
             <main className="flex-grow">
               <Routes>
-                <Route path="/" index element={<LoginForm />} />
+                <Route path="/" index element={<AddLogin />} />
                 <Route
                   path="home"
                   element={
@@ -46,6 +50,7 @@ const App = () => {
                     <>
                       <Header />
                       <FormUser />
+                      <FormProjet />
                     </>
                   }
                 />

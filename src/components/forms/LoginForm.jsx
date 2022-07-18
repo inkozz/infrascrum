@@ -22,34 +22,36 @@ const LoginForm = ({ formik }) => (
       </div>
       <form onSubmit={formik.handleSubmit} method="POST">
         <div className="flex flex-col p-4">
-          <label htmlFor="Email" className="text-xs text-black flex flex-col " />
-          Nom d'utilisateur
-          <input
-            id="Email"
-            name="Email"
-            type="text"
-            value={formik.values.Email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            placeholder="Nom d'utilisateur"
-            className="border border-primary rounded px-3 py-1 mt-4 focus:outline-2 outline-primary"
-          />
+          <label htmlFor="Email" className="text-xs text-black flex flex-col ">
+            Nom d'utilisateur
+            <input
+              id="Email"
+              name="Email"
+              type="text"
+              value={formik.values.Email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              placeholder="Nom d'utilisateur"
+              className="border border-primary rounded px-3 py-1 mt-4 focus:outline-2 outline-primary"
+            />
+          </label>
           {formik.touched.Email && formik.errors.Email && (
             <div className="text-sm text-red">{formik.errors.Email}</div>
           )}
           <div className="flex flex-col my-4">
-            <label htmlFor="Password" className="text-xs text-black flex flex-col" />
-            Mot de passe
-            <input
-              id="Password"
-              name="Password"
-              type="password"
-              value={formik.values.Password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              placeholder="Mot de passe"
-              className="border border-primary rounded px-3 py-1 mt-4 focus:outline-2 outline-primary"
-            />
+            <label htmlFor="Password" className="text-xs text-black flex flex-col">
+              Mot de passe
+              <input
+                id="Password"
+                name="Password"
+                type="password"
+                value={formik.values.Password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                placeholder="Mot de passe"
+                className="border border-primary rounded px-3 py-1 mt-4 focus:outline-2 outline-primary"
+              />
+            </label>
             {formik.touched.Password && formik.errors.Password && (
               <div className="text-sm text-red">{formik.errors.Password}</div>
             )}

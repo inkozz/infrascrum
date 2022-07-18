@@ -26,68 +26,74 @@ const FormProjet = ({ formik }) => {
               <div className="divide-y divide-gray-200">
                 <div className=" text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                   <div className="flex flex-col">
-                    <label htmlFor="NameProjet" />
-                    Nom du projet
-                    <input
-                      type="text"
-                      name="NameProjet"
-                      id="NameProjet"
-                      value={formik.values.NameProjet}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Nom"
-                    />
+                    <label htmlFor="NameProjet">
+                      Nom du projet
+                      <input
+                        type="text"
+                        name="NameProjet"
+                        id="NameProjet"
+                        value={formik.values.NameProjet}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Nom"
+                      />
+                    </label>
                     {formik.touched.NameProjet && formik.errors.NameProjet && (
                       <div className="">{formik.errors.NameProjet}</div>
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="Describe" />
-                    Description du projet
-                    <textarea
-                      type="text"
-                      name="Describe"
-                      id="Describe"
-                      value={formik.values.Describe}
-                      onChange={formik.handleChange}
-                      cols="10"
-                      rows="2"
-                      onBlur={formik.handleBlur}
-                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="describe"
-                    />
+                    <label htmlFor="Describe">
+                      Description du projet
+                      <textarea
+                        type="text"
+                        name="Describe"
+                        id="Describe"
+                        value={formik.values.Describe}
+                        onChange={formik.handleChange}
+                        cols="10"
+                        rows="2"
+                        onBlur={formik.handleBlur}
+                        className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="describe"
+                      />
+                    </label>
                     {formik.touched.Describe && formik.errors.Describe && (
                       <div className="">{formik.errors.Describe}</div>
                     )}
                   </div>
 
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="StartDate">Date de début :</label>
-                    <input
-                      type="date"
-                      id="StartDate"
-                      name="StartDate"
-                      value={formik.values.StartDate}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
-                    />
+                    <label htmlFor="StartDate">
+                      Date de début :
+                      <input
+                        type="date"
+                        id="StartDate"
+                        name="StartDate"
+                        value={formik.values.StartDate}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
+                      />
+                    </label>
                     {formik.touched.StartDate && formik.errors.StartDate && (
                       <div className="">{formik.errors.StartDate}</div>
                     )}
                   </div>
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="EndDate">Date de fin :</label>
-                    <input
-                      type="date"
-                      id="EndDate"
-                      name="EndDate"
-                      value={formik.values.EndDate}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
-                    />
+                    <label htmlFor="EndDate">
+                      Date de fin :
+                      <input
+                        type="date"
+                        id="EndDate"
+                        name="EndDate"
+                        value={formik.values.EndDate}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
+                      />
+                    </label>
                     {formik.touched.EndDate && formik.errors.EndDate && (
                       <div className="">{formik.errors.EndDate}</div>
                     )}

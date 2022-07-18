@@ -2,13 +2,13 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/ui/Header';
-import FormUser from './components/forms/FormUser';
 import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
 import FormProjet from './components/forms/FormProjet';
 import AddLogin from './pages/AddLogin';
+import AddUser from './pages/AddUser';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -45,7 +45,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <FormUser />
+                      <AddUser />
                       <FormProjet />
                     </>
                   }

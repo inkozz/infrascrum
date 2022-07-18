@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { Route, Routes, Link, BrowserRouter as Router } from 'react-router-dom';
-import LoginForm from '../components/forms/LoginForm';
+import FormLogin from '../components/forms/LoginForm';
 
 const AddLogin = () => {
   const handleSubmit = (e) => {
@@ -24,6 +24,6 @@ const AddLogin = () => {
     console.log(formik.values);
   };
 
-  return <LoginForm formik={formik} />;
+  return <FormLogin formik={formik} />;
 };
 export default AddLogin;

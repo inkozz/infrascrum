@@ -6,13 +6,11 @@ import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
-
 import ProjectsPage from './pages/ProjectsPage';
-
 import FormProjet from './components/forms/FormProjet';
 import AddLogin from './pages/AddLogin';
 import AddUser from './pages/AddUser';
-
+import AddProjet from './pages/AddProjet';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -50,7 +48,6 @@ const App = () => {
                     <>
                       <Header />
                       <AddUser />
-                      <FormProjet />
                     </>
                   }
                 />
@@ -69,6 +66,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
+                      <AddProjet />
                       <ProjectsPage />
                     </>
                   }

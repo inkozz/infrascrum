@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import LoginForm from './components/forms/LoginForm';
 import Header from './components/ui/Header';
-import FormUser from './components/forms/FormUser';
 import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
 import AddTasks from './pages/AddTasks';
+import ProjectsPage from './pages/ProjectsPage';
+import FormProjet from './components/forms/FormProjet';
+import AddLogin from './pages/AddLogin';
+import AddUser from './pages/AddUser';
+import AddProjet from './pages/AddProjet';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -30,7 +33,7 @@ const App = () => {
             <Sidebar />
             <main className="flex-grow">
               <Routes>
-                <Route path="/" index element={<LoginForm />} />
+                <Route path="/" index element={<AddLogin />} />
                 <Route
                   path="home"
                   element={
@@ -45,7 +48,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <FormUser />
+                      <AddUser />
                     </>
                   }
                 />
@@ -59,7 +62,16 @@ const App = () => {
                   }
                 />
                 <Route path="/home/taches" element={<Header />} />
-                <Route path="/home/projets" element={<Header />} />
+                <Route
+                  path="/home/projets"
+                  element={
+                    <>
+                      <Header />
+                      <AddProjet />
+                      <ProjectsPage />
+                    </>
+                  }
+                />
               </Routes>
             </main>
           </div>

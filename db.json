@@ -2,16 +2,19 @@
   "users": [
     {
       "id": 1,
+      "pic": "/img/ben.jpeg",
       "name": "Brion",
       "firstname": "Benjamin"
     },
     {
       "id": 2,
+      "pic": "/img/alex.jpg",
       "name": "Ladriere",
       "firstname": "Alex"
     },
     {
       "id": 3,
+      "pic": "/img/oli.jpeg",
       "name": "Simo Rico",
       "firstname": "Olivia"
     }
@@ -19,21 +22,35 @@
   "projects": [
     {
       "id": 1,
-      "name": "Projet 1",
-      "dateB": "23 Jan, 2023",
-      "dateE": "1 April, 2022",
+      "name": "Boa.Inc",
+      "ceoName": "Olivia",
+      "ceoPic": "/img/oli.jpeg",
+      "pic": "/img/snake.jpg",
+      "colPic1": "/img/oli.jpeg",
+      "colPic2": "/img/max.jpg",
+      "colPic3": "/img/dog.jpg",
+      "dateB": "2 Feb, 2022",
+      "dateE": "1 April, 2023",
       "status": "Dans les temps",
       "idUser": 1,
-      "idTask": 1
+      "idTask": 1,
+      "update": "Hier"
     },
     {
       "id": 2,
-      "name": "Projet 2",
-      "dateB": "23 Jan, 2023",
-      "dateE": "1 April, 2022",
+      "name": "Goulagwe",
+      "ceoName": "Ben",
+      "ceoPic": "/img/ben.jpg",
+      "pic": "/img/max.jpg",
+      "colPic1": "/img/max.jpg",
+      "colPic2": "/img/ben.jpeg",
+      "colPic3": "/img/alex.jpg",
+      "dateB": "23 Jan, 2022",
+      "dateE": "1 Dec, 2023",
       "status": "En retard",
       "idUser": 1,
-      "idTask": 1
+      "idTask": 1,
+      "update": "1sem"
     }
   ],
   "tasks": [

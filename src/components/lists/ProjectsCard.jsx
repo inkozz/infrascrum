@@ -1,4 +1,4 @@
-const ProjectsList = ({ project }) => (
+const ProjectsCard = ({ project }) => (
   <div className="border-b border-gray-400">
     <div className="bg-blue-300 w-44 h-48 m-8 static rounded-lg mx-auto ">
       <div className="bg-white w-44 h-48 mt-2 hover:m-0 absolute rounded-lg shadow-lg hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
@@ -15,4 +15,4 @@ const ProjectsList = ({ project }) => (
     </div>
   </div>
 );
-export default ProjectsList;
+export default ProjectsCard;

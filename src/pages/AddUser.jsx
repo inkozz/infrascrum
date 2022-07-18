@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import FormUser from '../components/forms/FormUser';
+import { addUser } from '../data/getData';
 
 const AddUser = () => {
   const formik = useFormik({
@@ -27,13 +28,10 @@ const AddUser = () => {
       Role: Yup.array().min(1),
     }),
     onSubmit: (values) => {
+      addUser(values);
       console.log(values);
     },
   });
-
-  // const buttonQuiAfficheLesDonnesDuFormulaire = () => {
-  //   console.log(formik.values);
-  // };
 
   return <FormUser formik={formik} />;
 };

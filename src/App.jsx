@@ -2,16 +2,13 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/ui/Header';
-import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
 import AddTasks from './pages/AddTasks';
 import ProjectsPage from './pages/ProjectsPage';
-import FormProjet from './components/forms/FormProjet';
-import AddLogin from './pages/AddLogin';
 import AddUser from './pages/AddUser';
-import AddProjet from './pages/AddProjet';
+import LoginPage from './pages/LoginPage';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -33,7 +30,7 @@ const App = () => {
             <Sidebar />
             <main className="flex-grow">
               <Routes>
-                <Route path="/" index element={<AddLogin />} />
+                <Route path="/" index element={<LoginPage />} />
                 <Route
                   path="home"
                   element={
@@ -52,8 +49,9 @@ const App = () => {
                     </>
                   }
                 />
+                <Route path="/home/notifications" element={<Header />} />
                 <Route
-                  path="/home/notifications"
+                  path="/home/taches"
                   element={
                     <>
                       <Header />
@@ -61,7 +59,6 @@ const App = () => {
                     </>
                   }
                 />
-                <Route path="/home/taches" element={<Header />} />
                 <Route
                   path="/home/projets"
                   element={

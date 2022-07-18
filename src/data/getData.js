@@ -37,3 +37,8 @@ export const getProjects = async () => {
   const { data } = await axios.get('http://localhost:8080/projects');
   return data;
 };
+
+export const postLogin = async (login) => {
+  const { data } = await axios.post('http://localhost:8080/login', login);
+  return data;
+};

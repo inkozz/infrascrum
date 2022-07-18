@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "pic": "/img/ben.jpeg",
-      "name": "Brion",
-      "firstname": "Benjamin"
-    },
-    {
-      "id": 2,
-      "pic": "/img/alex.jpg",
-      "name": "Ladriere",
-      "firstname": "Alex"
-    },
-    {
-      "id": 3,
-      "pic": "/img/oli.jpeg",
-      "name": "Simo Rico",
-      "firstname": "Olivia"
+      "Name": "test",
+      "LastName": "test",
+      "Birthday": "232",
+      "Adress": "test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 22,
+      "Role": "",
+      "id": 1
     }
   ],
   "projects": [
@@ -73,130 +67,13 @@
       "idUser": 1
     },
     {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
+      "Name": "Test",
+      "DateDebut": "2",
+      "DateFin": "2",
       "Status": "",
       "Assign": "",
       "Roles": "",
       "id": 3
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 4
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 5
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 19
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 20
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 21
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 22
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 23
-    },
-    {
-      "Name": "",
-      "DateDebut": "",
-      "DateFin": "",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 24
     }
   ],
   "tampon": [
@@ -204,6 +81,18 @@
       "idUser": 1,
       "idProject": 1,
       "update": "Il y a 2j"
+    }
+  ],
+  "login": [
+    {
+      "Email": "test@gmail.com",
+      "Password": "azerty",
+      "id": 1
+    },
+    {
+      "Email": "test2@gmail.com",
+      "Password": "azerty",
+      "id": 2
     }
   ]
 }

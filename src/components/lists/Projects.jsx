@@ -1,5 +1,4 @@
 import ProjectLine from './ProjectLine';
-import ProjectsCard from './ProjectsCard';
 
 const Projects = ({ data }) => (
   <tbody>

@@ -1,12 +1,9 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { Route, Routes, Link, BrowserRouter as Router } from 'react-router-dom';
-import FormLogin from '../components/forms/LoginForm';
+import LoginForm from '../components/forms/LoginForm';
+import { postLogin } from '../data/getData';
 
-const AddLogin = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+const LoginPage = () => {
   const formik = useFormik({
     initialValues: {
       Email: '',
@@ -17,13 +14,10 @@ const AddLogin = () => {
       Password: Yup.string().required('Entrez un mot de passe'),
     }),
     onSubmit: (values) => {
-      console.log(formik.values);
+      postLogin(values);
+      console.log(values);
     },
   });
-  const displayData = () => {
-    console.log(formik.values);
-  };
-
-  return <FormLogin formik={formik} />;
+  return <LoginForm formik={formik} />;
 };
-export default AddLogin;
+export default LoginPage;

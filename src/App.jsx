@@ -67,7 +67,6 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <AddProjet />
                       <ProjectsPage />
                     </>
                   }

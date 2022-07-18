@@ -1,6 +1,7 @@
 import Select from 'react-select';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { addUser } from '../../data/getData';
 
 const FormUser = () => {
   const options = [
@@ -36,11 +37,14 @@ const FormUser = () => {
       Role: Yup.array().min(1),
     }),
     onSubmit: (values) => {
-      console.log(values);
+      addUser(values)
+      console.log("mdr");
     },
   });
 
   const buttonQuiAfficheLesDonnesDuFormulaire = () => {
+    console.log("mdr2");
+    addUser(values)
     console.log(formik.values);
   };
   return (

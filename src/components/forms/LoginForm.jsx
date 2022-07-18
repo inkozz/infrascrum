@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { Route, Routes, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const handleSubmit = (e) => {

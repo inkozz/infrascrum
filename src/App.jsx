@@ -8,6 +8,7 @@ import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
+import AddTasks from './pages/AddTasks';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -53,7 +54,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <Notification />
+                      <AddTasks />
                     </>
                   }
                 />

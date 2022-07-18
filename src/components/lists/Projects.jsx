@@ -1,9 +1,9 @@
-import ProjectsCard from './ProjectsCard';
+import ProjectLine from './ProjectLine';
 
 const Projects = ({ data }) => (
-  <div>
-    {data && data.map((element) => <ProjectsCard key={element.id} project={element} />)}
-  </div>
+  <tbody>
+    {data && data.map((element) => <ProjectLine key={element.id} project={element} />)}
+  </tbody>
 );
 
 export default Projects;

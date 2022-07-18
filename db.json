@@ -11,6 +11,18 @@
       "Tel": 22,
       "Role": "",
       "id": 1
+    },
+    {
+      "Name": "Test3",
+      "LastName": "Test3",
+      "Birthday": "2",
+      "Adress": "Test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 2,
+      "Role": "",
+      "id": 2
     }
   ],
   "projects": [
@@ -65,15 +77,6 @@
       "status": "Priorité",
       "idProject": 1,
       "idUser": 1
-    },
-    {
-      "Name": "Test",
-      "DateDebut": "2",
-      "DateFin": "2",
-      "Status": "",
-      "Assign": "",
-      "Roles": "",
-      "id": 3
     }
   ],
   "tampon": [
@@ -93,6 +96,11 @@
       "Email": "test2@gmail.com",
       "Password": "azerty",
       "id": 2
+    },
+    {
+      "Email": "Test3@gmail.com",
+      "Password": "azerty",
+      "id": 3
     }
   ]
 }

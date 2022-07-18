@@ -38,7 +38,6 @@ const Header = () => (
           <ul className="ml-4 xl:w-48 flex items-center justify-end">
             <Link to="/home/formuser">
               <li className="ml-2 lg:ml-4 relative inline-block">
-                <a className="add" href="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -52,12 +51,10 @@ const Header = () => (
                       d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
                     />
                   </svg>
-                </a>
               </li>
             </Link>
             <Link to="/home/notifications">
               <li className="ml-2 lg:ml-4 relative inline-block">
-                <a className="notification" href="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -71,12 +68,10 @@ const Header = () => (
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                </a>
               </li>
             </Link>
             <Link to="/home/taches">
               <li className="ml-2 lg:ml-4 relative inline-block">
-                <a className="contributor" href="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -90,12 +85,10 @@ const Header = () => (
                       d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                     />
                   </svg>
-                </a>
               </li>
             </Link>
             <Link to="/home/projets">
               <li className="ml-2 lg:ml-4 relative inline-block">
-                <a className="projects" href="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -109,7 +102,6 @@ const Header = () => (
                       d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
                     />
                   </svg>
-                </a>
               </li>
             </Link>
           </ul>

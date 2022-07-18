@@ -29,6 +29,10 @@ export const getTasks = async () => {
   const { data } = await axios.get('http://localhost:8080/tasks');
   return data;
 };
+export const addTask = async (tasks) => {
+  const { data } = await axios.post('http://localhost:8080/tasks', tasks);
+  return data;
+};
 export const getProjects = async () => {
   const { data } = await axios.get('http://localhost:8080/projects');
   return data;

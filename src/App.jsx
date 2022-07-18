@@ -6,6 +6,7 @@ import Notification from './components/lists/Notification';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
+import AddTasks from './pages/AddTasks';
 import ProjectsPage from './pages/ProjectsPage';
 import FormProjet from './components/forms/FormProjet';
 import AddLogin from './pages/AddLogin';
@@ -56,7 +57,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <Notification />
+                      <AddTasks />
                     </>
                   }
                 />

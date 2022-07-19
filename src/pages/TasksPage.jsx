@@ -2,10 +2,8 @@
 import { useQuery } from 'react-query';
 // import toast from 'react-hot-toast';
 
-import TasksLineCom from '../components/lists/TasksLineCom';
-
 import { Link } from 'react-router-dom';
-import Tasks from '../components/lists/Tasks';
+import TasksLineCom from '../components/lists/TasksLineCom';
 
 import { getTasks } from '../data/getData';
 
@@ -21,7 +19,7 @@ const TasksPage = () => {
     <div className="bg-white p-8 rounded-md w-full">
       <div>
         <div className="flex justify-end">
-          <Link to="/addproject">
+          <Link to="/addtask">
             <button className="btn primary" type="submit">
               Ajouter un projet
             </button>

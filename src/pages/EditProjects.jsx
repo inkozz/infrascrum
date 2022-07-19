@@ -1,0 +1,61 @@
+import { Formik } from 'formik';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { useMutation, useQuery } from 'react-query';
+import { useNavigate, useParams } from 'react-router-dom';
+import * as Yup from 'yup';
+import FormProjet from '../components/forms/FormProjet';
+import apiClient from '../http-common';
+
+const EditProjects = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [project, setProject] = useState({});
+  const { isLoading } = useQuery(
+    'projects',
+    async () => await apiClient.get(`/projects/${id}`),
+    {
+      onSuccess: (res) => {
+        setProject(res.data);
+        console.log(res.data);
+      },
+    },
+  );
+
+  const { isLoading: isUpdate, mutate: updateProject } = useMutation(
+    'projects',
+    async (projectValues) => await apiClient.put(`/projects/${id}`, projectValues),
+    {
+      onSuccess: () => {
+        navigate('/home/projets');
+        toast.success('Le matériel a bien été mis à jour');
+      },
+    },
+  );
+  const validationSchema = Yup.object({
+    nameProjet: Yup.string(),
+    describe: Yup.string()
+      .required()
+      .max(50, 'Le titre doit faire maximum 50 caractères'),
+    startDate: Yup.date(),
+    endDate: Yup.date(),
+    priority: Yup.array().min(1),
+  });
+
+  return (
+    <>
+      {isLoading || isUpdate}
+      {Object.keys(project).length && (
+        <Formik
+          initialValues={project}
+          validationSchema={validationSchema}
+          onSubmit={(values) => {
+            updateProject(values);
+          }}>
+          {(props) => <FormProjet formik={props} />}
+        </Formik>
+      )}
+    </>
+  );
+};
+export default EditProjects;

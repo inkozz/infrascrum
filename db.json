@@ -28,10 +28,7 @@
   "projects": [
     {
       "id": 1,
-
-
       "name": "Boa",
-
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "pic": "/img/snake.jpg",
@@ -61,7 +58,7 @@
     },
     {
       "id": 2,
-      "name": "Test",
+      "name": "Test21",
       "ceoName": "Ben",
       "ceoPic": "/img/ben.jpg",
       "pic": "/img/max.jpg",
@@ -76,15 +73,24 @@
       "update": "1sem"
       "update": "1sem",
       "describe": "test"
+    },
+    {
+      "name": "Test22",
+      "logo": "",
+      "describe": "Testtt",
+      "dateB": "2022-07-22",
+      "dateE": "2022-07-23",
+      "priority": "",
+      "id": 3
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "name": "Tryptik",
+      "name": "Test2",
       "dateB": "26 Mai, 2022",
       "dateE": "3 Juin, 2022",
-      "goal": "Terminer la responsivité des stocks",
+      "goal": "Terminer les formulaires",
       "ceoName": "Maxime",
       "ceoPic": "/img/max.jpg",
       "colPic2": "/img/ben.jpeg",
@@ -128,32 +134,7 @@
     {
       "Email": "test2@gmail.com",
       "Password": "azerty",
-      "id": 2
-    },
-    {
-      "Email": "Test3@gmail.com",
-      "Password": "azerty",
-      "id": 3
-    },
-    {
-
-      "email": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 6
-      "email": "azertyui@live.be",
-      "password": "",
-      "Password": "ç",
-      "id": 4
+      "id": 2,
     }
   ]
 }

@@ -66,19 +66,31 @@
   "tasks": [
     {
       "id": 1,
-      "name": "Tache 1",
+      "name": "Tryptik",
       "dateB": "26 Mai, 2022",
       "dateE": "3 Juin, 2022",
+      "goal": "Terminer la responsivité des stocks",
+      "ceoName": "Maxime",
+      "ceoPic": "/img/max.jpg",
+      "colPic2": "/img/ben.jpeg",
+      "colPic1": "/img/alex.jpg",
       "status": "En cours",
+      "post": "Front-End",
       "idProject": 1,
       "idUser": 1,
       "update": "2h."
     },
     {
       "id": 2,
-      "name": "Tache 2",
-      "dateB": "26 Mai, 2022",
-      "dateE": "3 Juin, 2022",
+      "name": "Goulagwe",
+      "dateB": "25 Mai, 2022",
+      "dateE": "2 Juin, 2022",
+      "goal": "Terminer la devanture du site",
+      "ceoName": "Olivia",
+      "ceoPic": "/img/oli.jpeg",
+      "colPic2": "/img/max.jpeg",
+      "colPic1": "/img/ben.jpg",
+      "post": "Back-End",
       "status": "Priorité",
       "idProject": 1,
       "idUser": 1,
@@ -107,6 +119,12 @@
       "Email": "Test3@gmail.com",
       "Password": "azerty",
       "id": 3
+    },
+    {
+      "email": "azertyui@live.be",
+      "password": "",
+      "Password": "ç",
+      "id": 4
     }
   ]
 }

@@ -28,7 +28,7 @@
   "projects": [
     {
       "id": 1,
-      "name": "Boa.Inc",
+      "name": "TestS",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "pic": "/img/snake.jpg",
@@ -40,11 +40,15 @@
       "status": "Dans les temps",
       "idUser": 1,
       "idTask": 1,
-      "update": "Hier"
+      "update": "Hier",
+      "description": "Description du projet",
+      "describe": "SSS",
+      "startDate": "2022-07-22",
+      "endDate": "2022-07-24"
     },
     {
       "id": 2,
-      "name": "Goulagwe",
+      "name": "TestFF",
       "ceoName": "Ben",
       "ceoPic": "/img/ben.jpg",
       "pic": "/img/max.jpg",
@@ -56,7 +60,8 @@
       "status": "En retard",
       "idUser": 1,
       "idTask": 1,
-      "update": "1sem"
+      "update": "1sem",
+      "describe": "azeae"
     }
   ],
   "tasks": [
@@ -104,15 +109,5 @@
       "Password": "azerty",
       "id": 3
     },
-    {
-      "email": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 5
-    }
   ]
 }

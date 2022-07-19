@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const ProjectLine = ({ project }) => (
   <tr className=" border-b-2 border-gray-200">
@@ -76,7 +76,7 @@ const ProjectLine = ({ project }) => (
             d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
           />
         </svg>
-        <Link to="/editproject/">
+        <NavLink to={`/home/projets/${project.id}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 mr-2 cursor-pointer hover:text-[#deb887] hover:animate-spin"
@@ -95,7 +95,7 @@ const ProjectLine = ({ project }) => (
               d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-        </Link>
+        </NavLink>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6 hover:text-red cursor-pointer"

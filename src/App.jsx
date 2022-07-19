@@ -9,6 +9,9 @@ import ProjectsPage from './pages/ProjectsPage';
 import AddUser from './pages/AddUser';
 import LoginPage from './pages/LoginPage';
 import TasksPage from './pages/TasksPage';
+import EditProjects from './pages/EditProjects';
+import AddProjet from './pages/AddProjet';
+import AddTasks from './pages/AddTasks';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -60,11 +63,47 @@ const App = () => {
                   }
                 />
                 <Route
+                  path="/home/projets/:id"
+                  element={
+                    <>
+                      <Header />
+                      <EditProjects />
+                    </>
+                  }
+                />
+                <Route
                   path="/adduser"
                   element={
                     <>
                       <Header />
                       <AddUser />
+                    </>
+                  }
+                />
+                <Route
+                  path="/addprojects"
+                  element={
+                    <>
+                      <Header />
+                      <AddProjet />
+                    </>
+                  }
+                />
+                <Route
+                  path="/editprojects"
+                  element={
+                    <>
+                      <Header />
+                      <EditProjects />
+                    </>
+                  }
+                />
+                <Route
+                  path="/addtasks"
+                  element={
+                    <>
+                      <Header />
+                      <AddTasks />
                     </>
                   }
                 />

@@ -12,6 +12,7 @@ import TasksPage from './pages/TasksPage';
 import EditProjects from './pages/EditProjects';
 import AddProjet from './pages/AddProjet';
 import AddTasks from './pages/AddTasks';
+import EditTasks from './pages/EditTasks';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -54,6 +55,24 @@ const App = () => {
                   }
                 />
                 <Route
+                  path="/home/taches/:id"
+                  element={
+                    <>
+                      <Header />
+                      <EditTasks />
+                    </>
+                  }
+                />
+                <Route
+                  path="/addtasks"
+                  element={
+                    <>
+                      <Header />
+                      <AddTasks />
+                    </>
+                  }
+                />
+                <Route
                   path="/home/projets"
                   element={
                     <>
@@ -72,15 +91,6 @@ const App = () => {
                   }
                 />
                 <Route
-                  path="/adduser"
-                  element={
-                    <>
-                      <Header />
-                      <AddUser />
-                    </>
-                  }
-                />
-                <Route
                   path="/addprojects"
                   element={
                     <>
@@ -90,20 +100,11 @@ const App = () => {
                   }
                 />
                 <Route
-                  path="/editprojects"
+                  path="/adduser"
                   element={
                     <>
                       <Header />
-                      <EditProjects />
-                    </>
-                  }
-                />
-                <Route
-                  path="/addtasks"
-                  element={
-                    <>
-                      <Header />
-                      <AddTasks />
+                      <AddUser />
                     </>
                   }
                 />

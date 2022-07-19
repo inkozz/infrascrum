@@ -1,9 +1,11 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 import FormTask from '../components/forms/FormTask';
 import { addTask } from '../data/getData';
 
 const AddTask = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -22,6 +24,7 @@ const AddTask = () => {
     }),
     onSubmit: (values) => {
       addTask(values);
+      navigate('/home/taches/');
       console.log(values);
     },
   });

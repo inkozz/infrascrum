@@ -1,9 +1,11 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 import FormProjet from '../components/forms/FormProjet';
 import { addProject } from '../data/getData';
 
 const AddProjet = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -22,6 +24,7 @@ const AddProjet = () => {
     }),
     onSubmit: (values) => {
       addProject(values);
+      navigate('/home/projets');
       console.log(values);
     },
   });

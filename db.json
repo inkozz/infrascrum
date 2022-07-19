@@ -28,26 +28,20 @@
   "projects": [
     {
       "id": 1,
-      "name": "Boa",
-      "name": "test2",
+      "name": "test",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "pic": "/img/snake.jpg",
       "colPic1": "/img/oli.jpeg",
       "colPic2": "/img/max.jpg",
       "colPic3": "/img/dog.jpg",
-      "dateB": "2022-08-10",
-      "dateE": "2022-08-12",
+      "dateB": "2022-08-01",
+      "dateE": "2022-08-02",
       "status": "Dans les temps",
       "idUser": 1,
       "idTask": 1,
       "update": "Hier",
-      "describe": ""
-    },
-    {
-      "id": 2,
-      "name": "Goulagwe",
-      "describe": "test2",
+      "describe": "test",
       "startDate": "2022-08-02",
       "endDate": "2022-08-04"
     },
@@ -65,7 +59,6 @@
       "status": "En retard",
       "idUser": 1,
       "idTask": 1,
-      "update": "1sem"
       "update": "1sem",
       "describe": "test"
     }
@@ -121,31 +114,6 @@
       "Email": "test2@gmail.com",
       "Password": "azerty",
       "id": 2
-    },
-    {
-      "Email": "Test3@gmail.com",
-      "Password": "azerty",
-      "id": 3
-    },
-    {
-
-      "email": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 6
-      "email": "azertyui@live.be",
-      "password": "",
-      "Password": "ç",
-      "id": 4
     }
   ]
 }

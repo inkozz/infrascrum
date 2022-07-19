@@ -12,6 +12,7 @@ import TasksPage from './pages/TasksPage';
 import EditProjects from './pages/EditProjects';
 import AddProjet from './pages/AddProjet';
 import AddTasks from './pages/AddTasks';
+import Assignation from './components/Assignations';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);

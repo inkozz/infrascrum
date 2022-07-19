@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.loginFormAnime {
-  animation: reveal 1s;
-}
 @keyframes reveal {
   0% {
     transform: translate(0, 40%);
@@ -14,11 +11,11 @@
   }
 }
 
-/* .btn {
+.btn {
   @apply px-3 py-1 rounded-md duration-200;
 }
 .btn.primary {
-  @apply bg-emerald-600 text-white hover:bg-emerald-900 hover:drop-shadow;
+  @apply bg-primary text-white hover:bg-white hover:drop-shadow hover:text-primary;
 }
 .btn.cancel {
   @apply bg-rose-600 text-white hover:bg-rose-900 hover:drop-shadow;
@@ -30,7 +27,7 @@
   @apply cursor-not-allowed bg-gray-300 hover:drop-shadow-none hover:bg-gray-300;
 }
 
-.title {
+/* .title {
   @apply my-3 relative block font-semibold before:block before:absolute before:-bottom-1 before:bg-emerald-600 before:duration-200 before:h-1 before:rounded before:w-0 before:hover:w-3/4;
 }
 .title.primary {
@@ -40,7 +37,7 @@
   @apply text-xl;
 }
 
-.form-control{
+.form-control {
   @apply mt-4;
 }
 
@@ -72,7 +69,7 @@
   @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm;
 }
 
-.form-control.checkbox{
+.form-control.checkbox {
   @apply flex items-center;
 }
 .form-control.checkbox label {
@@ -82,7 +79,7 @@
   @apply focus:ring-emerald-500 h-4 w-4 text-emerald-600 border-gray-300 rounded;
 }
 
-.form-control.radio div{
+.form-control.radio div {
   @apply flex items-center mt-1;
 }
 .form-control.radio div label {
@@ -90,8 +87,7 @@
 }
 .form-control.radio div input {
   @apply focus:ring-emerald-500 h-4 w-4 text-emerald-600 border-gray-300 rounded-full;
-} */
-
-/* .primary {
-  @apply color:[#0F70B7];
-} */
+}
+.primary {
+}
+@apply color:[#0F70B7]; */

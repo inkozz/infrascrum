@@ -19,28 +19,28 @@ const FormProjet = ({ formik }) => {
                 <img src="/public/img/logoInfra.png" alt="logo" />
               </div>
               <div className="block font-semibold text-2xl self-start text-gray-700">
-                <h2 className="leading-relaxed">Pojet</h2>
+                <h2 className="leading-relaxed">Projet</h2>
               </div>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <div className="divide-y divide-gray-200">
                 <div className=" text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                   <div className="flex flex-col">
-                    <label htmlFor="nameProjet">
+                    <label htmlFor="name">
                       Nom du projet
                       <input
                         type="text"
-                        name="nameProjet"
-                        id="nameProjet"
-                        value={formik.values.nameProjet}
+                        name="name"
+                        id="name"
+                        value={formik.values.name}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                         placeholder="Nom"
                       />
                     </label>
-                    {formik.touched.nameProjet && formik.errors.nameProjet && (
-                      <div className="">{formik.errors.nameProjet}</div>
+                    {formik.touched.name && formik.errors.name && (
+                      <div className="">{formik.errors.name}</div>
                     )}
                   </div>
                   <div className="flex flex-col">
@@ -65,37 +65,37 @@ const FormProjet = ({ formik }) => {
                   </div>
 
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="startDate">
+                    <label htmlFor="dateB">
                       Date de début :
                       <input
                         type="date"
-                        id="startDate"
-                        name="startDate"
-                        value={formik.values.startDate}
+                        id="dateB"
+                        name="dateB"
+                        value={formik.values.dateB}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                       />
                     </label>
-                    {formik.touched.startDate && formik.errors.startDate && (
-                      <div className="">{formik.errors.startDate}</div>
+                    {formik.touched.dateB && formik.errors.dateB && (
+                      <div className="">{formik.errors.dateB}</div>
                     )}
                   </div>
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="endDate">
+                    <label htmlFor="dateE">
                       Date de fin :
                       <input
                         type="date"
-                        id="endDate"
-                        name="endDate"
-                        value={formik.values.endDate}
+                        id="dateE"
+                        name="dateE"
+                        value={formik.values.dateE}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                       />
                     </label>
-                    {formik.touched.endDate && formik.errors.endDate && (
-                      <div className="">{formik.errors.endDate}</div>
+                    {formik.touched.dateE && formik.errors.dateE && (
+                      <div className="">{formik.errors.dateE}</div>
                     )}
                   </div>
                   <div className="flex flex-col">

@@ -10,7 +10,7 @@ const ProfilePage = () => {
     data: tasks,
     isError,
     isFetching,
-    isLoading,
+    // isLoading,
     // refetch: reloadData,
   } = useQuery('tasks', getTasks);
   useEffect(() => {

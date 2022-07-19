@@ -18,15 +18,15 @@ const Sidebar = () => {
   };
   return (
     <div
-      className={`relative p-4 rounded-md shadow-md bg-white flex flex-col duration-200 ${
-        isExpand ? 'min-w-[250px] expand' : 'min-w-[10px]'
+      className={`relative p-4 rounded-md shadow-md flex flex-col duration-200 bg-white text-black ${
+        isExpand ? '  min-w-[250px] expand ' : '  min-w-[10px]'
       }`}
-      data-cy="sidebar">
+      name="sidebar">
       <button
         type="button"
         className="absolute top-2 right-2"
         onClick={() => setIsExpand(!isExpand)}
-        data-cy="expandBtn">
+        name="expandBtn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={`h-6 w-6 text-gray-400 duration-200 ${isExpand ? 'rotate-180' : ''}`}
@@ -44,7 +44,7 @@ const Sidebar = () => {
       <img
         src="/img/logo.png"
         alt="logo app"
-        className={`mt-8 mx-auto ${isExpand ? 'w-24' : 'w-12'}`}
+        className={`mt-8 mx-auto ${isExpand ? 'w-24' : 'w-24'}`}
       />
       <nav className="flex flex-col items-center flex-grow mt-8">
         <ul className="flex flex-col w-full flex-grow space-y-6">
@@ -93,7 +93,7 @@ const Sidebar = () => {
             type="button"
             className="flex items-center text-blue-600 duration-200 hover:text-blue-800"
             onClick={login}
-            data-cy="loginBtn">
+            name="loginBtn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`h-6 w-6 ${!isExpand ? 'mr-0' : 'mr-2'}`}

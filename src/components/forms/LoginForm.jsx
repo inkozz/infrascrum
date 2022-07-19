@@ -50,6 +50,7 @@ const LoginForm = ({ formik }) => {
                 <input
                   id="password"
                   name="password"
+
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
@@ -68,6 +69,7 @@ const LoginForm = ({ formik }) => {
                 <input
                   id="password"
                   name="password"
+
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}

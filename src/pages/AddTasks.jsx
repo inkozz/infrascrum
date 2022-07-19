@@ -6,19 +6,19 @@ import { addTask } from '../data/getData';
 const AddTask = () => {
   const formik = useFormik({
     initialValues: {
-      Name: '',
-      DateDebut: '',
-      DateFin: '',
-      Status: '',
-      Assign: '',
-      Roles: '',
+      name: '',
+      dateDebut: '',
+      dateFin: '',
+      status: '',
+      assign: '',
+      roles: '',
     },
     validationSchema: Yup.object({
-      Name: Yup.string(),
-      DateDebut: Yup.date(),
-      DateFin: Yup.date(),
-      Status: Yup.array().min(1),
-      Assign: Yup.array().min(1),
+      name: Yup.string(),
+      dateDebut: Yup.date(),
+      dateFin: Yup.date(),
+      status: Yup.array().min(1),
+      assign: Yup.array().min(1),
     }),
     onSubmit: (values) => {
       addTask(values);

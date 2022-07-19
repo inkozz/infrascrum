@@ -73,48 +73,60 @@ const FormUser = ({ formik }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex flex-col">
-                      <label htmlFor="birthDate">
-                        Date de naissance
-                        <div className="relative focus-within:text-gray-600 text-gray-400">
-                          <input
-                            type="date"
-                            name="birthDate"
-                            id="birthDate"
-                            value={formik.values.birthDate}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            className="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                            placeholder="25/02/2020"
-                          />
-                          {formik.touched.birthDate && formik.errors.birthDate && (
-                            <div className="absolute -bottom-3 text-sm text-red-600">
-                              {formik.errors.birthDate}
-                            </div>
-                          )}
-                          <div className="absolute left-3 top-2">
-                            <svg
-                              className="w-6 h-6"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                              />
-                            </svg>
+                  <div className="flex">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex flex-col">
+                        <label htmlFor="password">
+                          Mot de passe
+                          <div className="relative focus-within:text-gray-600 text-gray-400 mr-4">
+                            <input
+                              type="pasword"
+                              name="password"
+                              id="password"
+                              value={formik.values.password}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                              placeholder="*******"
+                            />
+                            {formik.touched.password && formik.errors.password && (
+                              <div className="absolute -bottom-3 text-sm text-red-600">
+                                {formik.errors.password}
+                              </div>
+                            )}
                           </div>
-                        </div>
-                      </label>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="flex flex-col">
+                        <label htmlFor="verifPassword">
+                          Vérif du mot de passe!
+                          <div className="relative focus-within:text-gray-600 text-gray-400">
+                            <input
+                              type="pasword"
+                              name="verifPassword"
+                              id="verifPassword"
+                              value={formik.values.verifPassword}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                              placeholder="********"
+                            />
+                            {formik.touched.verifPassword &&
+                              formik.errors.verifPassword && (
+                                <div className="absolute -bottom-3 text-sm text-red-600">
+                                  {formik.errors.verifPassword}
+                                </div>
+                              )}
+                          </div>
+                        </label>
+                      </div>
                     </div>
                   </div>
                   <div className="flex flex-col">
                     <label htmlFor="ville">
-                      Adresse
+                      Ville
                       <input
                         type="text"
                         name="ville"

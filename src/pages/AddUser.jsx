@@ -8,7 +8,9 @@ const AddUser = () => {
     initialValues: {
       name: '',
       lastName: '',
-      birthDate: '',
+      username: '',
+      password: '',
+      verifPassword: '',
       ville: '',
       email: '',
       tel: '',
@@ -17,7 +19,8 @@ const AddUser = () => {
     validationSchema: Yup.object({
       name: Yup.string(),
       lastName: Yup.string().required('Il faut plus de 2 lettres'),
-      birthDate: Yup.date(),
+      password: Yup.string(),
+      verifPassword: Yup.string(),
       ville: Yup.string().required('Remplir obligatoirement le champ'),
       email: Yup.string().email('Email invalide').required('Entrez un Email'),
       tel: Yup.number(),

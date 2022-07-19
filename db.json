@@ -28,19 +28,30 @@
   "projects": [
     {
       "id": 1,
-      "name": "Test243",
+      "name": "Boa",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "pic": "/img/snake.jpg",
       "colPic1": "/img/oli.jpeg",
       "colPic2": "/img/max.jpg",
       "colPic3": "/img/dog.jpg",
+
+
+
       "dateB": "2022-08-10",
       "dateE": "2022-08-12",
+
       "status": "Dans les temps",
       "idUser": 1,
       "idTask": 1,
       "update": "Hier",
+
+      "describe": ""
+    },
+    {
+      "id": 2,
+      "name": "Goulagwe",
+
       "describe": "test2",
       "startDate": "2022-08-02",
       "endDate": "2022-08-04"
@@ -59,6 +70,7 @@
       "status": "En retard",
       "idUser": 1,
       "idTask": 1,
+      "update": "1sem"
       "update": "1sem",
       "describe": "test"
     },
@@ -94,7 +106,7 @@
       "name": "Goulagwe",
       "dateB": "25 Mai, 2022",
       "dateE": "2 Juin, 2022",
-      "goal": "Terminer la devanture du site",
+      "goal": "Terminer la devanture du site en respectant les exigeances du client. Ne pas oublier de remplir tout les champs disponibles et de respecter les couleurs imposées.",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "colPic2": "/img/max.jpeg",
@@ -122,7 +134,7 @@
     {
       "Email": "test2@gmail.com",
       "Password": "azerty",
-      "id": 2
+      "id": 2,
     }
   ]
 }

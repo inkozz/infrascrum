@@ -49,7 +49,7 @@ const LoginForm = ({ formik }) => {
                 Mot de passe
                 <input
                   id="password"
-                  name="Password"
+                  name="password"
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}

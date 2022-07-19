@@ -9,6 +9,7 @@ import AddTasks from './pages/AddTasks';
 import ProjectsPage from './pages/ProjectsPage';
 import AddUser from './pages/AddUser';
 import LoginPage from './pages/LoginPage';
+import TasksCard from './components/lists/TasksCard';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -40,22 +41,13 @@ const App = () => {
                     </>
                   }
                 />
-                <Route
-                  path="/home/formUser"
-                  element={
-                    <>
-                      <Header />
-                      <AddUser />
-                    </>
-                  }
-                />
                 <Route path="/home/notifications" element={<Header />} />
                 <Route
                   path="/home/taches"
                   element={
                     <>
                       <Header />
-                      <AddTasks />
+                      <TasksCard />
                     </>
                   }
                 />
@@ -65,6 +57,15 @@ const App = () => {
                     <>
                       <Header />
                       <ProjectsPage />
+                    </>
+                  }
+                />
+                <Route
+                  path="/adduser"
+                  element={
+                    <>
+                      <Header />
+                      <AddUser />
                     </>
                   }
                 />

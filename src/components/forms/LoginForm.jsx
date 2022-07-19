@@ -72,6 +72,9 @@ const LoginForm = ({ formik }) => {
                 type="submit">
                 Soumettre
               </button>
+              <Link to="/adduser">
+                <p className="text-primary pt-8">Pas de compte? Créez en un ici !</p>
+              </Link>
             </div>
           </Link>
         </form>

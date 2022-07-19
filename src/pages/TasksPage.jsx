@@ -19,7 +19,7 @@ const TasksPage = () => {
     <div className="bg-white p-8 rounded-md w-full">
       <div>
         <div className="flex justify-end">
-          <Link to="/addproject">
+          <Link to="/addtask">
             <button className="btn primary" type="submit">
               Ajouter un projet
             </button>

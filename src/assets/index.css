@@ -27,6 +27,32 @@
   @apply cursor-not-allowed bg-gray-300 hover:drop-shadow-none hover:bg-gray-300;
 }
 
+.AssigPeople {
+  @apply border-b border-gray-300 p-4  flex justify-between;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  opacity: 0.5;
+  /* background-color: #82979f; */
+}
+
+::-webkit-scrollbar:hover {
+  width: 12px;
+  opacity: 1;
+}
+
+/* /* Handle / */
+::-webkit-scrollbar-thumb {
+  background: #82979f;
+  border-radius: 10px;
+}
+
+/* / Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #82979f;
+} */
+
 /* .title {
   @apply my-3 relative block font-semibold before:block before:absolute before:-bottom-1 before:bg-emerald-600 before:duration-200 before:h-1 before:rounded before:w-0 before:hover:w-3/4;
 }

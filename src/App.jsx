@@ -5,11 +5,10 @@ import Header from './components/ui/Header';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import ProfilePage from './pages/ProfilePage';
-import AddTasks from './pages/AddTasks';
 import ProjectsPage from './pages/ProjectsPage';
 import AddUser from './pages/AddUser';
 import LoginPage from './pages/LoginPage';
-import TasksCard from './components/lists/TasksCard';
+import TasksPage from './pages/TasksPage';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -47,7 +46,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <TasksCard />
+                      <TasksPage />
                     </>
                   }
                 />

@@ -2,10 +2,8 @@
 import { useQuery } from 'react-query';
 // import toast from 'react-hot-toast';
 
-import TasksLineCom from '../components/lists/TasksLineCom';
-
 import { Link } from 'react-router-dom';
-import Tasks from '../components/lists/Tasks';
+import TasksLineCom from '../components/lists/TasksLineCom';
 
 import { getTasks } from '../data/getData';
 
@@ -29,18 +27,20 @@ const TasksPage = () => {
         </div>
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-            <table className="table text-gray-400 border-separate space-y-6 text-sm">
+            <table className="table text-gray-400 w-full space-y-6 text-sm">
               <thead className="text-white">
                 <tr>
-                  <th className="p-3 text-primary">Projet</th>
-                  <th className="p-3 text-primary">Contenu de la tâche</th>
-                  <th className="p-3 text-primary">Personne responsable</th>
-                  <th className="p-3 text-primary">Collaborateurs</th>
-                  <th className="p-3 text-primary">Rôle</th>
-                  <th className="p-3 text-primary">Statut</th>
-                  <th className="p-3 text-primary">Date de début</th>
-                  <th className="p-3 text-primary">Date de fin</th>
-                  <th className="p-3 text-primary">Autre</th>
+                  <th className="p-3 text-primary bg-gray-100 rounded-tl-lg">Projet</th>
+                  <th className="p-3 w-2/5 text-primary bg-gray-100">
+                    Contenu de la tâche
+                  </th>
+                  <th className="p-3 text-primary bg-gray-100">Personne responsable</th>
+                  <th className="p-3 text-primary bg-gray-100">Collaborateurs</th>
+                  <th className="p-3 text-primary bg-gray-100">Rôle</th>
+                  <th className="p-3 text-primary bg-gray-100">Statut</th>
+                  <th className="p-3 text-primary bg-gray-100">Date de début</th>
+                  <th className="p-3 text-primary bg-gray-100">Date de fin</th>
+                  <th className="p-3 text-primary bg-gray-100 rounded-tr-lg">Autre</th>
                 </tr>
               </thead>
               <TasksLineCom data={task} />

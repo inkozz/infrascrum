@@ -80,7 +80,7 @@ const FormUser = ({ formik }) => {
                           Mot de passe
                           <div className="relative focus-within:text-gray-600 text-gray-400 mr-4">
                             <input
-                              type="pasword"
+                              type="password"
                               name="password"
                               id="password"
                               value={formik.values.password}
@@ -104,7 +104,7 @@ const FormUser = ({ formik }) => {
                           Vérif du mot de passe!
                           <div className="relative focus-within:text-gray-600 text-gray-400">
                             <input
-                              type="pasword"
+                              type="password"
                               name="verifPassword"
                               id="verifPassword"
                               value={formik.values.verifPassword}

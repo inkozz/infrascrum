@@ -6,20 +6,20 @@ const AddProjet = () => {
   const formik = useFormik({
     initialValues: {
       logo: '',
-      NameProjet: '',
-      Describe: '',
-      StartDate: '',
-      EndDate: '',
-      Priority: '',
+      nameProjet: '',
+      describe: '',
+      startDate: '',
+      endDate: '',
+      priority: '',
     },
     validationSchema: Yup.object({
-      NameProjet: Yup.string(),
-      Describe: Yup.string()
+      nameProjet: Yup.string(),
+      describe: Yup.string()
         .required()
         .max(50, 'Le titre doit faire maximum 50 caractères'),
-      StartDate: Yup.date(),
-      EndDate: Yup.date(),
-      Priority: Yup.array().min(1),
+      startDate: Yup.date(),
+      endDate: Yup.date(),
+      priority: Yup.array().min(1),
     }),
     onSubmit: (values) => {
       console.log(values);

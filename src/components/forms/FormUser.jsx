@@ -30,44 +30,44 @@ const FormUser = ({ formik }) => {
                   <div className="flex">
                     <div className="flex items-center space-x-4">
                       <div className="flex flex-col mr-3">
-                        <label htmlFor="Name">
+                        <label htmlFor="name">
                           Nom
                           <input
                             type="text"
-                            name="Name"
-                            id="Name"
-                            value={formik.values.Name}
+                            name="name"
+                            id="name"
+                            value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                             placeholder="Event title"
                           />
                         </label>
-                        {formik.touched.Name && formik.errors.Name && (
+                        {formik.touched.name && formik.errors.name && (
                           <div className="absolute -bottom-3 text-sm text-red-600">
-                            {formik.errors.Name}
+                            {formik.errors.name}
                           </div>
                         )}
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
                       <div className="flex flex-col ml-3">
-                        <label htmlFor="LastName">
+                        <label htmlFor="lastName">
                           Nom de famille
                           <input
                             type="text"
-                            name="LastName"
-                            id="LastName"
-                            value={formik.values.LastName}
+                            name="lastName"
+                            id="lastName"
+                            value={formik.values.lastName}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                             placeholder="Event title"
                           />
                         </label>
-                        {formik.touched.LastName && formik.errors.LastName && (
+                        {formik.touched.lastName && formik.errors.lastName && (
                           <div className="absolute -bottom-3 text-sm text-red-600">
-                            {formik.errors.LastName}
+                            {formik.errors.lastName}
                           </div>
                         )}
                       </div>
@@ -75,22 +75,22 @@ const FormUser = ({ formik }) => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="flex flex-col">
-                      <label htmlFor="Birthday">
+                      <label htmlFor="birthDate">
                         Date de naissance
                         <div className="relative focus-within:text-gray-600 text-gray-400">
                           <input
-                            type="text"
-                            name="Birthday"
-                            id="Birthday"
-                            value={formik.values.Birthday}
+                            type="date"
+                            name="birthDate"
+                            id="birthDate"
+                            value={formik.values.birthDate}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                             placeholder="25/02/2020"
                           />
-                          {formik.touched.Birthday && formik.errors.Birthday && (
+                          {formik.touched.birthDate && formik.errors.birthDate && (
                             <div className="absolute -bottom-3 text-sm text-red-600">
-                              {formik.errors.Birthday}
+                              {formik.errors.birthDate}
                             </div>
                           )}
                           <div className="absolute left-3 top-2">
@@ -113,109 +113,68 @@ const FormUser = ({ formik }) => {
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="Adress">
+                    <label htmlFor="ville">
                       Adresse
                       <input
                         type="text"
-                        name="Adress"
-                        id="Adress"
-                        value={formik.values.Adress}
+                        name="ville"
+                        id="ville"
+                        value={formik.values.ville}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                         placeholder="Optional"
                       />
                     </label>
-                    {formik.touched.Adress && formik.errors.Adress && (
+                    {formik.touched.ville && formik.errors.ville && (
                       <div className="absolute -bottom-3 text-sm text-red-600">
-                        {formik.errors.Adress}
+                        {formik.errors.ville}
                       </div>
                     )}
                   </div>
-                  <div className="flex">
-                    <div className="flex flex-col mr-3">
-                      <label htmlFor="Number">
-                        Numéro
-                        <input
-                          type="text"
-                          name="Number"
-                          id="Number"
-                          value={formik.values.Number}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                          placeholder="Optional"
-                        />
-                      </label>
-                      {formik.touched.Postal && formik.errors.Postal && (
-                        <div className="absolute -bottom-3 text-sm text-red-600">
-                          {formik.errors.Postal}
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex flex-col ml-3">
-                      <label htmlFor="Postal">
-                        Code postal
-                        <input
-                          type="text"
-                          name="Postal"
-                          id="Postal"
-                          value={formik.values.Postal}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                          placeholder="Optional"
-                        />
-                      </label>
-                      {formik.touched.Postal && formik.errors.Postal && (
-                        <div className="absolute -bottom-3 text-sm text-red-600">
-                          {formik.errors.Postal}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+
                   <div className="flex flex-col">
-                    <label htmlFor="Email">
+                    <label htmlFor="email">
                       Adresse mail
                       <input
                         type="text"
-                        name="Email"
-                        id="Email"
-                        value={formik.values.Email}
+                        name="email"
+                        id="email"
+                        value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                         placeholder="Optional"
                       />
                     </label>
-                    {formik.touched.Email && formik.errors.Email && (
+                    {formik.touched.email && formik.errors.email && (
                       <div className="absolute -bottom-3 text-sm text-red-600">
-                        {formik.errors.Email}
+                        {formik.errors.email}
                       </div>
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="Tel">
+                    <label htmlFor="tel">
                       Téléphone
                       <input
                         type="number"
-                        name="Tel"
-                        id="Tel"
-                        value={formik.values.Tel}
+                        name="tel"
+                        id="tel"
+                        value={formik.values.tel}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                         placeholder="Optional"
                       />
                     </label>
-                    {formik.touched.Tel && formik.errors.Tel && (
+                    {formik.touched.tel && formik.errors.tel && (
                       <div className="absolute -bottom-3 text-sm text-red-600">
-                        {formik.errors.Tel}
+                        {formik.errors.tel}
                       </div>
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="Role" />
+                    <label htmlFor="role" />
                     Rôle
                     <div>
                       <MyComponent />

@@ -38,94 +38,95 @@ const FormTask = ({ formik }) => {
             <div className="flex flex-col">
               <div className="flex items-center">
                 <div className="flex flex-col">
-                  <label htmlFor="Name" />
-                  Nom de la tache :
-                  <input
-                    type="text"
-                    name="Name"
-                    id="Name"
-                    value={formik.values.Name}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                    placeholder="Event title"
-                  />
-                  {formik.touched.Name && formik.errors.Name && (
-                    <div className=" text-sm text-red-600">{formik.errors.Name}</div>
+                  <label htmlFor="name">
+                    Nom de la tache :
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      value={formik.values.name}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      placeholder="Event title"
+                    />
+                  </label>
+                  {formik.touched.name && formik.errors.name && (
+                    <div className=" text-sm text-red-600">{formik.errors.name}</div>
                   )}
                 </div>
               </div>
               <div className="flex items-center">
                 <div className="flex flex-col ml-3">
-                  <label htmlFor="DateDebut" />
+                  <label htmlFor="dateDebut" />
                   Date de début :
                   <div className=" focus-within:text-gray-600 text-gray-400">
                     <input
                       type="text"
-                      name="DateDebut"
-                      id="DateDebut"
-                      value={formik.values.DateDebut}
+                      name="dateDebut"
+                      id="dateDebut"
+                      value={formik.values.dateDebut}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                       placeholder="25/02/2020"
                     />
-                    {formik.touched.DateDebut && formik.errors.DateDebut && (
+                    {formik.touched.dateDebut && formik.errors.dateDebut && (
                       <div className=" text-sm text-red-600">
-                        {formik.errors.DateDebut}
+                        {formik.errors.dateDebut}
                       </div>
                     )}
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="DateDebut" />
+                  <label htmlFor="datefin" />
                   Date de fin
                   <div className=" focus-within:text-gray-600 text-gray-400">
                     <input
                       type="text"
-                      name="DateFin"
-                      id="DateFin"
-                      value={formik.values.DateFin}
+                      name="dateFin"
+                      id="dateFin"
+                      value={formik.values.dateFin}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                       placeholder="25/02/2020"
                     />
-                    {formik.touched.DateFin && formik.errors.DateFin && (
-                      <div className=" text-sm text-red-600">{formik.errors.DateFin}</div>
+                    {formik.touched.dateFin && formik.errors.dateFin && (
+                      <div className=" text-sm text-red-600">{formik.errors.dateFin}</div>
                     )}
                   </div>
                 </div>
               </div>
               <div className="flex flex-col">
-                <label htmlFor="Status" />
+                <label htmlFor="status" />
                 Status
                 <MySelectPriority
-                  value={formik.values.Status}
+                  value={formik.values.status}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.Status && formik.errors.Status && (
-                  <div className=" text-sm text-red-600">{formik.errors.Status}</div>
+                {formik.touched.status && formik.errors.status && (
+                  <div className=" text-sm text-red-600">{formik.errors.status}</div>
                 )}
               </div>
               <div className="flex flex-col">
-                <label htmlFor="Assign" />
+                <label htmlFor="assign" />
                 Assign
                 <MySelectAssign />
-                {formik.touched.Assign && formik.errors.Assign && (
+                {formik.touched.assign && formik.errors.assign && (
                   <div className="absolute text-sm text-red-600">
-                    {formik.errors.Assign}
+                    {formik.errors.assign}
                   </div>
                 )}
               </div>
               <div className="flex flex-col">
-                <label htmlFor="Roles" />
+                <label htmlFor="roles" />
                 Roles
                 <MySelectRole />
-                {formik.touched.Roles && formik.errors.Roles && (
+                {formik.touched.roles && formik.errors.roles && (
                   <div className="absolute text-sm text-red-600">
-                    {formik.errors.Roles}
+                    {formik.errors.roles}
                   </div>
                 )}
               </div>

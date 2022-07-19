@@ -19,38 +19,38 @@ const FormProjet = ({ formik }) => {
                 <img src="/public/img/logoInfra.png" alt="logo" />
               </div>
               <div className="block font-semibold text-2xl self-start text-gray-700">
-                <h2 className="leading-relaxed">Formulaire Collaborateurs</h2>
+                <h2 className="leading-relaxed">Pojet</h2>
               </div>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <div className="divide-y divide-gray-200">
                 <div className=" text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                   <div className="flex flex-col">
-                    <label htmlFor="NameProjet">
+                    <label htmlFor="nameProjet">
                       Nom du projet
                       <input
                         type="text"
-                        name="NameProjet"
-                        id="NameProjet"
-                        value={formik.values.NameProjet}
+                        name="nameProjet"
+                        id="nameProjet"
+                        value={formik.values.nameProjet}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                         placeholder="Nom"
                       />
                     </label>
-                    {formik.touched.NameProjet && formik.errors.NameProjet && (
-                      <div className="">{formik.errors.NameProjet}</div>
+                    {formik.touched.nameProjet && formik.errors.nameProjet && (
+                      <div className="">{formik.errors.nameProjet}</div>
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="Describe">
+                    <label htmlFor="describe">
                       Description du projet
                       <textarea
                         type="text"
-                        name="Describe"
-                        id="Describe"
-                        value={formik.values.Describe}
+                        name="describe"
+                        id="describe"
+                        value={formik.values.describe}
                         onChange={formik.handleChange}
                         cols="10"
                         rows="2"
@@ -59,48 +59,47 @@ const FormProjet = ({ formik }) => {
                         placeholder="describe"
                       />
                     </label>
-                    {formik.touched.Describe && formik.errors.Describe && (
-                      <div className="">{formik.errors.Describe}</div>
+                    {formik.touched.describe && formik.errors.describe && (
+                      <div className="">{formik.errors.describe}</div>
                     )}
                   </div>
 
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="StartDate">
+                    <label htmlFor="startDate">
                       Date de début :
                       <input
                         type="date"
-                        id="StartDate"
-                        name="StartDate"
-                        value={formik.values.StartDate}
+                        id="startDate"
+                        name="startDate"
+                        value={formik.values.startDate}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                       />
                     </label>
-                    {formik.touched.StartDate && formik.errors.StartDate && (
-                      <div className="">{formik.errors.StartDate}</div>
+                    {formik.touched.startDate && formik.errors.startDate && (
+                      <div className="">{formik.errors.startDate}</div>
                     )}
                   </div>
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="EndDate">
+                    <label htmlFor="endDate">
                       Date de fin :
                       <input
                         type="date"
-                        id="EndDate"
-                        name="EndDate"
-                        value={formik.values.EndDate}
+                        id="endDate"
+                        name="endDate"
+                        value={formik.values.endDate}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                       />
                     </label>
-                    {formik.touched.EndDate && formik.errors.EndDate && (
-                      <div className="">{formik.errors.EndDate}</div>
+                    {formik.touched.endDate && formik.errors.endDate && (
+                      <div className="">{formik.errors.endDate}</div>
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="Priority" />
-                    Priorité
+                    <label htmlFor="priority">Priorité</label>
                     <div>
                       <MyComponent />
                     </div>

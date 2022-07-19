@@ -67,7 +67,8 @@
       "dateE": "3 Juin, 2022",
       "status": "En cours",
       "idProject": 1,
-      "idUser": 1
+      "idUser": 1,
+      "update": "2h."
     },
     {
       "id": 2,
@@ -76,7 +77,8 @@
       "dateE": "3 Juin, 2022",
       "status": "Priorité",
       "idProject": 1,
-      "idUser": 1
+      "idUser": 1,
+      "update": "5min."
     }
   ],
   "tampon": [

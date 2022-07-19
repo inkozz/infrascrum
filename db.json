@@ -28,40 +28,39 @@
   "projects": [
     {
       "id": 1,
-      "name": "TestS",
+      "name": "test",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "pic": "/img/snake.jpg",
       "colPic1": "/img/oli.jpeg",
       "colPic2": "/img/max.jpg",
       "colPic3": "/img/dog.jpg",
-      "dateB": "2 Feb, 2022",
-      "dateE": "1 April, 2023",
+      "dateB": "2022-08-01",
+      "dateE": "2022-08-02",
       "status": "Dans les temps",
       "idUser": 1,
       "idTask": 1,
       "update": "Hier",
-      "description": "Description du projet",
-      "describe": "SSS",
-      "startDate": "2022-07-22",
-      "endDate": "2022-07-24"
+      "describe": "test",
+      "startDate": "2022-08-02",
+      "endDate": "2022-08-04"
     },
     {
       "id": 2,
-      "name": "TestFF",
+      "name": "Test",
       "ceoName": "Ben",
       "ceoPic": "/img/ben.jpg",
       "pic": "/img/max.jpg",
       "colPic1": "/img/max.jpg",
       "colPic2": "/img/ben.jpeg",
       "colPic3": "/img/alex.jpg",
-      "dateB": "23 Jan, 2022",
-      "dateE": "1 Dec, 2023",
+      "dateB": "2022-08-04",
+      "dateE": "2022-08-05",
       "status": "En retard",
       "idUser": 1,
       "idTask": 1,
       "update": "1sem",
-      "describe": "azeae"
+      "describe": "test"
     }
   ],
   "tasks": [
@@ -108,6 +107,6 @@
       "Email": "Test3@gmail.com",
       "Password": "azerty",
       "id": 3
-    },
+    }
   ]
 }

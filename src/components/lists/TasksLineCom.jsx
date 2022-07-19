@@ -1,7 +1,7 @@
 import TasksLine from './TasksLine';
 
 const TasksLineCom = ({ tasks, deleteTask }) => {
-  console.log(`${tasks}`);
+  console.log(tasks);
   return (
     <>
       {tasks &&

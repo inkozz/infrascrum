@@ -8,8 +8,8 @@ const AddProjet = () => {
       logo: '',
       nameProjet: '',
       describe: '',
-      startDate: '',
-      endDate: '',
+      dateB: '',
+      dateE: '',
       priority: '',
     },
     validationSchema: Yup.object({
@@ -17,8 +17,8 @@ const AddProjet = () => {
       describe: Yup.string()
         .required()
         .max(50, 'Le titre doit faire maximum 50 caractères'),
-      startDate: Yup.date(),
-      endDate: Yup.date(),
+      dateB: Yup.date(),
+      dateE: Yup.date(),
       priority: Yup.array().min(1),
     }),
     onSubmit: (values) => {

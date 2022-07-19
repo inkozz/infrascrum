@@ -13,18 +13,18 @@ const EditProjects = () => {
   const [project, setProject] = useState({});
   const { isLoading } = useQuery(
     'projects',
-    async () => await apiClient.get(`/projects/${id}`),
+    async () => apiClient.get(`/projects/${id}`),
     {
       onSuccess: (res) => {
         setProject(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       },
     },
   );
 
   const { isLoading: isUpdate, mutate: updateProject } = useMutation(
     'projects',
-    async (projectValues) => await apiClient.put(`/projects/${id}`, projectValues),
+    async (projectValues) => apiClient.put(`/projects/${id}`, projectValues),
     {
       onSuccess: () => {
         navigate('/home/projets');

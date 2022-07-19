@@ -28,7 +28,7 @@
   "projects": [
     {
       "id": 1,
-      "name": "TestS",
+      "name": "Boa",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "pic": "/img/snake.jpg",
@@ -41,14 +41,11 @@
       "idUser": 1,
       "idTask": 1,
       "update": "Hier",
-      "description": "Description du projet",
-      "describe": "SSS",
-      "startDate": "2022-07-22",
-      "endDate": "2022-07-24"
+      "describe": "kflz,zlm,"
     },
     {
       "id": 2,
-      "name": "TestFF",
+      "name": "Goulagwe",
       "ceoName": "Ben",
       "ceoPic": "/img/ben.jpg",
       "pic": "/img/max.jpg",
@@ -60,8 +57,7 @@
       "status": "En retard",
       "idUser": 1,
       "idTask": 1,
-      "update": "1sem",
-      "describe": "azeae"
+      "update": "1sem"
     }
   ],
   "tasks": [
@@ -109,5 +105,20 @@
       "Password": "azerty",
       "id": 3
     },
+    {
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 6
+    }
   ]
 }

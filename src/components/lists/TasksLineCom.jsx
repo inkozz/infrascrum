@@ -1,9 +1,14 @@
 import TasksLine from './TasksLine';
 
-const TasksLineCom = ({ data }) => {
-  console.log(`${data}`);
+const TasksLineCom = ({ tasks, deleteTask }) => {
+  console.log(`${tasks}`);
   return (
-    <>{data && data.map((element) => <TasksLine key={element.id} task={element} />)}</>
+    <>
+      {tasks &&
+        tasks.map((element) => (
+          <TasksLine key={element.id} task={element} deleteTask={deleteTask} />
+        ))}
+    </>
   );
 };
 

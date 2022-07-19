@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
 import { getTasks, getProjects } from '../data/getData';
 import Tasks from '../components/lists/Tasks';
-import ProjectsCards from '../components/lists/ProjectsCards';
+import Projects from '../components/lists/ProjectsCards';
 
 const ProfilePage = () => {
   const {
@@ -36,7 +36,7 @@ const ProfilePage = () => {
       <div className="flex justify-between space-x-5">
         <div className="bg-yellow-500 rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center mb-0">Projets</h2>
-          {projects && <ProjectsCards data={projects} />}
+          {projects && <Projects data={projects} />}
         </div>
         <div className="bg-primary rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Taches</h2>

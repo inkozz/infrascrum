@@ -1,9 +1,11 @@
 import { useFormik } from 'formik';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import FormUser from '../components/forms/FormUser';
 import { addUser } from '../data/getData';
 
 const AddUser = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -28,6 +30,7 @@ const AddUser = () => {
     }),
     onSubmit: (values) => {
       addUser(values);
+      navigate('/');
       console.log(values);
     },
   });

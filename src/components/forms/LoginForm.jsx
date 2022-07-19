@@ -49,25 +49,7 @@ const LoginForm = ({ formik }) => {
                 Mot de passe
                 <input
                   id="password"
-                  name="Password"
-                  type="password"
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  placeholder="Mot de passe"
-                  className="border border-primary rounded px-3 py-1 mt-4 focus:outline-2 outline-primary"
-                />
-              </label>
-              {formik.touched.password && formik.errors.password && (
-                <div className="text-sm text-red">{formik.errors.password}</div>
-              )}
-            </div>
-            <div className="flex flex-col my-2">
-              <label htmlFor="password" className="text-xs text-black flex flex-col">
-                Vérification du mot de passe !
-                <input
-                  id="password"
-                  name="Password"
+                  name="password"
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}

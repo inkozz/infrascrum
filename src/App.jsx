@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Header from './components/ui/Header';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
@@ -12,6 +13,8 @@ import TasksPage from './pages/TasksPage';
 import EditProjects from './pages/EditProjects';
 import AddProjet from './pages/AddProjet';
 import AddTasks from './pages/AddTasks';
+// import Assignation from './components/Assignations';
+
 import EditTasks from './pages/EditTasks';
 import Assignation from './components/Assignations';
 
@@ -30,6 +33,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>
+        <Toaster position="top-right" reverseOrder={false} />
         <Router>
           <div className="flex max-w-full bg-slate-200 w-full min-h-screen relative">
             <Sidebar />

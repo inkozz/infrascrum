@@ -1,11 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { postLogin } from '../../data/getData';
+import { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
+import loginCtx from '../../loginCtx';
 
 const LoginForm = ({ formik }) => {
   const submitLogin = () => {
     postLogin(formik.values);
     console.log(formik.values);
+  };
+  const { isLogged, setIsLogged } = useContext(loginCtx);
+  const login = () => {
+    setIsLogged(true);
+    toast('Connecté !', { className: 'successToast' });
   };
   return (
     <div className="bg-white h-screen w-screen flex justify-center items-center">
@@ -50,7 +58,6 @@ const LoginForm = ({ formik }) => {
                 <input
                   id="password"
                   name="password"
-
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
@@ -69,7 +76,6 @@ const LoginForm = ({ formik }) => {
                 <input
                   id="password"
                   name="password"
-
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
@@ -87,7 +93,7 @@ const LoginForm = ({ formik }) => {
           <Link to="/home">
             <div className="flex flex-col items-center justify-center my-3">
               <button
-                onClick={submitLogin}
+                onClick={submitLogin && login}
                 className=" py-1 w-full rounded bg-primary text-white"
                 type="submit">
                 Soumettre

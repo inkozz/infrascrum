@@ -17,7 +17,7 @@ import AddTasks from './pages/AddTasks';
 import EditTasks from './pages/EditTasks';
 
 const App = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   useEffect(() => {
     if (localStorage.getItem('isLogged')) {
       setIsLogged(true);
@@ -33,7 +33,7 @@ const App = () => {
       <LoginCtx.Provider value={contextValue}>
         <Router>
           <div className="flex max-w-full bg-slate-200 w-full min-h-screen relative">
-            <Sidebar />
+            {isLogged ? <Sidebar /> : null}
             <main className="flex-grow">
               <Routes>
                 <Route path="/" index element={<LoginPage />} />

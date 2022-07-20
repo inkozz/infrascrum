@@ -115,6 +115,7 @@ const FormProjet = ({ formik }) => {
                 >
                   Enregistrer
                 </button>
+                <Toaster position="top-right" reverseOrder={false} />
                 {/* </div> */}
               </div>
             </form>

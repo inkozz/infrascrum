@@ -9,18 +9,19 @@ const AddProjet = () => {
   const formik = useFormik({
     initialValues: {
       name: '',
+      description: '',
       logo: '',
-      describe: '',
-      dateB: '',
-      dateE: '',
+      startDate: '',
+      endDate: '',
       priority: '',
     },
     validationSchema: Yup.object({
       name: Yup.string(),
-      describe: Yup.string().max(50, 'Le titre doit faire maximum 50 caractères'),
-      dateB: Yup.date(),
-      dateE: Yup.date(),
-      priority: Yup.array(),
+      description: Yup.string(),
+      logo: Yup.string(),
+      startDate: Yup.date(),
+      endDate: Yup.date(),
+      priority: Yup.array().min(1),
     }),
     onSubmit: (values) => {
       addProject(values);

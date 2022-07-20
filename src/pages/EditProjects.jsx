@@ -34,9 +34,8 @@ const EditProjects = () => {
   );
   const validationSchema = Yup.object({
     name: Yup.string(),
-    describe: Yup.string()
-      .required()
-      .max(50, 'Le titre doit faire maximum 50 caractères'),
+    description: Yup.string(),
+    logo: Yup.string(),
     startDate: Yup.date(),
     endDate: Yup.date(),
     priority: Yup.array().min(1),

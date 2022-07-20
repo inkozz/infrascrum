@@ -7,7 +7,7 @@ const ProjectLine = ({ project, deleteProject }) => (
         <div className="flex-shrink-0 w-10 h-10">
           <img
             className="w-full h-full rounded-full bg-blue-900"
-            src={project.pic}
+            src={project.logo}
             alt=""
           />
         </div>
@@ -19,17 +19,17 @@ const ProjectLine = ({ project, deleteProject }) => (
       </div>
     </td>
     <td className="px-5 py-5  bg-white text-sm flex items-center">
-      <img className="w-10 h-10 rounded-full" src={project.ceoPic} alt="" />
-      <p className="text-gray-900 whitespace-no-wrap pl-2">{project.ceoName}</p>
+      <img className="w-10 h-10 rounded-full" src={project.logo} alt="" />
+      <p className="text-gray-900 whitespace-no-wrap pl-2">ceoName</p>
     </td>
     <td className="px-5 py-5  bg-white text-sm">
-      <p className="text-gray-900 whitespace-no-wrap">{project.dateB}</p>
+      <p className="text-gray-900 whitespace-no-wrap">{project.startDate}</p>
     </td>
     <td className="px-5 py-5  bg-white text-sm">
-      <p className="text-gray-900 whitespace-no-wrap">{project.dateE}</p>
+      <p className="text-gray-900 whitespace-no-wrap">{project.endDate}</p>
     </td>
     <td className="px-5 py-5  bg-white text-sm">
-      <p className="text-gray-900 whitespace-no-wrap">{project.update}</p>
+      <p className="text-gray-900 whitespace-no-wrap">Derniere maj</p>
     </td>
     <td className="px-5 py-5  bg-white text-sm">
       <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -37,24 +37,20 @@ const ProjectLine = ({ project, deleteProject }) => (
           aria-hidden
           className="absolute inset-0 bg-[#7FFF00] opacity-50 rounded-full"
         />
-        <span className="relative">{project.status}</span>
+        <span className="relative">status</span>
       </span>
     </td>
     <td className="px-5 py-5  bg-white text-sm flex items-center">
       <div className="relative z-30">
-        <img className="w-10 h-10 rounded-full" src={project.colPic1} alt="#" />
+        <img className="w-10 h-10 rounded-full" src={project.logo} alt="#" />
         <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-[#7FFF00] border-2 border-white dark:border-gray-800 rounded-full" />
       </div>
       <div className="relative z-20 -ml-4">
-        <img
-          className="w-10 h-10 rounded-full"
-          src={project.colPic2}
-          alt="GoulagweKing"
-        />
+        <img className="w-10 h-10 rounded-full" src={project.logo} alt="logo" />
         <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-red border-2 border-white dark:border-gray-800 rounded-full" />
       </div>
       <div className="relative z-10 -ml-4">
-        <img className="w-10 h-10 rounded-full" src={project.colPic3} alt="DogWater" />
+        <img className="w-10 h-10 rounded-full" src={project.logo} alt="logo" />
         <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full" />
       </div>
       <div className="h-10 w-10 rounded-full bg-blue-100 z-0 -ml-4">

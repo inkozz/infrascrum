@@ -8,8 +8,8 @@ const LoginForm = ({ formik }) => {
     console.log(formik.values);
   };
   return (
-    <div className="bg-white h-screen w-screen flex justify-center items-center">
-      <div className="p-12 rounded-xl border-2 border-primary shadow-xl">
+    <div className="bg-white h-full w-full flex justify-center items-center">
+      <div className="p-6 rounded-xl border-2 border-primary shadow-xl">
         <div className="flex flex-col items-center justify-center mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,26 +50,6 @@ const LoginForm = ({ formik }) => {
                 <input
                   id="password"
                   name="password"
-
-                  type="password"
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  placeholder="Mot de passe"
-                  className="border border-primary rounded px-3 py-1 mt-4 focus:outline-2 outline-primary"
-                />
-              </label>
-              {formik.touched.password && formik.errors.password && (
-                <div className="text-sm text-red">{formik.errors.password}</div>
-              )}
-            </div>
-            <div className="flex flex-col my-2">
-              <label htmlFor="password" className="text-xs text-black flex flex-col">
-                Vérification du mot de passe !
-                <input
-                  id="password"
-                  name="password"
-
                   type="password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
@@ -85,18 +65,22 @@ const LoginForm = ({ formik }) => {
           </div>
 
           <Link to="/home">
-            <div className="flex flex-col items-center justify-center my-3">
+            <div className="flex flex-col items-center justify-center">
               <button
                 onClick={submitLogin}
-                className=" py-1 w-full rounded bg-primary text-white"
+                className=" py-2 w-1/3 rounded bg-primary text-white"
                 type="submit">
-                Soumettre
+                Se connecter
               </button>
-              <Link to="/adduser">
-                <p className="text-primary pt-8">Pas de compte? Créez en un ici !</p>
-              </Link>
             </div>
           </Link>
+          <div className="pt-6">
+            <Link to="/adduser">
+              <p className="text-primary text-center text-sm">
+                Pas de compte? Créez en un ici !
+              </p>
+            </Link>
+          </div>
         </form>
       </div>
     </div>

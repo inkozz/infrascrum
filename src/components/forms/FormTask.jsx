@@ -1,6 +1,5 @@
-import Select from 'react-select';
-
 const FormTask = ({ formik }) => {
+  console.log('oui');
   // const submitTask = () => {
   //   addTask(formik.values);
   //   console.log(formik.values);
@@ -96,19 +95,19 @@ const FormTask = ({ formik }) => {
               <div className="col-span-3 sm:col-span-2 relative">
                 <label htmlFor="type" className="block text-sm font-medium text-gray-700">
                   Priority
+                  <select
+                    id="priority"
+                    name="priority"
+                    autoComplete="priority"
+                    value={formik.values.priority}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="high">Elevée</option>
+                    <option value="mid">Normale</option>
+                    <option value="low">Basse</option>
+                  </select>
                 </label>
-                <select
-                  id="priority"
-                  name="priority"
-                  autoComplete="priority"
-                  value={formik.values.priority}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                  <option value="high">Elevée</option>
-                  <option value="mid">Normale</option>
-                  <option value="low">Basse</option>
-                </select>
                 {formik.touched.priority && formik.errors.priority && (
                   <div className="absolute -bottom-5 text-sm text-red-600">
                     {formik.errors.priority}
@@ -118,19 +117,19 @@ const FormTask = ({ formik }) => {
               <div className="col-span-3 sm:col-span-2 relative">
                 <label htmlFor="type" className="block text-sm font-medium text-gray-700">
                   Assign
+                  <select
+                    id="assign"
+                    name="assign"
+                    autoComplete="assign"
+                    value={formik.values.assign}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="collab1">collab1</option>
+                    <option value="collab2">collab2</option>
+                    <option value="collab3">collab3</option>
+                  </select>
                 </label>
-                <select
-                  id="assign"
-                  name="assign"
-                  autoComplete="assign"
-                  value={formik.values.assign}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                  <option value="collab1">collab1</option>
-                  <option value="collab2">collab2</option>
-                  <option value="collab3">collab3</option>
-                </select>
                 {formik.touched.assign && formik.errors.assign && (
                   <div className="absolute -bottom-5 text-sm text-red-600">
                     {formik.errors.assign}
@@ -140,19 +139,19 @@ const FormTask = ({ formik }) => {
               <div className="col-span-3 sm:col-span-2 relative">
                 <label htmlFor="type" className="block text-sm font-medium text-gray-700">
                   Roles
+                  <select
+                    id="roles"
+                    name="roles"
+                    autoComplete="roles"
+                    value={formik.values.roles}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="Designer">Designer</option>
+                    <option value="Front-End">Front-End</option>
+                    <option value="Back-End">Back-End</option>
+                  </select>
                 </label>
-                <select
-                  id="roles"
-                  name="roles"
-                  autoComplete="roles"
-                  value={formik.values.roles}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                  <option value="Designer">Designer</option>
-                  <option value="Front-End">Front-End</option>
-                  <option value="Back-End">Back-End</option>
-                </select>
                 {formik.touched.roles && formik.errors.roles && (
                   <div className="absolute -bottom-5 text-sm text-red-600">
                     {formik.errors.roles}
@@ -161,14 +160,23 @@ const FormTask = ({ formik }) => {
               </div>
             </div>
           </div>
-          <div className="pt-4 flex items-center justify-center space-x-4">
-            <div className=" flex flex-col items-center justify-center mx-auto w-2/3">
+          <div className="flex items-center justify-center">
+            <div className="pt-4 flex items-center justify-center space-x-4">
               <button
-                // onClick={submitTask}
-                type="submit"
-                className="bg-primary hover:bg-gray-800 p-2 mt-4 w-48 rounded text-white">
-                Enregistrer
+                type="button"
+                className="bg-green-500 hover:bg-yellow-300 p-2 mt-4 mr-4 w-48 rounded text-white">
+                Annuler
               </button>
+            </div>
+            <div className="pt-4 flex items-center justify-center space-x-4">
+              <div className=" flex flex-col items-center justify-center mx-auto w-2/3">
+                <button
+                  // onClick={submitTask}
+                  type="submit"
+                  className="bg-primary hover:bg-gray-800 p-2 mt-4 w-48 rounded text-white">
+                  Enregistrer
+                </button>
+              </div>
             </div>
           </div>
         </form>

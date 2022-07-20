@@ -28,12 +28,12 @@ const EditProjects = () => {
     {
       onSuccess: () => {
         navigate('/home/projets');
-        toast.success('Le matériel a bien été mis à jour');
+        toast.success('Le projet a été mis à jour');
       },
     },
   );
   const validationSchema = Yup.object({
-    nameProjet: Yup.string(),
+    name: Yup.string(),
     describe: Yup.string()
       .required()
       .max(50, 'Le titre doit faire maximum 50 caractères'),

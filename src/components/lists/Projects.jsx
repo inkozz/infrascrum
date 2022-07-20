@@ -1,8 +1,11 @@
 import ProjectLine from './ProjectLine';
 
-const Projects = ({ data }) => (
+const Projects = ({ projects, deleteProject }) => (
   <tbody>
-    {data && data.map((element) => <ProjectLine key={element.id} project={element} />)}
+    {projects &&
+      projects.map((element) => (
+        <ProjectLine key={element.id} project={element} deleteProject={deleteProject} />
+      ))}
   </tbody>
 );
 

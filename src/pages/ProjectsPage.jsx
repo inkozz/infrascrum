@@ -1,17 +1,37 @@
-// import { useEffect } from 'react';
-import { useQuery } from 'react-query';
-// import toast from 'react-hot-toast';
+import { useQuery, useMutation } from 'react-query';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Projects from '../components/lists/Projects';
-import { getProjects } from '../data/getData';
+import apiClient from '../http-common';
 
 const ProjectsPage = () => {
-  const { data: projects } = useQuery('projects', getProjects);
-  // useEffect(() => {
-  //   if (isError) {
-  //     toast('Il y a une erreur', { className: 'errorToast' });
-  //   }
-  // }, [isError]);
+  const [projects, setProjects] = useState([]);
+  const [id, setId] = useState();
+  const { isLoading, refetch: getProjects } = useQuery(
+    'projects',
+    async () => await apiClient.get('/projects'),
+    {
+      onSuccess: (res) => {
+        setProjects(res.data);
+      },
+    },
+  );
+  const { isLoading: isDeleting, mutate } = useMutation(
+    'projects',
+    async () => await apiClient.delete(`/projects/${id}`),
+    {
+      onSuccess: () => {
+        toast.success('Le projet a été supprimé');
+        getProjects();
+      },
+    },
+  );
+
+  const deleteProject = async (idProject) => {
+    await setId(idProject);
+    mutate();
+  };
 
   return (
     <div className="bg-white p-8 rounded-md w-full">
@@ -54,8 +74,8 @@ const ProjectsPage = () => {
                   </th>
                 </tr>
               </thead>
-
-              <Projects data={projects} />
+              {isLoading || isDeleting}
+              <Projects projects={projects} deleteProject={deleteProject} />
             </table>
           </div>
         </div>

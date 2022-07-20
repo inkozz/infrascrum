@@ -31,6 +31,12 @@
   @apply border-b border-gray-300 p-4  flex justify-between;
 }
 
+.toastStyle {
+  @apply cursor-pointer font-semibold;
+  background-color: rgb(13 148 136) !important;
+  color: white !important;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   opacity: 0.5;

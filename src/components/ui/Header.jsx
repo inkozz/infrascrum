@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const Header = () => (
-  <div className="header bg-white ">
+  <div className="header bg-white relative">
     <div className="container mx-auto px-2 py-4 flex items-center justify-between">
       <div className="flex justify-between items-center w-1/2">
         {/* <!-- logo --> */}

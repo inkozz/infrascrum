@@ -17,7 +17,7 @@
       "name": "SNCB",
       "description": "Refaire le site complet de la SNCB",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/LogoBR.svg/1200px-LogoBR.svg.png",
-      "startDate": "2022-07-21",
+      "startDate": "2022-08-07",
       "endDate": "2022-07-30",
       "priority": "",
       "id": 1
@@ -26,7 +26,7 @@
       "name": "SNCB 2",
       "description": "Refaire l'intranet de la SNCB",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/LogoBR.svg/1200px-LogoBR.svg.png",
-      "startDate": "2022-07-30",
+      "startDate": "2022-08-05",
       "endDate": "2023-01-29",
       "priority": "",
       "id": 2
@@ -38,10 +38,20 @@
       "taskDescription": "Sncb Header",
       "startDate": "2022-07-29",
       "endDate": "2022-08-07",
-      "priority": "",
-      "assign": "",
-      "roles": "",
+      "priority": "low",
+      "assign": "collab3",
+      "roles": "Front-End",
       "id": 1
+    },
+    {
+      "name": "SNCB",
+      "taskDescription": "Main SNCB",
+      "startDate": "2022-07-28",
+      "endDate": "2022-08-05",
+      "priority": "mid",
+      "assign": "collab2",
+      "roles": "Front-End",
+      "id": 2
     }
   ],
   "tampon": [

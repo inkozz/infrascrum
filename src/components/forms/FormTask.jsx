@@ -5,21 +5,6 @@ const FormTask = ({ formik }) => {
   //   addTask(formik.values);
   //   console.log(formik.values);
   // };
-  const optionsPriority = [
-    { value: 'low', label: 'Basse priorité' },
-    { value: 'high', label: 'Haute priorité' },
-    { value: 'normal', label: 'Priorité normale' },
-  ];
-  const optionsAssign = [{ value: 'lesgens', label: 'Les gens' }];
-  const optionsRole = [
-    { value: 'designer', label: 'Designer' },
-    { value: 'backend', label: 'Backend' },
-    { value: 'frontend', label: 'Front-End' },
-  ];
-
-  const MySelectPriority = () => <Select options={optionsPriority} />;
-  const MySelectAssign = () => <Select options={optionsAssign} />;
-  const MySelectRole = () => <Select options={optionsRole} />;
 
   return (
     <div className="flex justify-center items-center">
@@ -109,34 +94,68 @@ const FormTask = ({ formik }) => {
                   )}
                 </div>
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="priority" />
-                Priorité
-                <MySelectPriority
+              <div className="col-span-3 sm:col-span-2 relative">
+                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
+                  Priority
+                </label>
+                <select
+                  id="priority"
+                  name="priority"
+                  autoComplete="priority"
                   value={formik.values.priority}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                />
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                  <option value="high">Elevée</option>
+                  <option value="mid">Normale</option>
+                  <option value="low">Basse</option>
+                </select>
                 {formik.touched.priority && formik.errors.priority && (
-                  <div className=" text-sm text-red-600">{formik.errors.priority}</div>
+                  <div className="absolute -bottom-5 text-sm text-red-600">
+                    {formik.errors.priority}
+                  </div>
                 )}
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="assign" />
-                Assign
-                <MySelectAssign />
+              <div className="col-span-3 sm:col-span-2 relative">
+                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
+                  Assign
+                </label>
+                <select
+                  id="assign"
+                  name="assign"
+                  autoComplete="assign"
+                  value={formik.values.assign}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                  <option value="collab1">collab1</option>
+                  <option value="collab2">collab2</option>
+                  <option value="collab3">collab3</option>
+                </select>
                 {formik.touched.assign && formik.errors.assign && (
-                  <div className="absolute text-sm text-red-600">
+                  <div className="absolute -bottom-5 text-sm text-red-600">
                     {formik.errors.assign}
                   </div>
                 )}
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="roles" />
-                Roles
-                <MySelectRole />
+              <div className="col-span-3 sm:col-span-2 relative">
+                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
+                  Roles
+                </label>
+                <select
+                  id="roles"
+                  name="roles"
+                  autoComplete="roles"
+                  value={formik.values.roles}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                  <option value="Designer">Designer</option>
+                  <option value="Front-End">Front-End</option>
+                  <option value="Back-End">Back-End</option>
+                </select>
                 {formik.touched.roles && formik.errors.roles && (
-                  <div className="absolute text-sm text-red-600">
+                  <div className="absolute -bottom-5 text-sm text-red-600">
                     {formik.errors.roles}
                   </div>
                 )}

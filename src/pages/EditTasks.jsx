@@ -37,9 +37,9 @@ const EditTasks = () => {
     taskDescription: Yup.string(),
     startDate: Yup.date(),
     endDate: Yup.date(),
-    priority: Yup.array().min(1),
-    assign: Yup.array().min(1),
-    roles: Yup.array().min(1),
+    priority: Yup.string(),
+    assign: Yup.string(),
+    roles: Yup.string(),
   });
 
   return (

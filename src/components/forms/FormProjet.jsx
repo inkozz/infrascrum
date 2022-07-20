@@ -1,14 +1,6 @@
 import Select from 'react-select';
 
 const FormProjet = ({ formik }) => {
-  const options = [
-    { value: 'priori', label: 'Urgent' },
-    { value: 'impo', label: 'Important' },
-    { value: 'noimport', label: 'Non-important' },
-  ];
-
-  const MyComponent = () => <Select options={options} />;
-
   return (
     <div className="w-full bg-slate-200 flex flex-col justify-center sm:py-12">
       <div className="relative sm:max-w-xl sm:mx-auto">
@@ -66,7 +58,7 @@ const FormProjet = ({ formik }) => {
 
                   <div className="flex flex-col">
                     <label htmlFor="logo">
-                      url photo :
+                      Url photo :
                       <input
                         type="text"
                         name="logo"
@@ -83,7 +75,7 @@ const FormProjet = ({ formik }) => {
                     )}
                   </div>
 
-                  <div className="flex flex-col w-64 relative mt-2">
+                  <div className="flex items-center justify-between w-64 relative mt-2">
                     <label htmlFor="dateB">
                       Date de début :
                       <input
@@ -99,8 +91,6 @@ const FormProjet = ({ formik }) => {
                     {formik.touched.startDate && formik.errors.startDate && (
                       <div className="">{formik.errors.startDate}</div>
                     )}
-                  </div>
-                  <div className="flex flex-col w-64 relative mt-2">
                     <label htmlFor="endDate">
                       Date de fin :
                       <input
@@ -117,11 +107,30 @@ const FormProjet = ({ formik }) => {
                       <div className="">{formik.errors.endDate}</div>
                     )}
                   </div>
-                  <div className="flex flex-col">
-                    <label htmlFor="priority">Priorité</label>
-                    <div>
-                      <MyComponent />
-                    </div>
+
+                  <div className="col-span-3 sm:col-span-2 relative">
+                    <label
+                      htmlFor="type"
+                      className="block text-sm font-medium text-gray-700">
+                      Priority
+                    </label>
+                    <select
+                      id="priority"
+                      name="priority"
+                      autoComplete="priority"
+                      value={formik.values.priority}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                      <option value="high">Elevée</option>
+                      <option value="mid">Normale</option>
+                      <option value="low">Basse</option>
+                    </select>
+                    {formik.touched.priority && formik.errors.priority && (
+                      <div className="absolute -bottom-5 text-sm text-red-600">
+                        {formik.errors.priority}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

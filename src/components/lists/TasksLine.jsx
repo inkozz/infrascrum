@@ -6,7 +6,7 @@ const TasksLine = ({ task, deleteTask }) => (
       <td className="p-3 font-medium capitalize">{task.name}</td>
       <td className="p-3 text-wrap">{task.taskDescription}</td>
       <td className="p-3">ceoName</td>
-      <img src={task.colPic1} alt="colPic1" className="m-1 rounded-full h-10 w-10" />
+      <td>{task.assign}</td>
 
       <td className="p-3 uppercase">{task.roles}</td>
 

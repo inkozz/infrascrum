@@ -8,25 +8,26 @@ const AddUser = () => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
+      email: '',
+      password: '',
       name: '',
       lastName: '',
-      username: '',
-      password: '',
       verifPassword: '',
       ville: '',
-      email: '',
-      tel: '',
       role: '',
+      tel: '',
+      img: '',
     },
     validationSchema: Yup.object({
+      email: Yup.string().email('Email invalide').required('Entrez un Email'),
+      password: Yup.string(),
       name: Yup.string(),
       lastName: Yup.string().required('Il faut plus de 2 lettres'),
-      password: Yup.string(),
       verifPassword: Yup.string(),
       ville: Yup.string().required('Remplir obligatoirement le champ'),
-      email: Yup.string().email('Email invalide').required('Entrez un Email'),
-      tel: Yup.number(),
       role: Yup.array().min(1),
+      tel: Yup.number(),
+      img: Yup.array(),
     }),
     onSubmit: (values) => {
       addUser(values);

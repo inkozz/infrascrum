@@ -53,76 +53,72 @@ const FormTask = ({ formik }) => {
                   {formik.touched.name && formik.errors.name && (
                     <div className=" text-sm text-red-600">{formik.errors.name}</div>
                   )}
-                  <label htmlFor="goal">
+                  <label htmlFor="taskDescription">
                     Description :
                     <input
                       type="text"
-                      name="goal"
-                      id="goal"
-                      value={formik.values.goal}
+                      name="taskDescription"
+                      id="taskDescription"
+                      value={formik.values.taskDescription}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                       placeholder="Event title"
                     />
                   </label>
-                  {formik.touched.goal && formik.errors.goal && (
-                    <div className=" text-sm text-red-600">{formik.errors.goal}</div>
+                  {formik.touched.taskDescription && formik.errors.taskDescription && (
+                    <div className=" text-sm text-red-600">
+                      {formik.errors.taskDescription}
+                    </div>
                   )}
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="flex flex-col ml-3">
-                  <label htmlFor="dateDebut" />
-                  Date de début :
-                  <div className=" focus-within:text-gray-600 text-gray-400">
+                <div className="flex flex-col w-64 relative mt-2">
+                  <label htmlFor="dateB">
+                    Date de début :
                     <input
-                      type="text"
-                      name="dateDebut"
-                      id="dateDebut"
-                      value={formik.values.dateDebut}
+                      type="date"
+                      id="startDate"
+                      name="startDate"
+                      value={formik.values.startDate}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="25/02/2020"
+                      className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                     />
-                    {formik.touched.dateDebut && formik.errors.dateDebut && (
-                      <div className=" text-sm text-red-600">
-                        {formik.errors.dateDebut}
-                      </div>
-                    )}
-                  </div>
+                  </label>
+                  {formik.touched.startDate && formik.errors.startDate && (
+                    <div className="">{formik.errors.startDate}</div>
+                  )}
                 </div>
-                <div className="flex flex-col">
-                  <label htmlFor="datefin" />
-                  Date de fin
-                  <div className=" focus-within:text-gray-600 text-gray-400">
+                <div className="flex flex-col w-64 relative mt-2">
+                  <label htmlFor="endDate">
+                    Date de fin :
                     <input
-                      type="text"
-                      name="dateFin"
-                      id="dateFin"
-                      value={formik.values.dateFin}
+                      type="date"
+                      id="endDate"
+                      name="endDate"
+                      value={formik.values.endDate}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="25/02/2020"
+                      className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                     />
-                    {formik.touched.dateFin && formik.errors.dateFin && (
-                      <div className=" text-sm text-red-600">{formik.errors.dateFin}</div>
-                    )}
-                  </div>
+                  </label>
+                  {formik.touched.endDate && formik.errors.endDate && (
+                    <div className="">{formik.errors.endDate}</div>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col">
-                <label htmlFor="status" />
-                Status
+                <label htmlFor="priority" />
+                Priorité
                 <MySelectPriority
-                  value={formik.values.status}
+                  value={formik.values.priority}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.status && formik.errors.status && (
-                  <div className=" text-sm text-red-600">{formik.errors.status}</div>
+                {formik.touched.priority && formik.errors.priority && (
+                  <div className=" text-sm text-red-600">{formik.errors.priority}</div>
                 )}
               </div>
               <div className="flex flex-col">

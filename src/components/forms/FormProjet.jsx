@@ -44,23 +44,42 @@ const FormProjet = ({ formik }) => {
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="describe">
+                    <label htmlFor="description">
                       Description du projet
                       <textarea
                         type="text"
-                        name="describe"
-                        id="describe"
-                        value={formik.values.describe}
+                        name="description"
+                        id="description"
+                        value={formik.values.description}
                         onChange={formik.handleChange}
                         cols="10"
                         rows="2"
                         onBlur={formik.handleBlur}
                         className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                        placeholder="describe"
+                        placeholder="description"
                       />
                     </label>
-                    {formik.touched.describe && formik.errors.describe && (
-                      <div className="">{formik.errors.describe}</div>
+                    {formik.touched.description && formik.errors.description && (
+                      <div className="">{formik.errors.description}</div>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label htmlFor="logo">
+                      url photo :
+                      <input
+                        type="text"
+                        name="logo"
+                        id="logo"
+                        value={formik.values.logo}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                        placeholder="Nom"
+                      />
+                    </label>
+                    {formik.touched.logo && formik.errors.logo && (
+                      <div className="">{formik.errors.logo}</div>
                     )}
                   </div>
 
@@ -69,33 +88,33 @@ const FormProjet = ({ formik }) => {
                       Date de début :
                       <input
                         type="date"
-                        id="dateB"
-                        name="dateB"
-                        value={formik.values.dateB}
+                        id="startDate"
+                        name="startDate"
+                        value={formik.values.startDate}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                       />
                     </label>
-                    {formik.touched.dateB && formik.errors.dateB && (
-                      <div className="">{formik.errors.dateB}</div>
+                    {formik.touched.startDate && formik.errors.startDate && (
+                      <div className="">{formik.errors.startDate}</div>
                     )}
                   </div>
                   <div className="flex flex-col w-64 relative mt-2">
-                    <label htmlFor="dateE">
+                    <label htmlFor="endDate">
                       Date de fin :
                       <input
                         type="date"
-                        id="dateE"
-                        name="dateE"
-                        value={formik.values.dateE}
+                        id="endDate"
+                        name="endDate"
+                        value={formik.values.endDate}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                       />
                     </label>
-                    {formik.touched.dateE && formik.errors.dateE && (
-                      <div className="">{formik.errors.dateE}</div>
+                    {formik.touched.endDate && formik.errors.endDate && (
+                      <div className="">{formik.errors.endDate}</div>
                     )}
                   </div>
                   <div className="flex flex-col">

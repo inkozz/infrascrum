@@ -1,5 +1,4 @@
 import Select from 'react-select';
-import { addTask } from '../../data/getData';
 
 const FormTask = ({ formik }) => {
   // const submitTask = () => {
@@ -53,6 +52,22 @@ const FormTask = ({ formik }) => {
                   </label>
                   {formik.touched.name && formik.errors.name && (
                     <div className=" text-sm text-red-600">{formik.errors.name}</div>
+                  )}
+                  <label htmlFor="goal">
+                    Description :
+                    <input
+                      type="text"
+                      name="goal"
+                      id="goal"
+                      value={formik.values.goal}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      placeholder="Event title"
+                    />
+                  </label>
+                  {formik.touched.goal && formik.errors.goal && (
+                    <div className=" text-sm text-red-600">{formik.errors.goal}</div>
                   )}
                 </div>
               </div>

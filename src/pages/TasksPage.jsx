@@ -1,27 +1,50 @@
-// import { useEffect } from 'react';
-import { useQuery } from 'react-query';
-// import toast from 'react-hot-toast';
-
+import { useQuery, useMutation } from 'react-query';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import TasksLineCom from '../components/lists/TasksLineCom';
-
-import { getTasks } from '../data/getData';
+import apiClient from '../http-common';
 
 const TasksPage = () => {
-  const { data: task } = useQuery('task', getTasks);
   // useEffect(() => {
   //   if (isError) {
   //     toast('Il y a une erreur', { className: 'errorToast' });
   //   }
   // }, [isError]);
+  const [tasks, setTasks] = useState([]);
+  const [id, setId] = useState();
+  const { isLoading, refetch: getTasks } = useQuery(
+    'tasks',
+    async () => await apiClient.get('/tasks'),
+    {
+      onSuccess: (res) => {
+        setTasks(res.data);
+      },
+    },
+  );
+  const { isLoading: isDeleting, mutate } = useMutation(
+    'tasks',
+    async () => await apiClient.delete(`/tasks/${id}`),
+    {
+      onSuccess: () => {
+        toast.success('La tache a été supprimé');
+        getTasks();
+      },
+    },
+  );
+
+  const deleteTask = async (idTask) => {
+    await setId(idTask);
+    mutate();
+  };
 
   return (
     <div className="bg-white p-8 rounded-md w-full">
       <div>
         <div className="flex justify-end">
-          <Link to="/addtask">
+          <Link to="/addtasks">
             <button className="btn primary" type="submit">
-              Ajouter un projet
+              Ajouter une tache
             </button>
           </Link>
         </div>
@@ -43,7 +66,8 @@ const TasksPage = () => {
                   <th className="p-3 text-primary bg-gray-100 rounded-tr-lg">Autre</th>
                 </tr>
               </thead>
-              <TasksLineCom data={task} />
+              {isLoading || isDeleting}
+              <TasksLineCom tasks={tasks} deleteTask={deleteTask} />
             </table>
           </div>
         </div>

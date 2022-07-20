@@ -37,6 +37,11 @@ export const getProjects = async () => {
   const { data } = await axios.get('http://localhost:8080/projects');
   return data;
 };
+export const addProject = async (projects) => {
+  const { data } = await axios.post('http://localhost:8080/projects', projects);
+  console.log(data);
+  return data;
+};
 export const updateProject = async (project) => {
   const { data } = await axios.put(`http://localhost:8080/projects/${project.id}`, project);
   return data;

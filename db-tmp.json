@@ -35,17 +35,28 @@
       "colPic1": "/img/oli.jpeg",
       "colPic2": "/img/max.jpg",
       "colPic3": "/img/dog.jpg",
+
       "dateB": "2022-08-10",
       "dateE": "2022-08-12",
+
       "status": "Dans les temps",
       "idUser": 1,
       "idTask": 1,
       "update": "Hier",
+
       "describe": ""
     },
     {
       "id": 2,
-      "name": "Tpk",
+      "name": "Goulagwe",
+
+      "describe": "test2",
+      "startDate": "2022-08-02",
+      "endDate": "2022-08-04"
+    },
+    {
+      "id": 2,
+      "name": "Test21",
       "ceoName": "Ben",
       "ceoPic": "/img/ben.jpg",
       "pic": "/img/max.jpg",
@@ -58,7 +69,16 @@
       "idUser": 1,
       "idTask": 1,
       "update": "1sem",
-      "describe": "testt"
+      "describe": "test"
+    },
+    {
+      "name": "Test22",
+      "logo": "",
+      "describe": "Testtt",
+      "dateB": "2022-07-22",
+      "dateE": "2022-07-23",
+      "priority": "",
+      "id": 3
     }
   ],
   "tasks": [
@@ -80,10 +100,10 @@
     },
     {
       "id": 2,
-      "name": "Goulagwee",
+      "name": "Goulagwe",
       "dateB": "25 Mai, 2022",
       "dateE": "2 Juin, 2022",
-      "goal": "Le site doit être achevé avant fin Aout",
+      "goal": "Terminer la devanture du site en respectant les exigeances du client. Ne pas oublier de remplir tout les champs disponibles et de respecter les couleurs imposées.",
       "ceoName": "Olivia",
       "ceoPic": "/img/oli.jpeg",
       "colPic2": "/img/max.jpeg",

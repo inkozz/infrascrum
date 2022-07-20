@@ -77,8 +77,6 @@ const LoginForm = ({ formik }) => {
               <button
                 onClick={submitLogin && login}
                 className=" py-1 w-full rounded bg-primary text-white"
-                onClick={submitLogin}
-                className=" py-2 w-1/3 rounded bg-primary text-white"
                 type="submit">
                 Se connecter
               </button>

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import FormUser from '../components/forms/FormUser';
 import { addUser } from '../data/getData';

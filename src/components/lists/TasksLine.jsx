@@ -4,20 +4,20 @@ const TasksLine = ({ task, deleteTask }) => (
   <tbody>
     <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
       <td className="p-3 font-medium capitalize">{task.name}</td>
-      <td className="p-3 text-wrap">{task.goal}</td>
-      <td className="p-3">{task.ceoName}</td>
+      <td className="p-3 text-wrap">{task.taskDescription}</td>
+      <td className="p-3">ceoName</td>
       <img src={task.colPic1} alt="colPic1" className="m-1 rounded-full h-10 w-10" />
 
-      <td className="p-3 uppercase">{task.post}</td>
+      <td className="p-3 uppercase">{task.roles}</td>
 
       <td className="p-3">
-        <span className="bg-green-400 text-gray-50 rounded-md px-2">{task.status}</span>
+        <span className="bg-green-400 text-gray-50 rounded-md px-2">{task.priority}</span>
       </td>
       <td className="p-3">
-        <span className=" rounded-md px-2">{task.dateB}</span>
+        <span className=" rounded-md px-2">{task.startDate}</span>
       </td>
       <td className="p-3">
-        <span className=" rounded-md px-2">{task.dateE}</span>
+        <span className=" rounded-md px-2">{task.endDate}</span>
       </td>
       <td className="p-3">
         <div className="flex ">

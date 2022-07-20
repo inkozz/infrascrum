@@ -34,10 +34,12 @@ const EditTasks = () => {
   );
   const validationSchema = Yup.object({
     name: Yup.string(),
-    goal: Yup.string().required().max(50, 'Le titre doit faire maximum 50 caractères'),
+    taskDescription: Yup.string(),
     startDate: Yup.date(),
     endDate: Yup.date(),
     priority: Yup.array().min(1),
+    assign: Yup.array().min(1),
+    roles: Yup.array().min(1),
   });
 
   return (

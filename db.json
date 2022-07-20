@@ -1,32 +1,20 @@
 {
   "users": [
     {
-      "Name": "test",
-      "LastName": "test",
-      "Birthday": "232",
-      "Adress": "test",
-      "Number": "22",
-      "Postal": "22",
-      "Email": "test@gmail.com",
-      "Tel": 22,
-      "Role": "",
-      "id": 1
-    },
-    {
-      "Name": "Test3",
-      "LastName": "Test3",
-      "Birthday": "2",
-      "Adress": "Test",
-      "Number": "22",
-      "Postal": "22",
-      "Email": "test@gmail.com",
-      "Tel": 2,
-      "Role": "",
-      "id": 2
+      "email": "test@gmail.com",
+      "password": "azerty",
+      "name": "Alex",
+      "lastName": "Andre",
+      "verifPassword": "azerty",
+      "ville": "Dour",
+      "role": "Front-end",
+      "tel": "0471492827",
+      "img": "https://www.kana.fr/wp-content/uploads/2021/07/luffytaro-640x640.jpg"
     }
   ],
   "projects": [
     {
+
       "id": 1,
       "name": "Boa",
       "ceoName": "Olivia",
@@ -60,102 +48,35 @@
       "update": "1sem",
       "describe": "testt"
     },
-    {
-      "name": "zerty",
-      "logo": "",
-      "describe": "qsdfghj",
-      "dateB": "",
-      "dateE": "",
+   
+      "name": "SNCB",
+      "description": "Refaire le site complet de la SNCB",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/LogoBR.svg/1200px-LogoBR.svg.png",
+      "startDate": "2022-07-21",
+      "endDate": "2022-07-30",
       "priority": "",
-      "id": 3
+      "id": 1
     },
     {
-      "name": "",
-      "logo": "",
-      "describe": "",
-      "dateB": "",
-      "dateE": "",
+      "name": "SNCB 2",
+      "description": "Refaire l'intranet de la SNCB",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/LogoBR.svg/1200px-LogoBR.svg.png",
+      "startDate": "2022-07-30",
+      "endDate": "2023-01-29",
       "priority": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "logo": "",
-      "describe": "",
-      "dateB": "",
-      "dateE": "",
-      "priority": "",
-      "id": 5
-    },
-    {
-      "name": "ssss",
-      "logo": "",
-      "describe": "\"\"\"",
-      "dateB": "",
-      "dateE": "",
-      "priority": "",
-      "id": 6
-    },
-    {
-      "name": "",
-      "logo": "",
-      "describe": "",
-      "dateB": "",
-      "dateE": "",
-      "priority": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "logo": "",
-      "describe": "",
-      "dateB": "",
-      "dateE": "",
-      "priority": "",
-      "id": 8
-    },
-    {
-      "name": "k,k",
-      "logo": "",
-      "describe": "",
-      "dateB": "",
-      "dateE": "",
-      "priority": "",
-      "id": 9
+      "id": 2
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "name": "Test2",
-      "dateB": "26 Mai, 2022",
-      "dateE": "3 Juin, 2022",
-      "goal": "Terminer les formulaires",
-      "ceoName": "Maxime",
-      "ceoPic": "/img/max.jpg",
-      "colPic2": "/img/ben.jpeg",
-      "colPic1": "/img/alex.jpg",
-      "status": "En cours",
-      "post": "Front-End",
-      "idProject": 1,
-      "idUser": 1,
-      "update": "2h."
-    },
-    {
-      "id": 2,
-      "name": "Goulagwee",
-      "dateB": "25 Mai, 2022",
-      "dateE": "2 Juin, 2022",
-      "goal": "Le site doit être achevé avant fin Aout",
-      "ceoName": "Olivia",
-      "ceoPic": "/img/oli.jpeg",
-      "colPic2": "/img/max.jpeg",
-      "colPic1": "/img/ben.jpg",
-      "post": "Back-End",
-      "status": "Priorité",
-      "idProject": 1,
-      "idUser": 1,
-      "update": "5min."
+      "name": "Header",
+      "taskDescription": "Sncb Header",
+      "startDate": "2022-07-29",
+      "endDate": "2022-08-07",
+      "priority": "",
+      "assign": "",
+      "roles": "",
+      "id": 1
     }
   ],
   "tampon": [

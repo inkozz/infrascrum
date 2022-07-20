@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import Header from './components/ui/Header';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
@@ -31,7 +31,6 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>
-        <Toaster position="top-right" reverseOrder={false} />
         <Router>
           <div className="flex max-w-full bg-slate-200 w-full min-h-screen relative">
             <Sidebar />
@@ -113,6 +112,10 @@ const App = () => {
                 />
               </Routes>
             </main>
+            <Toaster
+              position="top-center"
+              toastOptions={{ duration: 2000, className: 'toastStyle' }}
+            />
           </div>
         </Router>
       </LoginCtx.Provider>

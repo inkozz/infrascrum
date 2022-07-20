@@ -14,6 +14,41 @@
   ],
   "projects": [
     {
+
+      "id": 1,
+      "name": "Boa",
+      "ceoName": "Olivia",
+      "ceoPic": "/img/oli.jpeg",
+      "pic": "/img/snake.jpg",
+      "colPic1": "/img/oli.jpeg",
+      "colPic2": "/img/max.jpg",
+      "colPic3": "/img/dog.jpg",
+      "dateB": "2022-08-10",
+      "dateE": "2022-08-12",
+      "status": "Dans les temps",
+      "idUser": 1,
+      "idTask": 1,
+      "update": "Hier",
+      "describe": "dsfdsf"
+    },
+    {
+      "id": 2,
+      "name": "Tpk",
+      "ceoName": "Ben",
+      "ceoPic": "/img/ben.jpg",
+      "pic": "/img/max.jpg",
+      "colPic1": "/img/max.jpg",
+      "colPic2": "/img/ben.jpeg",
+      "colPic3": "/img/alex.jpg",
+      "dateB": "2022-08-04",
+      "dateE": "2022-08-05",
+      "status": "En retard",
+      "idUser": 1,
+      "idTask": 1,
+      "update": "1sem",
+      "describe": "testt"
+    },
+   
       "name": "SNCB",
       "description": "Refaire le site complet de la SNCB",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/LogoBR.svg/1200px-LogoBR.svg.png",
@@ -61,6 +96,21 @@
       "Email": "test2@gmail.com",
       "Password": "azerty",
       "id": 2
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 5
     }
   ]
 }

@@ -22,8 +22,8 @@ const AddTask = () => {
       startDate: Yup.date(),
       endDate: Yup.date(),
       priority: Yup.string(),
-      assign: Yup.array(),
-      roles: Yup.array(),
+      assign: Yup.string(),
+      roles: Yup.string(),
     }),
     onSubmit: (values) => {
       addTask(values);

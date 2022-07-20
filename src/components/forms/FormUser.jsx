@@ -5,12 +5,6 @@ const FormUser = ({ formik }) => {
   // const submitUser = () => {
   //   console.log(formik.values);
   // };
-  const options = [
-    { value: 'designer', label: 'Designer' },
-    { value: 'front', label: 'Front-End' },
-    { value: 'back', label: 'Back-End' },
-  ];
-  const MyComponent = () => <Select options={options} />;
   return (
     <div className="w-full bg-slate-200 flex flex-col justify-center sm:py-12">
       <div className="relative sm:max-w-xl sm:mx-auto">
@@ -186,10 +180,29 @@ const FormUser = ({ formik }) => {
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <label htmlFor="role" />
-                    Rôle
-                    <div>
-                      <MyComponent />
+                    <div className="col-span-3 sm:col-span-2 relative">
+                      <label
+                        htmlFor="type"
+                        className="block text-sm font-medium text-gray-700">
+                        Roles
+                      </label>
+                      <select
+                        id="roles"
+                        name="roles"
+                        autoComplete="roles"
+                        value={formik.values.roles}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                        <option value="high">Elevée</option>
+                        <option value="mid">Normale</option>
+                        <option value="low">Basse</option>
+                      </select>
+                      {formik.touched.roles && formik.errors.roles && (
+                        <div className="absolute -bottom-5 text-sm text-red-600">
+                          {formik.errors.roles}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

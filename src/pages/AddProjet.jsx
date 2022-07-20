@@ -21,7 +21,7 @@ const AddProjet = () => {
       logo: Yup.string(),
       startDate: Yup.date(),
       endDate: Yup.date(),
-      priority: Yup.array().min(1),
+      priority: Yup.string(),
     }),
     onSubmit: (values) => {
       addProject(values);

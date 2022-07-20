@@ -5,7 +5,6 @@ const FormTask = ({ formik }) => {
   //   addTask(formik.values);
   //   console.log(formik.values);
   // };
-
   return (
     <div className="flex justify-center items-center">
       <div className="flex flex-col items-center justify-center w-1/2 bg-white shadow rounded-3xl p-4">

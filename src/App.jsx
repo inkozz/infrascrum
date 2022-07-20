@@ -17,7 +17,7 @@ import AddTasks from './pages/AddTasks';
 import EditTasks from './pages/EditTasks';
 
 const App = () => {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
   useEffect(() => {
     if (localStorage.getItem('isLogged')) {
       setIsLogged(true);

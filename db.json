@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "Name": "test",
+      "LastName": "test",
+      "Birthday": "232",
+      "Adress": "test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 22,
+      "Role": "",
+      "id": 1
+    },
+    {
+      "Name": "Test3",
+      "LastName": "Test3",
+      "Birthday": "2",
+      "Adress": "Test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 2,
+      "Role": "",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "e",
+      "description": "",
+      "logo": "",
+      "startDate": "2022-07-03",
+      "endDate": "2022-07-24",
+      "priority": "Waiting"
+    }
+  ],
+  "tasks": [
+    {
+      "name": "SNCB Main",
+      "taskDescription": "Refaire la page de garde",
+      "startDate": "2022-07-22",
+      "endDate": "2022-07-31",
+      "priority": "high",
+      "assign": "collab3",
+      "roles": "Back-End",
+      "id": 1
+    },
+    {
+      "name": "Test",
+      "taskDescription": "Test",
+      "startDate": "2022-07-24",
+      "endDate": "2022-08-07",
+      "priority": "mid",
+      "assign": "collab2",
+      "roles": "Front-End",
+      "id": 2
+    }
+  ],
+  "tampon": [
+    {
+      "idUser": 1,
+      "idProject": 1,
+      "update": "Il y a 2j"
+    }
+  ],
+  "login": [
+    {
+      "Email": "test@gmail.com",
+      "Password": "azerty",
+      "id": 1
+    },
+    {
+      "Email": "test2@gmail.com",
+      "Password": "azerty",
+      "id": 2
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 3
+    }
+  ]
+}

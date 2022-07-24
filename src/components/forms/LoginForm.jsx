@@ -1,17 +1,14 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
-import { Link, useNavigate } from 'react-router-dom';
-import { postLogin } from '../../data/getData';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import loginCtx from '../../loginCtx';
 
 const LoginForm = ({ formik }) => {
-  const submitLogin = () => {
-    postLogin(formik.values);
-    console.log(formik.values);
-  };
   const { isLogged, setIsLogged } = useContext(loginCtx);
   const login = () => {
+    localStorage.setItem('isLogged', true);
     setIsLogged(true);
     toast('Connecté !', { className: 'successToast' });
   };
@@ -75,7 +72,7 @@ const LoginForm = ({ formik }) => {
           <Link to="/home">
             <div className="flex flex-col items-center justify-center">
               <button
-                onClick={submitLogin && login}
+                onClick={login}
                 className=" py-1 w-full rounded bg-primary text-white"
                 type="submit">
                 Se connecter

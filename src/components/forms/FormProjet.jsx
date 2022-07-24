@@ -175,7 +175,7 @@ const FormProjet = ({
             type="button"
             className="btn cancel"
             onClick={cancelFunction}
-            data-cy="cancel">
+            name="cancel">
             Annuler
           </button>
         </div>

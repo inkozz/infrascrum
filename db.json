@@ -28,44 +28,24 @@
   "projects": [
     {
       "id": 1,
-      "name": "Sncb",
+      "name": "Sncbb",
       "description": "",
       "logo": "",
       "startDate": "2022-07-20",
       "endDate": "2022-08-07",
-      "priority": "Proccess",
-      "collaborator": "collab2"
-    },
-    {
-      "name": "Tec",
-      "description": "",
-      "logo": "",
-      "startDate": "2022-07-16",
-      "endDate": "2022-07-30",
-      "priority": "Priority",
-      "id": 2
+      "priority": "Proccess"
     }
   ],
   "tasks": [
     {
       "id": 1,
       "name": "Header",
-      "description": "Faire le Header",
+      "description": "Faire le Headerr",
       "startDate": "2022-07-24",
       "endDate": "2022-07-25",
       "priority": "Low",
-      "assign": "collab1",
+      "assign": "collab2",
       "roles": "Front-End"
-    },
-    {
-      "id": 2,
-      "name": "Sncb",
-      "description": "Faire la bdd",
-      "startDate": "2022-07-24",
-      "endDate": "2022-08-06",
-      "priority": "Mid",
-      "assign": "collab1",
-      "roles": "Back"
     }
   ],
   "tampon": [

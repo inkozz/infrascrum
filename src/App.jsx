@@ -10,11 +10,6 @@ import ProjectsPage from './pages/ProjectsPage';
 import AddUser from './pages/AddUser';
 import LoginPage from './pages/LoginPage';
 import TasksPage from './pages/TasksPage';
-import EditProjects from './pages/EditProjects';
-import AddProjet from './pages/AddProjet';
-import AddTasks from './pages/AddTasks';
-
-import EditTasks from './pages/EditTasks';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -57,24 +52,6 @@ const App = () => {
                   }
                 />
                 <Route
-                  path="/home/taches/:id"
-                  element={
-                    <>
-                      <Header />
-                      <EditTasks />
-                    </>
-                  }
-                />
-                <Route
-                  path="/addtasks"
-                  element={
-                    <>
-                      <Header />
-                      <AddTasks />
-                    </>
-                  }
-                />
-                <Route
                   path="/home/projets"
                   element={
                     <>
@@ -83,24 +60,6 @@ const App = () => {
                     </>
                   }
                 />
-                {/* <Route
-                  path="/home/projets/:id"
-                  element={
-                    <>
-                      <Header />
-                      <EditProjects />
-                    </>
-                  }
-                /> */}
-                {/* <Route
-                  path="/addprojects"
-                  element={
-                    <>
-                      <Header />
-                      <AddProjet />
-                    </>
-                  }
-                /> */}
                 <Route
                   path="/adduser"
                   element={

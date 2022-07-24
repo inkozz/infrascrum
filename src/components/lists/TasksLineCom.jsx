@@ -5,7 +5,7 @@ const TasksLineCom = ({ data, reloadData }) => {
   return (
     <>
       {data.length === 0 ? (
-        <div className="text-2xl" data-cy="tableEmpty">
+        <div className="text-2xl" name="tableEmpty">
           Aucune tâche en cours
         </div>
       ) : (

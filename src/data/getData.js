@@ -15,12 +15,12 @@ export const addUser = async (user) => {
   return data;
 };
 
-export const update = async (user) => {
+export const updateUser = async (user) => {
   const { data } = await axios.put(`http://localhost:8080/users/${user.id}`, user);
   return data;
 };
 
-export const remove = async (user) => {
+export const removeUser = async (user) => {
   const { data } = await axios.delete(`http://localhost:8080/users/${user.id}`);
   return data;
 };

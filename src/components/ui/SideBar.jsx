@@ -6,19 +6,18 @@ import loginCtx from '../../loginCtx';
 const Sidebar = () => {
   const { isLogged, setIsLogged } = useContext(loginCtx);
   const [isExpand, setIsExpand] = useState(true);
-  const navigate = useNavigate();
-  const login = () => {
-    localStorage.setItem('isLogged', true);
-    setIsLogged(true);
-    toast('Connecté !', { className: 'successToast' });
-  };
+  // const login = () => {
+  //   localStorage.setItem('isLogged', true);
+  //   setIsLogged(true);
+  //   toast('Connecté !', { className: 'successToast' });
+  // };
 
-  const logout = () => {
-    setIsLogged(false);
-    navigate('/');
-    isExpand(false);
-    toast('Déconnecté !', { className: 'errorToast' });
-  };
+  // const logout = () => {
+  //   setIsLogged(false);
+  //   navigate('/');
+  //   isExpand(false);
+  //   toast('Déconnecté !', { className: 'errorToast' });
+  // };
   return (
     <div
       className={`relative p-4 rounded-md shadow-md flex flex-col ease-in-out duration-200 bg-white text-black ${

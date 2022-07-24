@@ -7,13 +7,7 @@ import Tasks from '../components/lists/Tasks';
 import Projectscards from '../components/lists/ProjectsCards';
 
 const ProfilePage = () => {
-  const {
-    data: tasks,
-    isError,
-    isFetching,
-    // isLoading,
-    // refetch: reloadData,
-  } = useQuery('tasks', getTasks);
+  const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
   useEffect(() => {
     if (isError) {
       toast('Il y a une erreur', { className: 'errorToast' });

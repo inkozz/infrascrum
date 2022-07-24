@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate, NavLink } from 'react-router-dom';
 import loginCtx from '../../loginCtx';
 
 const Header = () => {
@@ -65,7 +64,7 @@ const Header = () => {
                   </svg>
                 </li>
               </Link>
-              <Link to="/home/taches">
+              <Link to="/taches">
                 <li className="ml-2 lg:ml-4 relative inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +81,7 @@ const Header = () => {
                   </svg>
                 </li>
               </Link>
-              <Link to="/home/projets">
+              <Link to="/projets">
                 <li className="ml-2 lg:ml-4 relative inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +93,7 @@ const Header = () => {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
                     />
                   </svg>
                 </li>

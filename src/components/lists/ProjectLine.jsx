@@ -14,7 +14,7 @@ const ProjectLine = ({ element, reloadData }) => {
     async (projectValues) => removeProject(projectValues),
     {
       onSuccess: () => {
-        toast('Le matériel a été supprimé', { className: 'successToast' });
+        toast('Projet supprimé', { className: 'successToast' });
         reloadData();
       },
       onError: () => {
@@ -27,7 +27,7 @@ const ProjectLine = ({ element, reloadData }) => {
     async (projectValues) => updateProject({ id: element.id, ...projectValues }),
     {
       onSuccess: () => {
-        toast('Le matériel a été mis à jour', { className: 'successToast' });
+        toast('Projet mis à jour', { className: 'successToast' });
         reloadData();
       },
       onError: () => {
@@ -51,9 +51,9 @@ const ProjectLine = ({ element, reloadData }) => {
           mode="edit"
         />
       ) : (
-        <tbody className="text-center">
-          <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 ">
-            <td className="px-5 py-5 text-sm text-center">
+        <tbody>
+          <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center ">
+            <td className="px-5 py-5 text-sm">
               <div className="flex justify-center items-center">
                 <div className="flex-shrink-0 w-10 h-10">
                   <img
@@ -67,7 +67,7 @@ const ProjectLine = ({ element, reloadData }) => {
                 </td>
               </div>
             </td>
-            <td className="px-5 py-5 text-sm text-center">
+            <td className="px-5 py-5 text-sm">
               <div className="flex justify-center items-center">
                 <div className="flex-shrink-0 w-10 h-10">
                   <img
@@ -82,9 +82,7 @@ const ProjectLine = ({ element, reloadData }) => {
               </div>
             </td>
             <td className="px-5 py-5 text-sm">
-              <p className="text-gray-900 whitespace-no-wrap text-center">
-                {element.startDate}
-              </p>
+              <p className="text-gray-900 whitespace-no-wrap">{element.startDate}</p>
             </td>
             <td className="px-5 py-5 text-sm">
               <p className="text-gray-900 whitespace-no-wrap">{element.endDate}</p>

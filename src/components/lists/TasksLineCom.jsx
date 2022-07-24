@@ -1,13 +1,19 @@
 import TasksLine from './TasksLine';
 
-const TasksLineCom = ({ tasks, deleteTask }) => {
-  console.log(tasks);
+const TasksLineCom = ({ data, reloadData }) => {
+  console.log(data);
   return (
     <>
-      {tasks &&
-        tasks.map((element) => (
-          <TasksLine key={element.id} task={element} deleteTask={deleteTask} />
-        ))}
+      {data.length === 0 ? (
+        <div className="text-2xl" data-cy="tableEmpty">
+          Aucune tâche en cours
+        </div>
+      ) : (
+        ''
+      )}
+      {data.map((element) => (
+        <TasksLine key={element.id} element={element} reloadData={reloadData} />
+      ))}
     </>
   );
 };

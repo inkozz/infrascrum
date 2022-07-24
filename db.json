@@ -28,34 +28,44 @@
   "projects": [
     {
       "id": 1,
-      "name": "e",
+      "name": "Sncb",
       "description": "",
       "logo": "",
-      "startDate": "2022-07-03",
-      "endDate": "2022-07-24",
-      "priority": "Waiting"
+      "startDate": "2022-07-20",
+      "endDate": "2022-08-07",
+      "priority": "Proccess",
+      "collaborator": "collab2"
+    },
+    {
+      "name": "Tec",
+      "description": "",
+      "logo": "",
+      "startDate": "2022-07-16",
+      "endDate": "2022-07-30",
+      "priority": "Priority",
+      "id": 2
     }
   ],
   "tasks": [
     {
-      "name": "SNCB Main",
-      "taskDescription": "Refaire la page de garde",
-      "startDate": "2022-07-22",
-      "endDate": "2022-07-31",
-      "priority": "high",
-      "assign": "collab3",
-      "roles": "Back-End",
-      "id": 1
+      "id": 1,
+      "name": "Header",
+      "description": "Faire le Header",
+      "startDate": "2022-07-24",
+      "endDate": "2022-07-25",
+      "priority": "Low",
+      "assign": "collab1",
+      "roles": "Front-End"
     },
     {
-      "name": "Test",
-      "taskDescription": "Test",
+      "id": 2,
+      "name": "Sncb",
+      "description": "Faire la bdd",
       "startDate": "2022-07-24",
-      "endDate": "2022-08-07",
-      "priority": "mid",
-      "assign": "collab2",
-      "roles": "Front-End",
-      "id": 2
+      "endDate": "2022-08-06",
+      "priority": "Mid",
+      "assign": "collab1",
+      "roles": "Back"
     }
   ],
   "tampon": [

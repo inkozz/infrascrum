@@ -1,27 +1,79 @@
-const FormTask = ({ formik }) => {
-  console.log('oui');
-  // const submitTask = () => {
-  //   addTask(formik.values);
-  //   console.log(formik.values);
-  // };
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+const FormTask = ({
+  mode,
+  name,
+  description,
+  startDate,
+  endDate,
+  priority,
+  assign,
+  roles,
+  saveFunction,
+  cancelFunction,
+}) => {
+  const formik = useFormik({
+    initialValues: {
+      name: name || '',
+      description: description || '',
+      startDate: startDate || '',
+      endDate: endDate || '',
+      priority: priority || '',
+      assign: assign || '',
+      roles: roles || '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string(),
+      description: Yup.string(),
+      startDate: Yup.date(),
+      endDate: Yup.date(),
+      priority: Yup.string(),
+      assign: Yup.string(),
+      roles: Yup.string(),
+    }),
+    onSubmit: (taskValues) => {
+      saveFunction(taskValues);
+    },
+  });
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-col items-center justify-center w-1/2 bg-white shadow rounded-3xl p-4">
-        <div className="flex items-center justify-center space-x-5">
-          <div className="h-14 w-14 rounded-full flex flex-shrink-0 justify-center items-center">
-            <img src="/public/img/logoInfra.png" alt="logo" />
-          </div>
-          <div className="block font-semibold text-2xl self-start text-gray-700">
-            <h2 className="leading-relaxed">Ajouter une tâche</h2>
-          </div>
-        </div>
-        <form onSubmit={formik.handleSubmit}>
-          <div className="">
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <div className="flex flex-col">
-                  <label htmlFor="name">
-                    Nom de la tache :
+    <div>
+      <form onSubmit={formik.handleSubmit} className="border-2 border-primary">
+        <table className="table w-full space-y-6 text-sm">
+          <thead className="text-white">
+            <tr>
+              <th className="p- text-primary bg-gray-100">
+                <label htmlFor="name"> Projet </label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="description">Description</label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="responsable">Responsable </label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="assign">Collaborateurs</label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="roles">Rôle</label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="priority">Priorité</label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="startDate">Date de début</label>
+              </th>
+              <th className="p-3 text-primary bg-gray-100">
+                <label htmlFor="endDate">Date de fin</label>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
+                  <p className=" whitespace-no-wrap cursor-pointer hover:text-primary">
                     <input
                       type="text"
                       name="name"
@@ -29,94 +81,42 @@ const FormTask = ({ formik }) => {
                       value={formik.values.name}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Event title"
+                      className="border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      placeholder="Nom du projet"
                     />
-                  </label>
-                  {formik.touched.name && formik.errors.name && (
-                    <div className=" text-sm text-red-600">{formik.errors.name}</div>
-                  )}
-                  <label htmlFor="taskDescription">
-                    Description :
+                    {formik.touched.name && formik.errors.name && (
+                      <div className="">{formik.errors.name}</div>
+                    )}
+                  </p>
+                </div>
+              </td>
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
+                  <p className=" whitespace-no-wrap cursor-pointer hover:text-primary">
                     <input
                       type="text"
-                      name="taskDescription"
-                      id="taskDescription"
-                      value={formik.values.taskDescription}
+                      name="description"
+                      id="description"
+                      value={formik.values.description}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Event title"
+                      className="border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      placeholder="Description"
                     />
-                  </label>
-                  {formik.touched.taskDescription && formik.errors.taskDescription && (
-                    <div className=" text-sm text-red-600">
-                      {formik.errors.taskDescription}
-                    </div>
-                  )}
+                    {formik.touched.description && formik.errors.description && (
+                      <div className="">{formik.errors.description}</div>
+                    )}
+                  </p>
                 </div>
-              </div>
-              <div className="flex items-center">
-                <div className="flex flex-col w-64 relative mt-2">
-                  <label htmlFor="dateB">
-                    Date de début :
-                    <input
-                      type="date"
-                      id="startDate"
-                      name="startDate"
-                      value={formik.values.startDate}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
-                    />
-                  </label>
-                  {formik.touched.startDate && formik.errors.startDate && (
-                    <div className="">{formik.errors.startDate}</div>
-                  )}
+              </td>
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
+                  <img src="/img/ben.jpeg" className="w-10 h-10 rounded-full" alt="" />
+                  <p className="whitespace-no-wrap pl-2">ceoName</p>
                 </div>
-                <div className="flex flex-col w-64 relative mt-2">
-                  <label htmlFor="endDate">
-                    Date de fin :
-                    <input
-                      type="date"
-                      id="endDate"
-                      name="endDate"
-                      value={formik.values.endDate}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
-                    />
-                  </label>
-                  {formik.touched.endDate && formik.errors.endDate && (
-                    <div className="">{formik.errors.endDate}</div>
-                  )}
-                </div>
-              </div>
-              <div className="col-span-3 sm:col-span-2 relative">
-                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
-                  Priority
-                  <select
-                    id="priority"
-                    name="priority"
-                    autoComplete="priority"
-                    value={formik.values.priority}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                    <option value="high">Elevée</option>
-                    <option value="mid">Normale</option>
-                    <option value="low">Basse</option>
-                  </select>
-                </label>
-                {formik.touched.priority && formik.errors.priority && (
-                  <div className="absolute -bottom-5 text-sm text-red-600">
-                    {formik.errors.priority}
-                  </div>
-                )}
-              </div>
-              <div className="col-span-3 sm:col-span-2 relative">
-                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
-                  Assign
+              </td>
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
                   <select
                     id="assign"
                     name="assign"
@@ -124,21 +124,19 @@ const FormTask = ({ formik }) => {
                     value={formik.values.assign}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                    <option value="collab1">collab1</option>
-                    <option value="collab2">collab2</option>
-                    <option value="collab3">collab3</option>
+                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="collab1">Collab1</option>
+                    <option value="collab2">Collab2</option>
                   </select>
-                </label>
-                {formik.touched.assign && formik.errors.assign && (
-                  <div className="absolute -bottom-5 text-sm text-red-600">
-                    {formik.errors.assign}
-                  </div>
-                )}
-              </div>
-              <div className="col-span-3 sm:col-span-2 relative">
-                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
-                  Roles
+                  {formik.touched.assign && formik.errors.assign && (
+                    <div className="absolute -bottom-5 text-sm text-red-600">
+                      {formik.errors.assign}
+                    </div>
+                  )}
+                </div>
+              </td>
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
                   <select
                     id="roles"
                     name="roles"
@@ -146,41 +144,88 @@ const FormTask = ({ formik }) => {
                     value={formik.values.roles}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
                     <option value="Designer">Designer</option>
                     <option value="Front-End">Front-End</option>
                     <option value="Back-End">Back-End</option>
                   </select>
-                </label>
-                {formik.touched.roles && formik.errors.roles && (
-                  <div className="absolute -bottom-5 text-sm text-red-600">
-                    {formik.errors.roles}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="pt-4 flex items-center justify-center space-x-4">
-              <button
-                type="button"
-                className="bg-green-500 hover:bg-yellow-300 p-2 mt-4 mr-4 w-48 rounded text-white">
-                Annuler
-              </button>
-            </div>
-            <div className="pt-4 flex items-center justify-center space-x-4">
-              <div className=" flex flex-col items-center justify-center mx-auto w-2/3">
-                <button
-                  // onClick={submitTask}
-                  type="submit"
-                  className="bg-primary hover:bg-gray-800 p-2 mt-4 w-48 rounded text-white">
-                  Enregistrer
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
+                  {formik.touched.roles && formik.errors.roles && (
+                    <div className="absolute -bottom-5 text-sm text-red-600">
+                      {formik.errors.roles}
+                    </div>
+                  )}
+                </div>
+              </td>
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
+                  <select
+                    id="priority"
+                    name="priority"
+                    autoComplete="priority"
+                    value={formik.values.priority}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="High">Haute</option>
+                    <option value="Mid">Normale</option>
+                    <option value="Low">Basse</option>
+                  </select>
+                  {formik.touched.priority && formik.errors.priority && (
+                    <div className="absolute -bottom-5 text-sm text-red-600">
+                      {formik.errors.priority}
+                    </div>
+                  )}
+                </div>
+              </td>
+
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
+                  <input
+                    type="date"
+                    id="startDate"
+                    name="startDate"
+                    value={formik.values.startDate}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
+                  />
+                  {formik.touched.startDate && formik.errors.startDate && (
+                    <div className="">{formik.errors.startDate}</div>
+                  )}
+                </div>
+              </td>
+              <td className="p-3 font-medium capitalize">
+                <div className="flex justify-center items-center">
+                  <input
+                    type="date"
+                    id="endDate"
+                    name="endDate"
+                    value={formik.values.endDate}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
+                  />
+                  {formik.touched.endDate && formik.errors.endDate && (
+                    <div className="">{formik.errors.endDate}</div>
+                  )}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div className="flex justify-end p-4">
+          <button type="submit" disabled={!formik.isValid} className="btn primary mr-4">
+            {mode !== 'edit' ? 'Créer' : 'Editer'}
+          </button>
+          <button
+            type="button"
+            className="btn cancel"
+            onClick={cancelFunction}
+            name="cancel">
+            Annuler
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

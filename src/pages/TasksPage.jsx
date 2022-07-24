@@ -1,53 +1,55 @@
 import { useQuery, useMutation } from 'react-query';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getTasks, addTask } from '../data/getData';
 import TasksLineCom from '../components/lists/TasksLineCom';
-import apiClient from '../http-common';
+import FormTask from '../components/forms/FormTask';
 
 const TasksPage = () => {
-  // useEffect(() => {
-  //   if (isError) {
-  //     toast('Il y a une erreur', { className: 'errorToast' });
-  //   }
-  // }, [isError]);
-  const [tasks, setTasks] = useState([]);
-  const [id, setId] = useState();
-  const { isLoading, refetch: getTasks } = useQuery(
+  const {
+    data: tasks,
+    isError,
+    isFetching,
+    refetch: reloadData,
+  } = useQuery('tasks', getTasks);
+  useEffect(() => {
+    if (isError) {
+      toast('Il y a une erreur', { className: 'errorToast' });
+    }
+  });
+  const [isAdd, setIsAdd] = useState(false);
+  const { isLoading, mutate: taskAdd } = useMutation(
     'tasks',
-    async () => await apiClient.get('/tasks'),
-    {
-      onSuccess: (res) => {
-        setTasks(res.data);
-      },
-    },
-  );
-  const { isLoading: isDeleting, mutate } = useMutation(
-    'tasks',
-    async () => await apiClient.delete(`/tasks/${id}`),
+    async (taskValues) => addTask(taskValues),
     {
       onSuccess: () => {
-        toast.success('La tache a été supprimé');
-        getTasks();
+        setIsAdd(false);
+        toast('Tâche ajoutée', { className: 'successToast' });
+        reloadData();
+      },
+      onError: () => {
+        toast("Erreur dans l'ajout", { className: 'errorToast' });
       },
     },
   );
-
-  const deleteTask = async (idTask) => {
-    await setId(idTask);
-    mutate();
+  const saveTask = (taskValues) => {
+    taskAdd(taskValues);
+    console.log(taskValues);
+  };
+  const cancelTask = () => {
+    setIsAdd(false);
   };
 
   return (
     <div className="bg-white p-8 rounded-md w-full">
       <div>
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <Link to="/addtasks">
             <button className="btn primary" type="submit">
               Ajouter une tache
             </button>
           </Link>
-        </div>
+        </div> */}
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
             <table className="table text-gray-400 w-full space-y-6 text-sm">
@@ -60,15 +62,33 @@ const TasksPage = () => {
                   <th className="p-3 text-primary bg-gray-100">Personne responsable</th>
                   <th className="p-3 text-primary bg-gray-100">Collaborateurs</th>
                   <th className="p-3 text-primary bg-gray-100">Rôle</th>
-                  <th className="p-3 text-primary bg-gray-100">Statut</th>
+                  <th className="p-3 text-primary bg-gray-100">Priorité</th>
                   <th className="p-3 text-primary bg-gray-100">Date de début</th>
                   <th className="p-3 text-primary bg-gray-100">Date de fin</th>
                   <th className="p-3 text-primary bg-gray-100 rounded-tr-lg">Autre</th>
                 </tr>
               </thead>
-              {isLoading || isDeleting}
-              <TasksLineCom tasks={tasks} deleteTask={deleteTask} />
+              {isLoading && isFetching}
+              {tasks && !isFetching && (
+                <TasksLineCom data={tasks} reloadData={reloadData} />
+              )}
             </table>
+            <div className="flex justify-end">
+              {isAdd ? (
+                <div className="w-full p-8  rounded  ">
+                  <FormTask saveFunction={saveTask} cancelFunction={cancelTask} />
+                </div>
+              ) : (
+                <div className="flex justify-end p-4">
+                  <button
+                    type="button"
+                    className="btn primary"
+                    onClick={() => setIsAdd(true)}>
+                    Ajouter une tâche
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

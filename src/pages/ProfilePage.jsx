@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
-import { getTasks, getProjects } from '../data/getData';
+import { getTasks, getProjects, getUser } from '../data/getData';
 import Tasks from '../components/lists/Tasks';
-// import Projects from '../components/lists/Projects';
 import Projectscards from '../components/lists/ProjectsCards';
 
 const ProfilePage = () => {
@@ -19,6 +18,8 @@ const ProfilePage = () => {
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
+
+    getUser()
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">

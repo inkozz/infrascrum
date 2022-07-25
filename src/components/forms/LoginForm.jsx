@@ -4,13 +4,17 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import loginCtx from '../../loginCtx';
+import { postLogin } from '../../data/getData';
 
 const LoginForm = ({ formik }) => {
   const { isLogged, setIsLogged } = useContext(loginCtx);
   const login = () => {
-    localStorage.setItem('isLogged', true);
+    postLogin(formik.values);
+
+    localStorage.setItem('isLogged', false);
     setIsLogged(true);
     toast('Connecté !', { className: 'successToast' });
+
   };
   return (
     <div className="bg-white h-full w-full flex justify-center items-center">
@@ -31,7 +35,7 @@ const LoginForm = ({ formik }) => {
           </svg>
           <h2 className="text-2xl font-bold text-primary">Login</h2>
         </div>
-        <form onSubmit={formik.handleSubmit} method="POST">
+        <form onSubmit={formik.onSubmit} method="POST">
           <div className="flex flex-col p-4">
             <label htmlFor="email" className="text-xs text-black flex flex-col ">
               Nom d'utilisateur

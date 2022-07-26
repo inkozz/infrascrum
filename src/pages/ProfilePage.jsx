@@ -23,6 +23,7 @@ const ProfilePage = () => {
     console.log('Request for value ' + project);
   }, [project]);
 
+
   return (
     <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">
       <div className="bg-primary rounded-3xl py-6 p-3">

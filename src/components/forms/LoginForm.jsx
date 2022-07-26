@@ -11,7 +11,7 @@ const LoginForm = ({ formik }) => {
   const login = () => {
     postLogin(formik.values);
     console.log(formik.values);
-    localStorage.setItem('isLogged', true);
+     localStorage.setItem('isLogged', false);
     setIsLogged(true);
     toast('Connecté !', { className: 'successToast' });
   };

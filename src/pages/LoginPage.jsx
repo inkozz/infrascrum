@@ -5,14 +5,13 @@ import LoginForm from '../components/forms/LoginForm';
 const LoginPage = () => {
   const formik = useFormik({
     initialValues: {
-      email: 'leila@mail.be',
+      email: '',
       password: 'test',
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Email invalide').required('Entrez un Email'),
       password: Yup.string().required('Entrez un mot de passe'),
     }),
-
   });
   return <LoginForm formik={formik} />;
 };

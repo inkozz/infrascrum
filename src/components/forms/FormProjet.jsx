@@ -7,9 +7,11 @@ const FormProjet = ({
   name,
   description,
   logo,
+  users,
   startDate,
   endDate,
   priority,
+  status,
   saveFunction,
   cancelFunction,
 }) => {
@@ -21,6 +23,8 @@ const FormProjet = ({
       startDate: startDate || '',
       endDate: endDate || '',
       priority: priority || '',
+      status: status || '',
+      users: users || '',
     },
     validationSchema: Yup.object({
       name: Yup.string(),
@@ -29,6 +33,8 @@ const FormProjet = ({
       startDate: Yup.date(),
       endDate: Yup.date(),
       priority: Yup.string(),
+      status: Yup.string(),
+      users: Yup.string(),
     }),
     onSubmit: (projectValues) => {
       saveFunction(projectValues);

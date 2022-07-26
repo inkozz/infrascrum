@@ -15,12 +15,12 @@ const FormProjet = ({
 }) => {
   const formik = useFormik({
     initialValues: {
-      name: name || '',
-      description: description || '',
-      logo: logo || '',
-      startDate: startDate || '',
-      endDate: endDate || '',
-      priority: priority || '',
+      name: name,
+      description: description,
+      logo: logo,
+      startDate: startDate,
+      endDate: endDate,
+      priority: priority,
     },
     validationSchema: Yup.object({
       name: Yup.string(),
@@ -32,11 +32,12 @@ const FormProjet = ({
     }),
     onSubmit: (projectValues) => {
       saveFunction(projectValues);
+      console.log(projectValues);
     },
   });
 
   return (
-    <div>
+    <div className="w-full">
       <form
         onSubmit={formik.handleSubmit}
         name="projetForm"
@@ -133,6 +134,9 @@ const FormProjet = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="" disabled selected>
+                      Select priorité
+                    </option>
                     <option value="Waiting">En attente</option>
                     <option value="Proccess">En cours</option>
                     <option value="Priority">En priorité</option>
@@ -154,6 +158,9 @@ const FormProjet = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="" disabled selected>
+                      Select collaborateurs
+                    </option>
                     <option value="collab">Collab1</option>
                     <option value="collab2">Collab2</option>
                   </select>

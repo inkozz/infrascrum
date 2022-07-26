@@ -10,16 +10,10 @@ const LoginForm = ({ formik }) => {
   const { isLogged, setIsLogged } = useContext(loginCtx);
   const login = () => {
     postLogin(formik.values);
-<<<<<<< HEAD
     console.log(formik.values);
     localStorage.setItem('isLogged', true);
-=======
-
-    localStorage.setItem('isLogged', false);
->>>>>>> 7b59958659e8c45378f7cce28edae29a7cec6bf8
     setIsLogged(true);
     toast('Connecté !', { className: 'successToast' });
-
   };
   return (
     <div className="bg-white h-full w-full flex justify-center items-center">

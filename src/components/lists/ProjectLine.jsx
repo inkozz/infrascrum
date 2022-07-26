@@ -39,17 +39,23 @@ const ProjectLine = ({ element, reloadData }) => {
     <>
       {isLoading || isLoadingUpdate}
       {mode === 'edit' ? (
-        <FormProjet
-          name={element.name}
-          description={element.description}
-          logo={element.logo}
-          startDate={element.startDate}
-          endDate={element.endDate}
-          priority={element.priority}
-          saveFunction={projectUpdate}
-          cancelFunction={cancelProject}
-          mode="edit"
-        />
+        <tbody>
+          <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center ">
+            <td colSpan="7">
+              <FormProjet
+                name={element.name}
+                description={element.description}
+                logo={element.logo}
+                startDate={element.startDate}
+                endDate={element.endDate}
+                priority={element.priority}
+                saveFunction={projectUpdate}
+                cancelFunction={cancelProject}
+                mode="edit"
+              />
+            </td>
+          </tr>
+        </tbody>
       ) : (
         <tbody>
           <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center ">

@@ -141,6 +141,10 @@ export const getProjects = async () => {
   const { data } = await axios.get('http://localhost:8080/projects');
   return data;
 };
+export const getOneProject = async (id) => {
+  const { data } = await axios.get(`http://localhost:8080/projects/${project.id}`, id);
+  return data;
+};
 export const addProject = async (projects) => {
   const { data } = await axios.post('http://localhost:8080/projects', projects);
   return data;

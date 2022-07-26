@@ -1,16 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
 import { getTasks, getProjects, getUser } from '../data/getData';
 import Tasks from '../components/lists/Tasks';
-<<<<<<< HEAD
-import ProjectsCards from '../components/lists/ProjectsCards';
-=======
-import Projectscards from '../components/lists/ProjectsCards';
->>>>>>> 7b59958659e8c45378f7cce28edae29a7cec6bf8
+import Select from '../components/lists/Select';
 
 const ProfilePage = () => {
   const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
+  const [project, setProject] = useState();
   useEffect(() => {
     if (isError) {
       toast('Il y a une erreur', { className: 'errorToast' });
@@ -22,8 +19,9 @@ const ProfilePage = () => {
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
-
-    getUser()
+  useEffect(() => {
+    console.log('Request for value ' + project);
+  }, [project]);
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">
@@ -36,7 +34,15 @@ const ProfilePage = () => {
       <div className="flex justify-between space-x-5">
         <div className="bg-yellow-500 rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center mb-0">Projets</h2>
-          {projects && !isFetching && <ProjectsCards data={projects} />}
+          {projects && !isFetching && (
+            <Select
+              data={projects}
+              setValue={setProject}
+              value={project}
+              name="project"
+              id="project"
+            />
+          )}
         </div>
         <div className="bg-primary rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Taches</h2>

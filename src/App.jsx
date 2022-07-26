@@ -23,6 +23,7 @@ const App = () => {
     [setIsLogged, isLogged],
   );
   const queryClient = new QueryClient();
+
   return (
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>

@@ -1,6 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import ProjectsCards from '../lists/ProjectsCards';
+import { useQuery } from 'react-query';
+import { getProjects } from '../../data/getData';
+import { useEffect } from 'react';
 
 const FormTask = ({
   mode,
@@ -13,6 +17,7 @@ const FormTask = ({
   roles,
   saveFunction,
   cancelFunction,
+  isError,
 }) => {
   const formik = useFormik({
     initialValues: {
@@ -37,6 +42,13 @@ const FormTask = ({
       saveFunction(taskValues);
     },
   });
+  const { data: projects } = useQuery('projects', getProjects);
+  useEffect(() => {
+    if (isError) {
+      toast('Il y a une erreur', { className: 'errorToast' });
+    }
+  }, [isError]);
+  console.log(formik.name);
   return (
     <div>
       <form onSubmit={formik.handleSubmit} className="border-2 border-primary">
@@ -73,21 +85,14 @@ const FormTask = ({
             <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
               <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
-                  <p className=" whitespace-no-wrap cursor-pointer hover:text-primary">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      value={formik.values.name}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      className="border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Nom du projet"
-                    />
-                    {formik.touched.name && formik.errors.name && (
-                      <div className="">{formik.errors.name}</div>
-                    )}
-                  </p>
+                  <ProjectsCards
+                    data={projects}
+                    name="name"
+                    id="name"
+                    value={formik.values.name}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
                 </div>
               </td>
               <td className="p-3 font-medium capitalize">

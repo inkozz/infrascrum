@@ -1,13 +1,14 @@
 import ProjectsCard from './ProjectsCard';
 
-const Projectscards = ({ data }) => {
-  console.log(data);
+const ProjectsCards = ({ data }) => {
   return (
     <div>
-      ProjectsCards
-      {data && data.map((element) => <ProjectsCard key={element.id} project={element} />)}
+      <select>
+        {data &&
+          data.map((element) => <ProjectsCard key={element.id} project={element} />)}
+      </select>
     </div>
   );
 };
 
-export default Projectscards;
+export default ProjectsCards;

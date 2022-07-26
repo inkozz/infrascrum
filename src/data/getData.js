@@ -1,4 +1,13 @@
 import axios from 'axios';
+// const token = JSON.parse(sessionStorage.getItem('data'));
+// const token = user.data.id;
+// export default axios.create({
+//   baseURL: 'http://localhost:8080',
+//   header: { Authorization: `Bearer ${token}` },
+// });
+// const bodyParameters = {
+//   key: 'value',
+// };
 
 export const getUsers = async () => {
   const { data } = await axios.get('http://localhost:8080/users');
@@ -48,11 +57,13 @@ export const getProjects = async () => {
 };
 export const addProject = async (projects) => {
   const { data } = await axios.post('http://localhost:8080/projects', projects);
-  console.log(data);
   return data;
 };
 export const updateProject = async (project) => {
-  const { data } = await axios.put(`http://localhost:8080/projects/${project.id}`, project);
+  const { data } = await axios.put(
+    `http://localhost:8080/projects/${project.id}`,
+    project,
+  );
   return data;
 };
 export const removeProject = async (project) => {

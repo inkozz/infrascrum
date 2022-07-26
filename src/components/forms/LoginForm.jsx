@@ -4,10 +4,13 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import loginCtx from '../../loginCtx';
+import { postLogin } from '../../data/getData';
 
 const LoginForm = ({ formik }) => {
   const { isLogged, setIsLogged } = useContext(loginCtx);
   const login = () => {
+    postLogin(formik.values);
+    console.log(formik.values);
     localStorage.setItem('isLogged', true);
     setIsLogged(true);
     toast('Connecté !', { className: 'successToast' });

@@ -7,6 +7,7 @@ const Header = () => {
   const { isLogged, setIsLogged } = useContext(loginCtx);
   const navigate = useNavigate();
   const logout = () => {
+    localStorage.removeItem('isLogged');
     setIsLogged(false);
     navigate('/');
     toast('Déconnecté !', { className: 'errorToast' });

@@ -13,7 +13,7 @@ const FormUser = ({ formik }) => {
                 <img src="/public/img/logoInfra.png" alt="logo" />
               </div>
               <div className="block font-semibold text-2xl self-start text-gray-700">
-                <h2 className="leading-relaxed">Formulaire Collaborateurs</h2>
+                <h2 className="leading-relaxed">Formulaire de création de compte</h2>
               </div>
             </div>
             <form onSubmit={formik.handleSubmit}>
@@ -32,7 +32,7 @@ const FormUser = ({ formik }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                            placeholder="Event title"
+                            placeholder="Ajoutez un nom"
                           />
                         </label>
                         {formik.touched.name && formik.errors.name && (
@@ -54,7 +54,7 @@ const FormUser = ({ formik }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                            placeholder="Event title"
+                            placeholder="Ajoutez un nom de famille"
                           />
                         </label>
                         {formik.touched.lastName && formik.errors.lastName && (
@@ -121,18 +121,18 @@ const FormUser = ({ formik }) => {
                       Ville
                       <input
                         type="text"
-                        name="ville"
-                        id="ville"
-                        value={formik.values.ville}
+                        name="city"
+                        id="city"
+                        value={formik.values.city}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                         placeholder="Optional"
                       />
                     </label>
-                    {formik.touched.ville && formik.errors.ville && (
+                    {formik.touched.city && formik.errors.city && (
                       <div className="absolute -bottom-3 text-sm text-red-600">
-                        {formik.errors.ville}
+                        {formik.errors.city}
                       </div>
                     )}
                   </div>
@@ -184,21 +184,23 @@ const FormUser = ({ formik }) => {
                         className="block text-sm font-medium text-gray-700">
                         Roles
                         <select
-                          id="roles"
-                          name="roles"
-                          autoComplete="roles"
-                          value={formik.values.roles}
+                          id="role"
+                          name="role"
+                          autoComplete="role"
+                          value={formik.values.role}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                          <option value="high">Elevée</option>
-                          <option value="mid">Normale</option>
-                          <option value="low">Basse</option>
+                          <option value="front">Front-End</option>
+                          <option value="back">Back-End</option>
+                          <option value="full">FullStack</option>
+                          <option value="design">Designer</option>
+                          <option value="manager">Manager</option>
                         </select>
                       </label>
-                      {formik.touched.roles && formik.errors.roles && (
+                      {formik.touched.role && formik.errors.role && (
                         <div className="absolute -bottom-5 text-sm text-red-600">
-                          {formik.errors.roles}
+                          {formik.errors.role}
                         </div>
                       )}
                     </div>

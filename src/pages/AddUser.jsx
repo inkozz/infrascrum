@@ -13,10 +13,9 @@ const AddUser = () => {
       name: '',
       lastName: '',
       verifPassword: '',
-      ville: '',
+      city: '',
       role: '',
-      tel: '',
-      img: '',
+      tel: ''
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Email invalide').required('Entrez un Email'),
@@ -24,10 +23,9 @@ const AddUser = () => {
       name: Yup.string(),
       lastName: Yup.string().required('Il faut plus de 2 lettres'),
       verifPassword: Yup.string(),
-      ville: Yup.string().required('Remplir obligatoirement le champ'),
-      role: Yup.array().min(1),
-      tel: Yup.number(),
-      img: Yup.array(),
+      city: Yup.string().required('Remplir obligatoirement le champ'),
+      role: Yup.string(),
+      tel: Yup.number()
     }),
     onSubmit: (values) => {
       addUser(values);

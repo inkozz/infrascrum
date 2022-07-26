@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
-import { getTasks, getProjects } from '../data/getData';
+import { getTasks, getProjects, getUser } from '../data/getData';
 import Tasks from '../components/lists/Tasks';
+<<<<<<< HEAD
 import ProjectsCards from '../components/lists/ProjectsCards';
+=======
+import Projectscards from '../components/lists/ProjectsCards';
+>>>>>>> 7b59958659e8c45378f7cce28edae29a7cec6bf8
 
 const ProfilePage = () => {
   const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
@@ -18,6 +22,8 @@ const ProfilePage = () => {
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
+
+    getUser()
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">

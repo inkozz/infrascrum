@@ -58,7 +58,6 @@ const ProjectLine = ({ element, reloadData }) => {
         </tbody>
       ) : (
         <tbody>
-          ProjectLine
           <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center ">
             <td className="px-5 py-5 text-sm">
               <div className="flex justify-center items-center">
@@ -99,11 +98,7 @@ const ProjectLine = ({ element, reloadData }) => {
             </td>
             <td className="px-5 py-5 text-sm">
               <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                <span
-                  aria-hidden
-                  className="absolute inset-0 bg-[#7FFF00] opacity-50 rounded-full"
-                />
-                <span className="relative">{element.priority}</span>
+                <span className={`text-gray-50 rounded-md px-2 ${element.priority == 'Urgent' ? 'bg-red' : ' relative bg-green-500'} ${element.priority == 'En attente' ? 'bg-gray-500' : ''}`}>{element.priority}</span>
               </span>
             </td>
             <td className="px-5 py-5 text-sm flex items-center justify-center">

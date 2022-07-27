@@ -53,7 +53,6 @@ const TaskItem = ({ element, reloadData }) => {
         />
       ) : (
         <tbody>
-          TaskItem
           <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center">
             <td className="p-3 font-medium capitalize text-cen">{element.name}</td>
             <td className="p-3 text-wrap">{element.description}</td>
@@ -63,7 +62,7 @@ const TaskItem = ({ element, reloadData }) => {
             <td className="p-3 uppercase">{element.roles}</td>
 
             <td className="p-3">
-              <span className="bg-green-400 text-gray-50 rounded-md px-2">
+              <span className={`text-gray-50 rounded-md px-2 ${element.priority == 'High' ? 'bg-red' : 'bg-green-500'}`}> 
                 {element.priority}
               </span>
             </td>

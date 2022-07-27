@@ -143,9 +143,9 @@ const FormProjet = ({
                     <option value="" disabled selected>
                       Select priorité
                     </option>
-                    <option value="Waiting">En attente</option>
-                    <option value="Proccess">En cours</option>
-                    <option value="Priority">En priorité</option>
+                    <option value="En attente">En attente</option>
+                    <option value="En cours">En cours</option>
+                    <option value="Urgent">En priorité</option>
                   </select>
                   {formik.touched.priority && formik.errors.priority && (
                     <div className="absolute -bottom-5 text-sm text-red-600">

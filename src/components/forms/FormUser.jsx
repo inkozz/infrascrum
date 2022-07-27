@@ -1,8 +1,4 @@
 const FormUser = ({ formik }) => {
-  console.log('noon');
-  // const submitUser = () => {
-  //   console.log(formik.values);
-  // };
   return (
     <div className="w-full bg-slate-200 flex flex-col justify-center sm:py-12">
       <div className="relative sm:max-w-xl sm:mx-auto">

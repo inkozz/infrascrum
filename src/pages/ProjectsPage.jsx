@@ -1,7 +1,7 @@
 import { useQuery, useMutation } from 'react-query';
 import toast from 'react-hot-toast';
 import { useEffect, useState } from 'react';
-import Projects from '../components/lists/Projects';
+import ProjectsList from '../components/projects/ProjectsList';
 import { getProjects, addProject } from '../data/getData';
 import FormProjet from '../components/forms/FormProjet';
 
@@ -58,7 +58,7 @@ const ProjectsPage = () => {
           </thead>
           {isLoading && isFetching}
           {projects && !isFetching && (
-            <Projects data={projects} reloadData={reloadData} />
+            <ProjectsList data={projects} reloadData={reloadData} />
           )}
         </table>
         <div className="flex justify-end">

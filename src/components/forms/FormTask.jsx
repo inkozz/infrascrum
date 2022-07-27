@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useQuery } from 'react-query';
 import { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import SelectForm from '../lists/SelectForm';
+import SelectForm from './selects/SelectForm';
 import { getProjects } from '../../data/getData';
 
 const FormTask = ({

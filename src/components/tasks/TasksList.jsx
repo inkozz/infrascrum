@@ -1,6 +1,6 @@
-import TasksLine from './TasksLine';
+import TaskItem from './TaskItem';
 
-const TasksLineCom = ({ data, reloadData }) => {
+const TasksList = ({ data, reloadData }) => {
   console.log(data);
   return (
     <>
@@ -11,11 +11,12 @@ const TasksLineCom = ({ data, reloadData }) => {
       ) : (
         ''
       )}
+      TaskLineCom
       {data.map((element) => (
-        <TasksLine key={element.id} element={element} reloadData={reloadData} />
+        <TaskItem key={element.id} element={element} reloadData={reloadData} />
       ))}
     </>
   );
 };
 
-export default TasksLineCom;
+export default TasksList;

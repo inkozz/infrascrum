@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import FormUser from '../components/forms/FormUser';
 import { addUser } from '../data/getData';
 
-const AddUser = () => {
+const AddUserPage = () => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
@@ -37,4 +37,4 @@ const AddUser = () => {
   return <FormUser formik={formik} />;
 };
 
-export default AddUser;
+export default AddUserPage;

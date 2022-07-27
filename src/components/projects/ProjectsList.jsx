@@ -1,6 +1,6 @@
-import ProjectLine from './ProjectLine';
+import ProjectItem from './ProjectItem';
 
-const Projects = ({ data, reloadData }) => {
+const ProjectsList = ({ data, reloadData }) => {
   console.log('ok');
   return (
     <>
@@ -9,13 +9,13 @@ const Projects = ({ data, reloadData }) => {
           Aucun projet dans la BDD
         </div>
       ) : (
-        ''
+        'Projects'
       )}
       {data.map((element) => (
-        <ProjectLine key={element.id} element={element} reloadData={reloadData} />
+        <ProjectItem key={element.id} element={element} reloadData={reloadData} />
       ))}
     </>
   );
 };
 
-export default Projects;
+export default ProjectsList;

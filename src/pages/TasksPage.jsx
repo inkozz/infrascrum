@@ -2,7 +2,7 @@ import { useQuery, useMutation } from 'react-query';
 import toast from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 import { getTasks, addTask } from '../data/getData';
-import TasksLineCom from '../components/lists/TasksLineCom';
+import TasksList from '../components/tasks/TasksList';
 import FormTask from '../components/forms/FormTask';
 
 const TasksPage = () => {
@@ -70,7 +70,7 @@ const TasksPage = () => {
               </thead>
               {isLoading && isFetching}
               {tasks && !isFetching && (
-                <TasksLineCom data={tasks} reloadData={reloadData} />
+                <TasksList data={tasks} reloadData={reloadData} />
               )}
             </table>
             <div className="flex justify-end">

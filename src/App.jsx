@@ -5,11 +5,11 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/ui/Header';
 import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
-import ProfilePage from './pages/ProfilePage';
+import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import AddUser from './pages/AddUser';
 import LoginPage from './pages/LoginPage';
 import TasksPage from './pages/TasksPage';
+import AddUserPage from './pages/AddUserPage'
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -46,7 +46,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <ProfilePage />
+                      <HomePage />
                     </>
                   }
                 />
@@ -74,7 +74,7 @@ const App = () => {
                   element={
                     <>
                       <Header />
-                      <AddUser />
+                      <AddUserPage />
                     </>
                   }
                 />

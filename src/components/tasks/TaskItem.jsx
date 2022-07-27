@@ -4,7 +4,7 @@ import { useMutation } from 'react-query';
 import { removeTask, updateTask } from '../../data/getData';
 import FormTask from '../forms/FormTask';
 
-const TasksLine = ({ element, reloadData }) => {
+const TaskItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
   const cancelTask = () => {
     setMode(false);
@@ -53,6 +53,7 @@ const TasksLine = ({ element, reloadData }) => {
         />
       ) : (
         <tbody>
+          TaskItem
           <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center">
             <td className="p-3 font-medium capitalize text-cen">{element.name}</td>
             <td className="p-3 text-wrap">{element.description}</td>
@@ -131,4 +132,4 @@ const TasksLine = ({ element, reloadData }) => {
   );
 };
 
-export default TasksLine;
+export default TaskItem;

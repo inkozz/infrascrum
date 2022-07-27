@@ -58,6 +58,7 @@ const ProjectLine = ({ element, reloadData }) => {
         </tbody>
       ) : (
         <tbody>
+          ProjectLine
           <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center ">
             <td className="px-5 py-5 text-sm">
               <div className="flex justify-center items-center">

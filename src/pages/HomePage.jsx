@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
 import { getTasks, getProjects, getUser } from '../data/getData';
-import Tasks from '../components/lists/Tasks';
-import Select from '../components/lists/Select';
-import UserBoard from '../components/lists/UserBoard';
+import TasksListHome from '../components/home/TasksListHome';
+import Select from '../components/forms/selects/Select';
+import UserBoard from '../components/home/UserBoard';
 
-const ProfilePage = () => {
+const HomePage = () => {
   const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
   const [project, setProject] = useState();
   useEffect(() => {
@@ -59,7 +59,7 @@ const ProfilePage = () => {
         </div>
         <div className="bg-primary rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Taches</h2>
-          {tasks && !isFetching && <Tasks data={tasks} />}
+          {tasks && !isFetching && <TasksListHome data={tasks} />}
         </div>
         <div className="hidden md:inline-block bg-purple-500 rounded-lg py-6 w-full p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Terminé</h2>
@@ -70,4 +70,4 @@ const ProfilePage = () => {
     </div>
   );
 };
-export default ProfilePage;
+export default HomePage;

@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import LoginForm from '../components/forms/LoginForm';
+import FormLogin from '../components/forms/FormLogin';
 
 const LoginPage = () => {
   const formik = useFormik({
@@ -13,6 +13,6 @@ const LoginPage = () => {
       password: Yup.string().required('Entrez un mot de passe'),
     }),
   });
-  return <LoginForm formik={formik} />;
+  return <FormLogin formik={formik} />;
 };
 export default LoginPage;

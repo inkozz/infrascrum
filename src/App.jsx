@@ -22,7 +22,7 @@ const App = () => {
     () => ({ setIsLogged, isLogged }),
     [setIsLogged, isLogged],
   );
-<<<<<<< HEAD
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -31,10 +31,7 @@ const App = () => {
       },
     },
   });
-=======
-  const queryClient = new QueryClient();
 
->>>>>>> ad469f51dabc64274998c7370290c37b6b2acf34
   return (
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>

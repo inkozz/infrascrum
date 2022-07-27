@@ -17,23 +17,14 @@ const FormProjet = ({
 }) => {
   const formik = useFormik({
     initialValues: {
-<<<<<<< HEAD
-      name: name || '',
-      description: description || '',
-      logo: logo || '',
-      startDate: startDate || '',
-      endDate: endDate || '',
-      priority: priority || '',
-      status: status || '',
-      users: users || '',
-=======
-      name: name,
-      description: description,
-      logo: logo,
-      startDate: startDate,
-      endDate: endDate,
-      priority: priority,
->>>>>>> ad469f51dabc64274998c7370290c37b6b2acf34
+      name,
+      description,
+      logo,
+      startDate,
+      endDate,
+      priority,
+      status,
+      users,
     },
     validationSchema: Yup.object({
       name: Yup.string(),

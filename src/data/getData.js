@@ -210,8 +210,3 @@ export const postLogin = async (login) => {
   const { data } = await axios.post('http://localhost:8080/users/login', login);
   return data;
 };
-<<<<<<< HEAD
-
-// jsonserver
-=======
->>>>>>> ad469f51dabc64274998c7370290c37b6b2acf34

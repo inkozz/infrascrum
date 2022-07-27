@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import SelectForm from '../lists/SelectForm';
 import { useQuery } from 'react-query';
-import { getProjects } from '../../data/getData';
 import { useEffect } from 'react';
+import { toast } from 'react-hot-toast';
+import SelectForm from '../lists/SelectForm';
+import { getProjects } from '../../data/getData';
 
 const FormTask = ({
   mode,
@@ -21,13 +22,13 @@ const FormTask = ({
 }) => {
   const formik = useFormik({
     initialValues: {
-      name: name,
-      description: description,
-      startDate: startDate,
-      endDate: endDate,
-      priority: priority,
-      assign: assign,
-      roles: roles,
+      name,
+      description,
+      startDate,
+      endDate,
+      priority,
+      assign,
+      roles,
     },
     validationSchema: Yup.object({
       name: Yup.string(),

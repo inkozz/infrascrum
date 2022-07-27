@@ -3,15 +3,8 @@ import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
 import { getTasks, getProjects, getUser } from '../data/getData';
 import Tasks from '../components/lists/Tasks';
-<<<<<<< HEAD
 import Select from '../components/lists/Select';
-=======
-import ProjectsCards from '../components/lists/ProjectsCards';
-<<<<<<< HEAD
 import UserBoard from '../components/lists/UserBoard';
-=======
->>>>>>> 7f070c95db9d89df516e2a7f87e231f0c73a64f2
->>>>>>> ad469f51dabc64274998c7370290c37b6b2acf34
 
 const ProfilePage = () => {
   const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
@@ -22,7 +15,7 @@ const ProfilePage = () => {
     }
   }, [isError]);
   const { data: projects } = useQuery('projects', getProjects);
-<<<<<<< HEAD
+
   // useEffect(() => {
   //   if (isError) {
   //     toast('Il y a une erreur', { className: 'errorToast' });
@@ -36,22 +29,15 @@ const ProfilePage = () => {
   //   }
   // }, [isError]);
 
-  // getUser();
-=======
   useEffect(() => {
     if (isError) {
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
-<<<<<<< HEAD
-  useEffect(() => {
-    console.log('Request for value ' + project);
-  }, [project]);
-=======
 
-  getUser();
->>>>>>> 7f070c95db9d89df516e2a7f87e231f0c73a64f2
->>>>>>> ad469f51dabc64274998c7370290c37b6b2acf34
+  useEffect(() => {
+    console.log(`Request for value ${project}`);
+  }, [project]);
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">

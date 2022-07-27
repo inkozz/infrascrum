@@ -84,15 +84,7 @@ const FormTask = ({
             <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
               <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
-                  <SelectForm
-                    data={projects}
-                    name="project"
-                    id="id"
-                    formik={formik}
-                    // value={formik.values.name}
-                    // onChange={formik.handleChange}
-                    // onBlur={formik.handleBlur}
-                  />
+                  <SelectForm data={projects} name="project" id="id" formik={formik} />
                 </div>
               </td>
               <td className="p-3 font-medium capitalize">

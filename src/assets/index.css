@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes reveal {
-  0% {
-    transform: translate(0, 40%);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+body {
+  @apply w-screen h-screen bg-gray-100;
 }
 
 .btn {
@@ -30,7 +25,6 @@
 .AssigPeople {
   @apply border-b border-gray-300 p-4  flex justify-between;
 }
-
 /* .toastStyle {
   @apply cursor-pointer font-semibold;
   background-color: green !important;
@@ -42,18 +36,6 @@
   background-color: rgba(224, 10, 10, 0.87) !important;
   color: white !important;
 }
-.successToast {
-  @apply cursor-pointer font-semibold;
-  background-color: green !important;
-  color: white !important;
-}
-
-.errorToast {
-  @apply cursor-pointer font-semibold;
-  background-color: rgb(221, 9, 9) !important;
-  color: white !important;
-}
-
 .successToast {
   @apply cursor-pointer font-semibold;
   background-color: rgb(9, 155, 9) !important;

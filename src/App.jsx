@@ -22,7 +22,14 @@ const App = () => {
     () => ({ setIsLogged, isLogged }),
     [setIsLogged, isLogged],
   );
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: 0,
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>

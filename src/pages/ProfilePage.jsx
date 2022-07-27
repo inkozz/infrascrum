@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { getTasks, getProjects, getUser } from '../data/getData';
 import Tasks from '../components/lists/Tasks';
 import ProjectsCards from '../components/lists/ProjectsCards';
+import UserBoard from '../components/lists/UserBoard';
 
 const ProfilePage = () => {
   const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
@@ -13,21 +14,25 @@ const ProfilePage = () => {
     }
   }, [isError]);
   const { data: projects } = useQuery('projects', getProjects);
-  useEffect(() => {
-    if (isError) {
-      toast('Il y a une erreur', { className: 'errorToast' });
-    }
-  }, [isError]);
+  // useEffect(() => {
+  //   if (isError) {
+  //     toast('Il y a une erreur', { className: 'errorToast' });
+  //   }
+  // }, [isError]);
+  const { data: user } = useQuery('user', getUser);
+  console.log(user);
+  // useEffect(() =>{
+  //   if (isError){
+  //     toast('Il y a une erreur', { className: 'errorToast' });
+  //   }
+  // }, [isError]);
 
-  getUser();
+  // getUser();
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">
       <div className="bg-primary rounded-3xl py-6 p-3">
-        <div>
-          <h1 className="text-2xl text-white text-center">Bonjour,</h1>
-          <h2 className="text-white text-center">User</h2>
-        </div>
+        {user && <UserBoard data={user} />}
       </div>
       <div className="flex justify-between space-x-5">
         <div className="bg-yellow-500 rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">

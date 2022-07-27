@@ -185,6 +185,10 @@ export const getProjects = async () => {
   const { data } = await axios.get('http://localhost:8080/projects');
   return data;
 };
+export const getOneProject = async (id) => {
+  const { data } = await axios.get(`http://localhost:8080/projects/${project.id}`, id);
+  return data;
+};
 export const addProject = async (projects) => {
   const { data } = await axios.post('http://localhost:8080/projects', projects);
   console.log(data);
@@ -206,5 +210,8 @@ export const postLogin = async (login) => {
   const { data } = await axios.post('http://localhost:8080/users/login', login);
   return data;
 };
+<<<<<<< HEAD
 
 // jsonserver
+=======
+>>>>>>> ad469f51dabc64274998c7370290c37b6b2acf34

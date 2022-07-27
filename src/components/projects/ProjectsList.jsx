@@ -9,7 +9,7 @@ const ProjectsList = ({ data, reloadData }) => {
           Aucun projet dans la BDD
         </div>
       ) : (
-        'Projects'
+        ''
       )}
       {data.map((element) => (
         <ProjectItem key={element.id} element={element} reloadData={reloadData} />

@@ -11,7 +11,6 @@ const TasksList = ({ data, reloadData }) => {
       ) : (
         ''
       )}
-      TaskLineCom
       {data.map((element) => (
         <TaskItem key={element.id} element={element} reloadData={reloadData} />
       ))}

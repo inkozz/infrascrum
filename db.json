@@ -36,25 +36,6 @@
       "priority": "Proccess"
     },
     {
-<<<<<<< HEAD
-      "name": "Test",
-      "description": "",
-      "logo": "",
-      "startDate": "2022-07-28",
-      "endDate": "2022-07-30",
-      "priority": "Proccess",
-      "collaborator": "collab2",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "name": "TesT23",
-      "description": "",
-      "logo": "",
-      "startDate": "",
-      "endDate": "",
-      "priority": "Proccess"
-=======
       "name": "Babouin",
       "description": "",
       "logo": "",
@@ -63,7 +44,6 @@
       "priority": "Priority",
       "collaborator": "collab2",
       "id": 2
->>>>>>> 7b59958659e8c45378f7cce28edae29a7cec6bf8
     }
   ],
   "tasks": [

@@ -16,13 +16,9 @@ const HomePage = () => {
   }, [isError]);
   const { data: projects } = useQuery('projects', getProjects);
 
-  // useEffect(() => {
-  //   if (isError) {
-  //     toast('Il y a une erreur', { className: 'errorToast' });
-  //   }
-  // }, [isError]);
   const { data: user } = useQuery('user', getUser);
 
+  console.log(user);
 
   useEffect(() => {
     if (isError) {

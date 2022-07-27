@@ -48,6 +48,18 @@
   color: white !important;
 }
 
+.errorToast {
+  @apply cursor-pointer font-semibold;
+  background-color: rgb(221, 9, 9) !important;
+  color: white !important;
+}
+
+.successToast {
+  @apply cursor-pointer font-semibold;
+  background-color: rgb(9, 155, 9) !important;
+  color: white !important;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   opacity: 0.5;

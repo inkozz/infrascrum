@@ -37,7 +37,7 @@ const HomePage = () => {
       </div>
 
       <div className="flex justify-between p-3">
-        <div className=" rounded-lg sm:h-[70vh] p-3 h-[20vh]">
+        <div className=" rounded-lg p-3 h-[20vh]">
           <h2 className="ml-4 text-3xl font-bold text-left mr-6 mb-8">Projets</h2>
           {projects && !isFetching && (
             <Select
@@ -51,7 +51,7 @@ const HomePage = () => {
         </div>
         <div />
 
-        <div className="rounded-lg sm:h-[70vh] p-3 w-screen border border-zinc-400">
+        <div className="rounded-lg p-3 w-full h-full border border-zinc-400">
           <h2 className="ml-4 text-3xl font-bold text-left">Tâches</h2>
           {tasks && !isFetching && <TasksListHome data={tasks} />}
         </div>

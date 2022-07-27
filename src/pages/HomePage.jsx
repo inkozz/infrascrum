@@ -31,13 +31,14 @@ const HomePage = () => {
   }, [project]);
 
   return (
-    <div className="flex flex-col max-w-6xl mx-auto space-y-4 ">
-      <div className="bg-primary rounded-3xl py-6 p-3">
+    <div className="flex flex-col max-w-7xl space-y-2 mx-auto">
+      <div className="border border-zinc-600 rounded-3xl py-6 p-3">
         {user && <UserBoard data={user} />}
       </div>
-      <div className="flex justify-between space-x-5">
-        <div className="bg-yellow-500 rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
-          <h2 className="m-4 text-3xl font-bold text-center mb-0">Projets</h2>
+
+      <div className="flex justify-between p-3">
+        <div className=" rounded-lg sm:h-[70vh] p-3 h-[20vh]">
+          <h2 className="ml-4 text-3xl font-bold text-left mr-6 mb-8">Projets</h2>
           {projects && !isFetching && (
             <Select
               data={projects}
@@ -48,16 +49,17 @@ const HomePage = () => {
             />
           )}
         </div>
-        <div className="bg-primary rounded-lg sm:h-[70vh] py-6 w-full h-[80vh] p-3">
-          <h2 className="m-4 text-3xl font-bold text-center">Taches</h2>
+        <div />
+
+        <div className="rounded-lg sm:h-[70vh] p-3 w-screen border border-zinc-400">
+          <h2 className="ml-4 text-3xl font-bold text-left">Tâches</h2>
           {tasks && !isFetching && <TasksListHome data={tasks} />}
         </div>
-        <div className="hidden md:inline-block bg-purple-500 rounded-lg py-6 w-full p-3">
+        {/* <div className="hidden md:inline-block border border-zinc-600 rounded-lg py-6 w-full p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Terminé</h2>
-        </div>
+        </div> */}
       </div>
       <div className=" md:hidden bg-purple-500 rounded-lg py-6 w-full p-3">card 4</div>
-      <div className="bg-blue-500 rounded-lg py-6 p-3">card 5</div>
     </div>
   );
 };

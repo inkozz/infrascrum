@@ -1,6 +1,7 @@
 const Select = ({ data, value, setValue, name, id }) => (
   <div>
     <select
+      className="rounded-md text-gray-700 "
       defaultValue=""
       name={name}
       id={id}

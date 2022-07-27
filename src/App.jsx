@@ -9,7 +9,7 @@ import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import LoginPage from './pages/LoginPage';
 import TasksPage from './pages/TasksPage';
-import AddUserPage from './pages/AddUserPage'
+import AddUserPage from './pages/AddUserPage';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -36,7 +36,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>
         <Router>
-          <div className="flex max-w-full bg-slate-200 w-full min-h-screen relative">
+          <div className="flex max-w-full w-full min-h-screen relative">
             {isLogged ? <Sidebar /> : null}
             <main className="flex-grow">
               <Routes>

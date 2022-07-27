@@ -20,7 +20,7 @@ const Sidebar = () => {
   // };
   return (
     <div
-      className={`relative p-4 rounded-md shadow-md bg-white h-[100vh] flex flex-col duration-200 ${
+      className={`relative p-4 rounded-md shadow-md bg-white flex flex-col duration-200 ${
         isExpand ? 'min-w-[250px] expand' : 'min-w-[10px]'
       }`}>
       <button

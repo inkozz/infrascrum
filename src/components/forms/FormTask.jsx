@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import ProjectsCards from '../lists/ProjectsCards';
+import SelectForm from '../lists/SelectForm';
 import { useQuery } from 'react-query';
 import { getProjects } from '../../data/getData';
 import { useEffect } from 'react';
@@ -21,13 +21,13 @@ const FormTask = ({
 }) => {
   const formik = useFormik({
     initialValues: {
-      name: name || '',
-      description: description || '',
-      startDate: startDate || '',
-      endDate: endDate || '',
-      priority: priority || '',
-      assign: assign || '',
-      roles: roles || '',
+      name: name,
+      description: description,
+      startDate: startDate,
+      endDate: endDate,
+      priority: priority,
+      assign: assign,
+      roles: roles,
     },
     validationSchema: Yup.object({
       name: Yup.string(),
@@ -48,7 +48,6 @@ const FormTask = ({
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
-  console.log(formik.name);
   return (
     <div>
       <form onSubmit={formik.handleSubmit} className="border-2 border-primary">
@@ -85,14 +84,7 @@ const FormTask = ({
             <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
               <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
-                  <ProjectsCards
-                    data={projects}
-                    name="name"
-                    id="name"
-                    value={formik.values.name}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                  />
+                  <SelectForm data={projects} name="project" id="id" formik={formik} />
                 </div>
               </td>
               <td className="p-3 font-medium capitalize">
@@ -130,6 +122,9 @@ const FormTask = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="" disabled selected>
+                      Select priorité
+                    </option>
                     <option value="collab1">Collab1</option>
                     <option value="collab2">Collab2</option>
                   </select>
@@ -150,6 +145,9 @@ const FormTask = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="" disabled selected>
+                      Select role
+                    </option>
                     <option value="Designer">Designer</option>
                     <option value="Front-End">Front-End</option>
                     <option value="Back-End">Back-End</option>
@@ -171,6 +169,9 @@ const FormTask = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    <option value="" disabled selected>
+                      Select priorité
+                    </option>
                     <option value="High">Haute</option>
                     <option value="Mid">Normale</option>
                     <option value="Low">Basse</option>

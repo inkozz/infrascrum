@@ -31,9 +31,20 @@
   @apply border-b border-gray-300 p-4  flex justify-between;
 }
 
-.toastStyle {
+/* .toastStyle {
   @apply cursor-pointer font-semibold;
-  background-color: rgb(13 148 136) !important;
+  background-color: green !important;
+  color: white !important;
+} */
+
+.errorToast {
+  @apply cursor-pointer font-semibold;
+  background-color: rgba(224, 10, 10, 0.87) !important;
+  color: white !important;
+}
+.successToast {
+  @apply cursor-pointer font-semibold;
+  background-color: green !important;
   color: white !important;
 }
 

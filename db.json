@@ -28,47 +28,57 @@
   "projects": [
     {
       "id": 1,
-      "name": "Sncbb",
-      "description": "",
-      "logo": "",
-      "startDate": "2022-07-20",
-      "endDate": "2022-08-07",
-      "priority": "Proccess"
-    },
-    {
-      "name": "Babouin",
+      "name": "Projet 2",
       "description": "",
       "logo": "",
       "startDate": "2022-07-28",
-      "endDate": "2022-10-21",
-      "priority": "Priority",
-      "collaborator": "collab2",
-      "id": 2
+      "endDate": "2022-07-31",
+      "priority": "Waiting"
+    },
+    {
+
+      "id": 2,
+      "name": "Projet 3",
+      "description": "",
+      "logo": "",
+      "startDate": "2022-07-29",
+      "endDate": "2022-07-31",
+      "priority": "Priority"
+    },
+    {
+      "id": 3,
+      "name": "Projet 4",
+      "description": "",
+      "logo": "",
+      "startDate": "2022-07-20",
+      "endDate": "2022-07-30",
+      "priority": "Proccess"
+
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "name": "Header",
-      "description": "Faire le Headerr",
-      "startDate": "2022-07-24",
-      "endDate": "2022-07-25",
-      "priority": "Low",
+      "name": "Projet 2",
+      "description": "Tache projet 1",
+      "startDate": "2022-07-15",
+      "endDate": "2022-07-31",
+      "priority": "High",
       "assign": "collab2",
-      "roles": "Front-End",
-      "idProjet": "2"
+      "roles": "Front-End"
     },
     {
       "id": 2,
-      "name": "Routes",
-      "description": "zrzezrezre",
-      "startDate": "2022-07-29",
-      "endDate": "2022-08-07",
+      "name": "Projet 3",
+      "description": "Tache projet 2",
+      "startDate": "2022-07-08",
+      "endDate": "2022-07-31",
       "priority": "Mid",
-      "assign": "",
+      "assign": "collab2",
       "roles": "Back-End"
     },
     {
+
       "name": "",
       "description": "",
       "startDate": "",
@@ -104,6 +114,14 @@
       "idUser": 1,
       "idProject": 1,
       "update": "Il y a 2j"
+      "id": 3,
+      "name": "Projet 2",
+      "description": "Tache projet 22",
+      "startDate": "2022-07-07",
+      "endDate": "2022-08-07",
+      "priority": "High",
+      "assign": "collab1",
+      "roles": "Designer"
     }
   ],
   "login": [
@@ -118,69 +136,14 @@
       "id": 2
     },
     {
-      "email": "",
-      "password": "",
+      "email": "leila@mail.be",
+      "password": "test",
       "id": 3
     },
     {
-      "email": "rzrezrezer",
-      "password": "zrezreezzera",
+      "email": "leila@mail.be",
+      "password": "test",
       "id": 4
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
-      "email": "test",
-      "password": "test",
-      "id": 6
-    },
-    {
-      "email": "test",
-      "password": "test",
-      "id": 7
-    },
-    {
-      "email": "test",
-      "password": "test",
-      "id": 8
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 9
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 10
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 11
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 12
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 13
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 14
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 15
     }
   ]
 }

@@ -20,10 +20,8 @@ const Sidebar = () => {
   // };
   return (
     <div
-
-      className={`relative p-4 rounded-md shadow-md bg-primary hover:bg-white h-[100vh] flex flex-col duration-200 ${
+      className={`relative p-4 rounded-md shadow-md bg-white h-[100vh] flex flex-col duration-200 ${
         isExpand ? 'expand' : ''
-
       }`}>
       <button
         type="button"

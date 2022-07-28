@@ -44,11 +44,6 @@
       "endDate": "2022-10-21",
       "priority": "Waiting"
     },
-    {
-      "name": "Test",
-      "description": "",
-      "id": 3
-    }
   ],
   "tasks": [
     {
@@ -61,16 +56,6 @@
       "assign": "collab2",
       "roles": "Front-End",
       "idProjet": "2"
-    },
-    {
-      "id": 2,
-      "name": "Routes",
-      "description": "zrzezrezre",
-      "startDate": "2022-07-29",
-      "endDate": "2022-08-07",
-      "priority": "Low",
-      "assign": "",
-      "roles": "Back-End"
     },
     {
       "name": "Sncbb",

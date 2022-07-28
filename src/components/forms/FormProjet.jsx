@@ -10,7 +10,6 @@ const FormProjet = ({
   users,
   startDate,
   endDate,
-  priority,
   status,
   saveFunction,
   cancelFunction,
@@ -18,21 +17,19 @@ const FormProjet = ({
   const formik = useFormik({
     initialValues: {
       name,
-      description,
+      description: description || '',
       logo,
       startDate,
       endDate,
-      priority,
       status,
       users,
     },
     validationSchema: Yup.object({
       name: Yup.string(),
-      description: Yup.string(),
       logo: Yup.string(),
+      description: Yup.string(),
       startDate: Yup.date(),
       endDate: Yup.date(),
-      priority: Yup.string(),
       status: Yup.string(),
       users: Yup.string(),
     }),
@@ -64,10 +61,10 @@ const FormProjet = ({
                 <label htmlFor="endDate">Date de fin</label>
               </th>
               <th className="p-3 text-primary bg-gray-100">
-                <label htmlFor="priority">Status</label>
+                <label htmlFor="status">Status</label>
               </th>
               <th className="p-3 text-primary bg-gray-100">
-                <label htmlFor="collaborator">Collaborateurs</label>
+                <label htmlFor="users">Collaborateurs</label>
               </th>
             </tr>
           </thead>
@@ -133,10 +130,10 @@ const FormProjet = ({
               <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
                   <select
-                    id="priority"
-                    name="priority"
-                    autoComplete="priority"
-                    value={formik.values.priority}
+                    id="status"
+                    name="status"
+                    autoComplete="status"
+                    value={formik.values.status}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
@@ -147,9 +144,9 @@ const FormProjet = ({
                     <option value="En cours">En cours</option>
                     <option value="Urgent">En priorité</option>
                   </select>
-                  {formik.touched.priority && formik.errors.priority && (
+                  {formik.touched.status && formik.errors.status && (
                     <div className="absolute -bottom-5 text-sm text-red-600">
-                      {formik.errors.priority}
+                      {formik.errors.status}
                     </div>
                   )}
                 </div>
@@ -157,10 +154,10 @@ const FormProjet = ({
               <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
                   <select
-                    id="collaborator"
-                    name="collaborator"
-                    autoComplete="collaborator"
-                    value={formik.values.collaborator}
+                    id="users"
+                    name="users"
+                    autoComplete="users"
+                    value={formik.values.users}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
@@ -170,9 +167,9 @@ const FormProjet = ({
                     <option value="collab">Collab1</option>
                     <option value="collab2">Collab2</option>
                   </select>
-                  {formik.touched.collaborator && formik.errors.collaborator && (
+                  {formik.touched.users && formik.errors.users && (
                     <div className="absolute -bottom-5 text-sm text-red-600">
-                      {formik.errors.collaborator}
+                      {formik.errors.users}
                     </div>
                   )}
                 </div>

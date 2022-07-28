@@ -18,7 +18,7 @@ const FormProjet = ({
   const formik = useFormik({
     initialValues: {
       name,
-      description,
+      description: description || '',
       logo,
       startDate,
       endDate,

@@ -50,7 +50,6 @@ const App = () => {
                     </>
                   }
                 />
-                <Route path="/home/notifications" element={<Header />} />
                 <Route
                   path="taches"
                   element={
@@ -78,6 +77,7 @@ const App = () => {
                     </>
                   }
                 />
+                <Route path="/home/notifications" element={<Header />} />
               </Routes>
             </main>
             <Toaster

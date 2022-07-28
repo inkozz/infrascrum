@@ -7,7 +7,15 @@ const Select = ({ data, value, setValue, name, id }) => (
       id={id}
       value={value}
       onChange={(e) => setValue(e.target.value)}>
-      {data && data.map((element) => <option value={element.id} label={element.name} />)}
+      <option value="" disabled selected>
+        Select {name}
+      </option>
+      {data &&
+        data.map((element) => (
+          <option value={element.id} label={element.name}>
+            {element.name}
+          </option>
+        ))}
     </select>
     <p>
       Selected {name} : {value}

@@ -98,7 +98,12 @@ const ProjectLine = ({ element, reloadData }) => {
             </td>
             <td className="px-5 py-5 text-sm">
               <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                <span className={`text-gray-50 rounded-md px-2 ${element.priority == 'Urgent' ? 'bg-red' : ' relative bg-green-500'} ${element.priority == 'En attente' ? 'bg-gray-500' : ''}`}>{element.priority}</span>
+                <span
+                  className={`text-gray-50 rounded-md px-2 ${
+                    element.priority === 'Urgent' ? 'bg-red' : ' relative bg-green-500'
+                  } ${element.priority === 'En attente' ? 'bg-gray-500' : ''}`}>
+                  {element.priority}
+                </span>
               </span>
             </td>
             <td className="px-5 py-5 text-sm flex items-center justify-center">

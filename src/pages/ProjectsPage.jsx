@@ -26,7 +26,7 @@ const ProjectsPage = () => {
     async (projectValues) => addProject(projectValues),
     {
       onSuccess: () => {
-        setIsAdd(false);
+        // setIsAdd(false);
         toast('Le projet a été ajouté', { className: 'successToast' });
         reloadData();
       },
@@ -44,6 +44,7 @@ const ProjectsPage = () => {
   };
 
   return (
+
     <>
       {isLogged ? (
         <div className="bg-white p-8 rounded-md w-full">
@@ -81,6 +82,34 @@ const ProjectsPage = () => {
                   </button>
                 </div>
               )}
+    <div className="bg-white p-8 rounded-md w-full">
+      <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+        <table className="table text-gray-400 w-full space-y-6 text-sm">
+          <thead className="text-white">
+            <tr>
+              <th className="p-3 text-primary bg-gray-100">Projet</th>
+              <th className="p-3 text-primary bg-gray-100">Responsable</th>
+              <th className="p-3 text-primary bg-gray-100">Date du début</th>
+              <th className="p-3 text-primary bg-gray-100">Date de fin</th>
+              <th className="p-3 text-primary bg-gray-100">Maj</th>
+              <th className="p-3 text-primary bg-gray-100">Status</th>
+              <th className="p-3 text-primary bg-gray-100">Collaborateurs</th>
+              <th className="p-3 text-primary bg-gray-100">Options</th>
+            </tr>
+          </thead>
+          {isLoading && isFetching}
+          {projects && !isFetching && (
+            <ProjectsList data={projects} reloadData={reloadData} />
+          )}
+        </table>
+        <div className="flex justify-end">
+          {isAdd ? (
+            <div className="w-full p-8  rounded  ">
+              <FormProjet
+                saveFunction={saveProject}
+                cancelFunction={cancelProject}
+                reloadData={reloadData}
+              />
             </div>
           </div>
         </div>

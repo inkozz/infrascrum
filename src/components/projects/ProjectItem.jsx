@@ -28,6 +28,7 @@ const ProjectLine = ({ element, reloadData }) => {
     {
       onSuccess: () => {
         toast('Projet mis à jour', { className: 'successToast' });
+        setMode(false);
         reloadData();
       },
       onError: () => {

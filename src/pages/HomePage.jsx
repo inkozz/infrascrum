@@ -1,15 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
-import { getProjects, getUser } from '../data/getData';
-// import TasksListHome from '../components/home/TasksListHome';
+import { getProjects, getUser, getTasks } from '../data/getData';
 import Select from '../components/forms/selects/Select';
 import UserBoard from '../components/home/UserBoard';
 import loginCtx from '../loginCtx';
 import LoginPage from './LoginPage';
 
 const HomePage = () => {
-  // const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
+  const { data: tasks } = useQuery('tasks', getTasks);
   const [project, setProject] = useState();
   const { isLogged } = useContext(loginCtx);
   const { data: projects, isError, isFetching } = useQuery('projects', getProjects);
@@ -53,17 +52,6 @@ const HomePage = () => {
               <h2 className="ml-4 text-3xl font-bold text-left">Tâches</h2>
               {tasks && !isFetching && <TasksListHome data={tasks} />}
             </div>
-            {/* <div className="hidden md:inline-block border border-zinc-600 rounded-lg py-6 w-full p-3">
-        <div className="rounded-lg p-3 w-full h-full border border-zinc-400">
-          <h2 className="ml-4 text-3xl font-bold text-left">Tâches</h2>
-          {/* {tasks && !isFetching && <TasksListHome data={tasks} />} */}
-        </div>
-        {/* <div className="hidden md:inline-block border border-zinc-600 rounded-lg py-6 w-full p-3">
-          <h2 className="m-4 text-3xl font-bold text-center">Terminé</h2>
-        </div> */}
-          </div>
-          <div className=" md:hidden bg-purple-500 rounded-lg py-6 w-full p-3">
-            card 4
           </div>
         </div>
       ) : (

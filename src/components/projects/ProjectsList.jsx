@@ -54,19 +54,19 @@ const ProjectsList = ({ data, reloadData }) => {
         <ProjectItem key={element.id} element={element} reloadData={reloadData} />
       ))}
       <div className="flex justify-end">
-        {isAdd ? (
+        {!isAdd ? (
+          <div className="flex justify-end p-4">
+            <button type="button" className="btn primary" onClick={() => setIsAdd(true)}>
+              Ajouter un projet
+            </button>
+          </div>
+        ) : (
           <div className="w-full p-8  rounded  ">
             <FormProjet
               saveFunction={saveProject}
               cancelFunction={cancelProject}
               reloadData={reloadData}
             />
-          </div>
-        ) : (
-          <div className="flex justify-end p-4">
-            <button type="button" className="btn primary" onClick={() => setIsAdd(true)}>
-              Ajouter un projet
-            </button>
           </div>
         )}
       </div>

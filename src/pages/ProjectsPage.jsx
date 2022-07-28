@@ -1,21 +1,16 @@
 import { useQuery, useMutation } from 'react-query';
 import toast from 'react-hot-toast';
-import { useEffect } from 'react';
-import ProjectsList from '../components/projects/ProjectsList';
-import { getProjects } from '../data/getData';
 import { useEffect, useState, useContext } from 'react';
 import ProjectsList from '../components/projects/ProjectsList';
 import { getProjects, addProject } from '../data/getData';
-import FormProjet from '../components/forms/FormProjet';
-import loginCtx from '../loginCtx';
 import LoginPage from './LoginPage';
+import loginCtx from '../loginCtx';
 
 const ProjectsPage = () => {
   const {
     data: projects,
     isError,
     isFetching,
-    isLoading,
     refetch: reloadData,
   } = useQuery('projects', getProjects);
   useEffect(() => {
@@ -23,7 +18,6 @@ const ProjectsPage = () => {
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   });
-
   const [isAdd, setIsAdd] = useState(false);
   const { isLogged } = useContext(loginCtx);
   const { isLoading, mutate: projectAdd } = useMutation(
@@ -49,52 +43,22 @@ const ProjectsPage = () => {
   };
 
   return (
-
     <>
       {isLogged ? (
         <div className="bg-white p-8 rounded-md w-full">
           <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
             <table className="table text-gray-400 w-full space-y-6 text-sm">
-              <thead className="text-white">
-                <tr>
-                  <th className="p-3 text-primary bg-gray-100">Projet</th>
-                  <th className="p-3 text-primary bg-gray-100">Responsable</th>
-                  <th className="p-3 text-primary bg-gray-100">Date du début</th>
-                  <th className="p-3 text-primary bg-gray-100">Date de fin</th>
-                  <th className="p-3 text-primary bg-gray-100">Maj</th>
-                  <th className="p-3 text-primary bg-gray-100">Status</th>
-                  <th className="p-3 text-primary bg-gray-100">Collaborateurs</th>
-                  <th className="p-3 text-primary bg-gray-100">Options</th>
-                </tr>
-              </thead>
               {isLoading && isFetching}
               {projects && !isFetching && (
                 <ProjectsList data={projects} reloadData={reloadData} />
               )}
             </table>
-            <div className="flex justify-end">
-              {isAdd ? (
-                <div className="w-full p-8  rounded  ">
-                  <FormProjet saveFunction={saveProject} cancelFunction={cancelProject} />
-                </div>
-              ) : (
-                <div className="flex justify-end p-4">
-                  <button
-                    type="button"
-                    className="btn primary"
-                    onClick={() => setIsAdd(true)}>
-                    Ajouter un projet
-                  </button>
-                </div>
-              )}
-    <div className="bg-white p-8 rounded-md w-full">
-      <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-        <table className="table text-gray-400 w-full space-y-6 text-sm">
-          {isLoading && isFetching}
-          {projects && !isFetching && (
-            <ProjectsList data={projects} reloadData={reloadData} />
-          )}
-        </table>
+          </div>
+        </div>
+      ) : (
+        <LoginPage />
+      )}
+    </>
   );
 };
 

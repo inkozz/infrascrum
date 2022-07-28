@@ -13,11 +13,6 @@
 //       authorization: localStorage.getItem('authorization'),
 //     },
 //   });
-//   // .then(async (response) => {
-//   //   console.log(await response.data);
-//   //   await response;
-//   // });
-
 //   return data;
 // };
 
@@ -38,19 +33,22 @@
 // // };
 
 // export const getTasks = async () => {
-//   const { data } = await axios.get('http://localhost:8080/tasks');
+//   const { data } = await axios.get('http://localhost:8000/tasks/get_tasks');
 //   return data;
 // };
 // export const addTask = async (tasks) => {
-//   const { data } = await axios.post('http://localhost:8080/tasks', tasks);
+//   const { data } = await axios.post('http://localhost:8000/tasks/new_tasks', tasks);
 //   return data;
 // };
 // export const updateTask = async (task) => {
-//   const { data } = await axios.put(`http://localhost:8080/tasks/${task.id}`, task);
+//   const { data } = await axios.put(
+//     `http://localhost:8000/tasks/${task.id}/patch_tasks`,
+//     task,
+//   );
 //   return data;
 // };
 // export const removeTask = async (task) => {
-//   const { data } = await axios.delete(`http://localhost:8080/tasks/${task.id}`);
+//   const { data } = await axios.delete(`http://localhost:8000/tasks/delete_tasks`);
 //   return data;
 // };
 
@@ -72,7 +70,7 @@
 // // ADDPROJECT IS OK
 // export const addProject = async (projects) => {
 //   const { data } = await axios
-//     .post(`http://localhost:8000/projects/${projects.id}/new_projects`, projects, {
+//     .post(`http://localhost:8000/projects/new_projects`, projects, {
 //       headers: {
 //         authorization: localStorage.getItem('authorization'),
 //       },
@@ -89,7 +87,7 @@
 // // à verfier quand il y aura la possibilité gné gné gnéééééééé
 // export const updateProject = async (project) => {
 //   const { data } = await axios
-//     .patch(`http://localhost:8000/projects/${project.id}/patch_project`, project, {
+//     .patch(`http://localhost:8000/projects/patch_project`, project, {
 //       headers: {
 //         authorization: localStorage.getItem('authorization'),
 //       },
@@ -106,7 +104,7 @@
 // // à verfier quand il y aura la possibilité gné gné gnéééééééé
 // export const removeProject = async (project) => {
 //   const { data } = await axios
-//     .delete(`http://localhost:8080/projects/${project.id}/delete_projects`, {
+//     .delete(`http://localhost:8080/projects/delete_projects`, {
 //       headers: {
 //         authorization: localStorage.getItem('authorization'),
 //       },
@@ -125,7 +123,6 @@
 //   const { data } = await axios
 //     .post('http://localhost:8000/users/login', login)
 //     .then(async (response) => {
-//       // localStorage.setItem('user', JSON.stringify({ userId: response.data.userId, firstName: response.data.firstName, lastName: }))
 //       localStorage.setItem('authorization', `bearer: ${response.data.jwtToken}`);
 //     })
 //     .catch((err) => {

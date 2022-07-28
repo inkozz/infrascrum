@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
@@ -124,6 +125,7 @@ const Header = () => {
       ) : (
         ''
       )}
+      <div />
     </>
   );
 };

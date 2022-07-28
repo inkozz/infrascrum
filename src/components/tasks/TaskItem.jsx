@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 import { removeTask, updateTask } from '../../data/getData';
 import FormTask from '../forms/FormTask';
+import Loader from '../ui/Loader';
 
 const TaskItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
@@ -37,7 +38,7 @@ const TaskItem = ({ element, reloadData }) => {
   );
   return (
     <>
-      {isLoading || isLoadingUpdate}
+      {isLoading || (isLoadingUpdate && <Loader />)}
       {mode === 'edit' ? (
         <FormTask
           name={element.name}
@@ -62,7 +63,10 @@ const TaskItem = ({ element, reloadData }) => {
             <td className="p-3 uppercase">{element.roles}</td>
 
             <td className="p-3">
-              <span className={`text-gray-50 rounded-md px-2 ${element.priority == 'High' ? 'bg-red' : 'bg-green-500'}`}> 
+              <span
+                className={`text-gray-50 rounded-md px-2 ${
+                  element.priority == 'High' ? 'bg-red' : 'bg-green-500'
+                }`}>
                 {element.priority}
               </span>
             </td>

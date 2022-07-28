@@ -3,12 +3,10 @@ import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
 import { removeProject, updateProject } from '../../data/getData';
 import FormProjet from '../forms/FormProjet';
+import Loader from '../ui/Loader';
 
 const ProjectLine = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
-  const cancelProject = () => {
-    setMode(false);
-  };
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
     async (projectValues) => removeProject(projectValues),
@@ -36,9 +34,12 @@ const ProjectLine = ({ element, reloadData }) => {
       },
     },
   );
+  const cancelProject = () => {
+    setMode(false);
+  };
   return (
     <>
-      {isLoading || isLoadingUpdate}
+      {isLoading || (isLoadingUpdate && <Loader />)}
       {mode === 'edit' ? (
         <tbody>
           <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100 text-center ">
@@ -49,7 +50,7 @@ const ProjectLine = ({ element, reloadData }) => {
                 logo={element.logo}
                 startDate={element.startDate}
                 endDate={element.endDate}
-                priority={element.priority}
+                status={element.status}
                 saveFunction={projectUpdate}
                 cancelFunction={cancelProject}
                 mode="edit"
@@ -65,8 +66,8 @@ const ProjectLine = ({ element, reloadData }) => {
                 <div className="flex-shrink-0 w-10 h-10">
                   <img
                     className="w-full h-full rounded-full bg-blue-900"
-                    src="/img/ben.jpg"
-                    alt="sncb"
+                    src={element.userCreator.img}
+                    alt="Responsable"
                   />
                 </div>
                 <td className="px-5 py-5 text-sm">
@@ -84,7 +85,9 @@ const ProjectLine = ({ element, reloadData }) => {
                   />
                 </div>
                 <td className="px-5 py-5 text-sm">
-                  <p className="text-gray-900 whitespace-no-wrap">CeoName</p>
+                  <p className="text-gray-900 whitespace-no-wrap">
+                    {element.userCreator.name}
+                  </p>
                 </td>
               </div>
             </td>
@@ -101,18 +104,22 @@ const ProjectLine = ({ element, reloadData }) => {
               <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                 <span
                   className={`text-gray-50 rounded-md px-2 ${
-                    element.priority === 'Urgent' ? 'bg-red' : ' relative bg-green-500'
-                  } ${element.priority === 'En attente' ? 'bg-gray-500' : ''}`}>
-                  {element.priority}
+                    element.status === 'Urgent' ? 'bg-red' : ' relative bg-green-500'
+                  } ${element.status === 'En attente' ? 'bg-gray-500' : ''}`}>
+                  {element.status}
                 </span>
               </span>
             </td>
             <td className="px-5 py-5 text-sm flex items-center justify-center">
               <div className="relative z-30">
-                <img className="w-10 h-10 rounded-full" src={element.logo} alt="#" />
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src={element.users.img}
+                  alt="Collabs"
+                />
                 <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-[#7FFF00] border-2 border-white dark:border-gray-800 rounded-full" />
               </div>
-              <div className="relative z-20 -ml-4">
+              {/* <div className="relative z-20 -ml-4">
                 <img className="w-10 h-10 rounded-full" src={element.logo} alt="logo" />
                 <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-red border-2 border-white dark:border-gray-800 rounded-full" />
               </div>
@@ -121,8 +128,10 @@ const ProjectLine = ({ element, reloadData }) => {
                 <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full" />
               </div>
               <div className="h-10 w-10 rounded-full bg-blue-100 z-0 -ml-4">
-                <p className="text-xl font-bold text-primary pt-1 pl-2">+5</p>
-              </div>
+                <p className="text-xl font-bold text-primary pt-1 pl-2">
+                  {element.users.length}
+                </p>
+              </div> */}
             </td>
             <td>
               <div className="flex justify-center">

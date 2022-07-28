@@ -2,17 +2,14 @@ const Select = ({ data, value, setValue, name, id }) => (
   <div>
     <select
       className="rounded-md text-gray-700 "
-      defaultValue=""
       name={name}
       id={id}
       value={value}
       onChange={(e) => setValue(e.target.value)}>
-      <option value="" disabled selected>
-        Select {name}
-      </option>
+      <option defaultValue="">Select {name}</option>
       {data &&
         data.map((element) => (
-          <option value={element.id} label={element.name}>
+          <option key={element.id} value={element.id} label={element.name}>
             {element.name}
           </option>
         ))}

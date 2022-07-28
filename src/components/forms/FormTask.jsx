@@ -135,9 +135,7 @@ const FormTask = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                    <option value="" disabled selected>
-                      Select priorité
-                    </option>
+                    <option defaultValue="">Select priorité</option>
                     <option value="collab1">Collab1</option>
                     <option value="collab2">Collab2</option>
                   </select>
@@ -158,9 +156,7 @@ const FormTask = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                    <option value="" disabled selected>
-                      Select role
-                    </option>
+                    <option defaultValue="">Select role</option>
                     <option value="Designer">Designer</option>
                     <option value="Front-End">Front-End</option>
                     <option value="Back-End">Back-End</option>
@@ -182,9 +178,7 @@ const FormTask = ({
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
-                    <option value="" disabled selected>
-                      Select priorité
-                    </option>
+                    <option defaultValue="">Select priorité</option>
                     <option value="High">Haute</option>
                     <option value="Mid">Normale</option>
                     <option value="Low">Basse</option>

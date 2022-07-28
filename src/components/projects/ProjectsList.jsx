@@ -1,20 +1,22 @@
+import { useState } from 'react';
 import { useMutation } from 'react-query';
 import toast from 'react-hot-toast';
-import { useState } from 'react';
 import { addProject } from '../../data/getData';
 import FormProjet from '../forms/FormProjet';
 import ProjectItem from './ProjectItem';
+import Loader from '../ui/Loader';
 
 const ProjectsList = ({ data, reloadData }) => {
   const [isAdd, setIsAdd] = useState(false);
   const { isLoading, mutate: projectAdd } = useMutation(
-    'projects',
+    '/projects',
     async (projectValues) => addProject(projectValues),
     {
       onSuccess: () => {
         setIsAdd(false);
         toast('Le projet a été ajouté', { className: 'successToast' });
         reloadData();
+        console.log('ok');
       },
       onError: () => {
         toast('Il y a une erreur dans l ajout', { className: 'errorToast' });
@@ -23,14 +25,13 @@ const ProjectsList = ({ data, reloadData }) => {
   );
   const saveProject = (projectValues) => {
     projectAdd(projectValues);
-    console.log(projectValues);
   };
   const cancelProject = () => {
     setIsAdd(false);
   };
   return (
     <>
-      {isLoading}
+      {isLoading && <Loader />}
       <thead className="text-white">
         <tr>
           <th className="p-3 text-primary bg-gray-100">Projet</th>
@@ -61,12 +62,8 @@ const ProjectsList = ({ data, reloadData }) => {
             </button>
           </div>
         ) : (
-          <div className="w-full p-8  rounded  ">
-            <FormProjet
-              saveFunction={saveProject}
-              cancelFunction={cancelProject}
-              reloadData={reloadData}
-            />
+          <div className="w-full p-8 rounded  ">
+            <FormProjet saveFunction={saveProject} cancelFunction={cancelProject} />
           </div>
         )}
       </div>

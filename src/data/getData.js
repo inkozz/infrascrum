@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // /* eslint-disable no-unused-vars */
 // /* eslint-disable no-undef */
 import axios from 'axios';
@@ -75,7 +76,7 @@ export const getProjects = async () => {
   return data;
 };
 
-// ADDPROJECT IS OK
+// ADDPROJECT IS OK /// 'Cannot destructure property 'data' of '(intermediate value)' as it is undefined.' => Enlever le await?
 export const addProject = async (projects) => {
   const { data } = await axios
     .post(`http://localhost:8000/projects/new_projects`, projects, {
@@ -84,7 +85,7 @@ export const addProject = async (projects) => {
       },
     })
     .then(async (response) => {
-      console.log('addProject /post is ok');
+      console.log('addProject /post is ok', response);
     })
     .catch((err) => {
       console.log(err);
@@ -92,7 +93,7 @@ export const addProject = async (projects) => {
   return data;
 };
 
-// à verfier quand il y aura la possibilité gné gné gnéééééééé
+// à verfier quand il y aura la possibilité gné gné gnéééééééé /// 
 export const updateProject = async (project) => {
   const { data } = await axios
     .patch(`http://localhost:8000/projects/patch_project`, project, {

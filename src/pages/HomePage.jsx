@@ -2,16 +2,23 @@ import { useContext, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
 import { getProjects, getUser, getTasks } from '../data/getData';
+import TasksListHome from '../components/home/TasksListHome';
 import Select from '../components/forms/selects/Select';
 import UserBoard from '../components/home/UserBoard';
 import loginCtx from '../loginCtx';
 import LoginPage from './LoginPage';
+import Loader from '../components/ui/Loader';
 
 const HomePage = () => {
   const { data: tasks } = useQuery('tasks', getTasks);
   const [project, setProject] = useState();
   const { isLogged } = useContext(loginCtx);
-  const { data: projects, isError, isFetching } = useQuery('projects', getProjects);
+  const {
+    data: projects,
+    isError,
+    isFetching,
+    isLoading,
+  } = useQuery('projects', getProjects);
   useEffect(() => {
     if (isError) {
       toast('Il y a une erreur', { className: 'errorToast' });
@@ -28,10 +35,11 @@ const HomePage = () => {
 
   return (
     <>
+      {isLoading && isFetching && <Loader />}
       {isLogged ? (
         <div className="flex flex-col max-w-7xl space-y-2 mx-auto">
           <div className="border border-zinc-600 rounded-3xl py-6 p-3">
-            {user && <UserBoard data={user} />}
+            {user && !isFetching && <Loader /> && <UserBoard data={user} />}
           </div>
 
           <div className="flex justify-between p-3">
@@ -57,6 +65,7 @@ const HomePage = () => {
       ) : (
         <LoginPage />
       )}
+      <div />
     </>
   );
 };

@@ -1,30 +1,24 @@
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import toast from 'react-hot-toast';
-import { getTasks, getProjects, getUser } from '../data/getData';
-import TasksListHome from '../components/home/TasksListHome';
+import { getProjects, getUser } from '../data/getData';
+// import TasksListHome from '../components/home/TasksListHome';
 import Select from '../components/forms/selects/Select';
 import UserBoard from '../components/home/UserBoard';
 
 const HomePage = () => {
-  const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
+  // const { data: tasks, isError, isFetching } = useQuery('tasks', getTasks);
   const [project, setProject] = useState();
+  const { data: projects, isError, isFetching } = useQuery('projects', getProjects);
   useEffect(() => {
     if (isError) {
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
-  const { data: projects } = useQuery('projects', getProjects);
 
   const { data: user } = useQuery('user', getUser);
 
   console.log(user);
-
-  useEffect(() => {
-    if (isError) {
-      toast('Il y a une erreur', { className: 'errorToast' });
-    }
-  }, [isError]);
 
   useEffect(() => {
     console.log(`Request for value ${project}`);
@@ -53,7 +47,7 @@ const HomePage = () => {
 
         <div className="rounded-lg p-3 w-full h-full border border-zinc-400">
           <h2 className="ml-4 text-3xl font-bold text-left">Tâches</h2>
-          {tasks && !isFetching && <TasksListHome data={tasks} />}
+          {/* {tasks && !isFetching && <TasksListHome data={tasks} />} */}
         </div>
         {/* <div className="hidden md:inline-block border border-zinc-600 rounded-lg py-6 w-full p-3">
           <h2 className="m-4 text-3xl font-bold text-center">Terminé</h2>

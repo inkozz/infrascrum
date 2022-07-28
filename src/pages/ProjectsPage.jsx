@@ -23,7 +23,7 @@ const ProjectsPage = () => {
     async (projectValues) => addProject(projectValues),
     {
       onSuccess: () => {
-        setIsAdd(false);
+        // setIsAdd(false);
         toast('Le projet a été ajouté', { className: 'successToast' });
         reloadData();
       },
@@ -64,7 +64,11 @@ const ProjectsPage = () => {
         <div className="flex justify-end">
           {isAdd ? (
             <div className="w-full p-8  rounded  ">
-              <FormProjet saveFunction={saveProject} cancelFunction={cancelProject} />
+              <FormProjet
+                saveFunction={saveProject}
+                cancelFunction={cancelProject}
+                reloadData={reloadData}
+              />
             </div>
           ) : (
             <div className="flex justify-end p-4">

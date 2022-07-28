@@ -58,16 +58,6 @@
       "idProjet": "2"
     },
     {
-      "id": 2,
-      "name": "Routes",
-      "description": "zrzezrezre",
-      "startDate": "2022-07-29",
-      "endDate": "2022-08-07",
-      "priority": "Low",
-      "assign": "",
-      "roles": "Back-End"
-    },
-    {
       "name": "Sncbb",
       "description": "dddddd",
       "priority": "Mid",

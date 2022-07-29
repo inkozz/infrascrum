@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
-import toast from 'react-hot-toast';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import loginCtx from '../../loginCtx';
+// import loginCtx from '../../loginCtx';
+// import {useContext} from 'react'
 
 const Sidebar = () => {
-  const { isLogged, setIsLogged } = useContext(loginCtx);
+  // const { isLogged, setIsLogged } = useContext(loginCtx);
   const [isExpand, setIsExpand] = useState(true);
   // const login = () => {
   //   localStorage.setItem('isLogged', true);
@@ -20,7 +20,7 @@ const Sidebar = () => {
   // };
   return (
     <div
-      className={`relative p-4 rounded-md shadow-md bg-white h-[100vh] flex flex-col duration-200 ${
+      className={`relative max-w-full max-h-full p-4 rounded-md shadow-md bg-white  flex flex-col duration-200 ${
         isExpand ? 'expand' : ''
       }`}>
       <button
@@ -111,6 +111,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-// {isLogged && (
-//   )}

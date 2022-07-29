@@ -26,7 +26,7 @@ const App = () => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        retry: 0,
+        retry: 1,
         refetchOnWindowFocus: false,
       },
     },
@@ -37,7 +37,7 @@ const App = () => {
       <LoginCtx.Provider value={contextValue}>
         <Router>
           <div className="flex max-w-full w-full min-h-screen relative">
-            {isLogged ? <Sidebar /> : null}
+            {!isLogged ? null : <Sidebar />}
             <main className="flex-grow">
               <Routes>
                 <Route path="/" index element={<LoginPage />} />
@@ -50,7 +50,6 @@ const App = () => {
                     </>
                   }
                 />
-                <Route path="/home/notifications" element={<Header />} />
                 <Route
                   path="taches"
                   element={
@@ -78,6 +77,7 @@ const App = () => {
                     </>
                   }
                 />
+                <Route path="/home/notifications" element={<Header />} />
               </Routes>
             </main>
             <Toaster

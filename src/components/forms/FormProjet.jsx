@@ -16,13 +16,13 @@ const FormProjet = ({
 }) => {
   const formik = useFormik({
     initialValues: {
-      name,
+      name: name || '',
       description: description || '',
-      logo,
-      startDate,
-      endDate,
-      status,
-      users,
+      logo: logo || '',
+      startDate: startDate || '',
+      endDate: endDate || '',
+      status: status || '',
+      users: users || '',
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -43,10 +43,7 @@ const FormProjet = ({
 
   return (
     <div className="w-full">
-      <form
-        onSubmit={formik.handleSubmit}
-        name="projetForm"
-        className="border-2 border-primary">
+      <form onSubmit={formik.handleSubmit} className="border-2 border-primary">
         <table className="table w-full space-y-6 text-sm">
           <thead className="text-white">
             <tr>
@@ -156,7 +153,7 @@ const FormProjet = ({
                     <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.status}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </td>
               <td className="p-3 font-medium">
@@ -165,7 +162,7 @@ const FormProjet = ({
                     id="users"
                     name="users"
                     autoComplete="users"
-                    value={formik.values.users}
+                    value={formik.values.users || undefined}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
@@ -179,7 +176,7 @@ const FormProjet = ({
                     <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.users}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </td>
             </tr>

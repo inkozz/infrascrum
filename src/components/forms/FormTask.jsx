@@ -14,8 +14,10 @@ const FormTask = ({
   startDate,
   endDate,
   priority,
-  assign,
+  users,
+  status,
   roles,
+  project,
   saveFunction,
   cancelFunction,
   isError,
@@ -25,10 +27,12 @@ const FormTask = ({
       name,
       description,
       startDate,
+      status: status || '',
       endDate,
       priority,
-      assign,
+      users: users || '', // doit être un []
       roles,
+      project,
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -45,6 +49,7 @@ const FormTask = ({
     }),
     onSubmit: (taskValues) => {
       saveFunction(taskValues);
+      taskValues(taskValues);
     },
   });
   const { data: projects } = useQuery('projects', getProjects);
@@ -69,7 +74,7 @@ const FormTask = ({
                 <label htmlFor="responsable">Responsable </label>
               </th>
               <th className="p-3 text-primary bg-gray-100">
-                <label htmlFor="assign">Collaborateurs</label>
+                <label htmlFor="users">Collaborateurs</label>
               </th>
               <th className="p-3 text-primary bg-gray-100">
                 <label htmlFor="roles">Rôle</label>
@@ -89,7 +94,12 @@ const FormTask = ({
             <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
               <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
-                  <SelectForm data={projects} name="project" id="id" formik={formik} />
+                  <SelectForm
+                    data={projects}
+                    name="project"
+                    id={projects.id}
+                    formik={formik}
+                  />
                 </div>
               </td>
               <td className="p-3 font-medium">
@@ -122,10 +132,10 @@ const FormTask = ({
               <td className="p-3 font-medium">
                 <div className="flex justify-center items-center w-40 relative">
                   <select
-                    id="assign"
-                    name="assign"
-                    autoComplete="assign"
-                    value={formik.values.assign}
+                    id="users"
+                    name="users"
+                    autoComplete="users"
+                    value={formik.values.users}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
@@ -138,6 +148,7 @@ const FormTask = ({
                   {formik.touched.assign && formik.errors.assign && (
                     <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.assign}
+
                     </div>
                   )}
                 </div>
@@ -179,6 +190,7 @@ const FormTask = ({
                     <option value="" disabled selected>
                       Select priorité
                     </option>
+
                     <option value="High">Haute</option>
                     <option value="Mid">Normale</option>
                     <option value="Low">Basse</option>

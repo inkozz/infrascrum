@@ -32,6 +32,7 @@ const FormUser = ({ formik }) => (
                       </label>
                       {formik.touched.name && formik.errors.name && (
                         <div className="absolute text-sm -bottom-5 text-red">
+
                           {formik.errors.name}
                         </div>
                       )}
@@ -39,6 +40,7 @@ const FormUser = ({ formik }) => (
                   </div>
                   <div className="flex items-center space-x-4 relative">
                     <div className="flex flex-col">
+
                       <label htmlFor="lastName">
                         Nom de famille
                         <input
@@ -86,6 +88,7 @@ const FormUser = ({ formik }) => (
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 relative mt-4">
+
                     <div className="flex flex-col">
                       <label htmlFor="verifPassword">
                         Vérif du mot de passe!
@@ -131,7 +134,6 @@ const FormUser = ({ formik }) => (
                     </div>
                   )}
                 </div>
-
                 <div className="flex flex-col relative">
                   <label htmlFor="email" className="mt-4">
                     Adresse mail
@@ -152,6 +154,7 @@ const FormUser = ({ formik }) => (
                     </div>
                   )}
                 </div>
+
                 <div className="flex flex-col relative">
                   <label htmlFor="tel" className="mt-4">
                     Téléphone
@@ -174,6 +177,7 @@ const FormUser = ({ formik }) => (
                 </div>
                 <div className="flex flex-col relative">
                   <div className="col-span-3 sm:col-span-2 mt-4">
+
                     <label
                       htmlFor="type"
                       className="block text-sm font-medium text-gray-700">

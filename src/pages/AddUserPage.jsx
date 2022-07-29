@@ -15,17 +15,21 @@ const AddUserPage = () => {
       verifPassword: '',
       city: '',
       role: '',
-      tel: ''
+      tel: '',
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Email invalide').required('Entrez un Email'),
-      password: Yup.string(),
-      name: Yup.string(),
-      lastName: Yup.string().required('Il faut plus de 2 lettres'),
-      verifPassword: Yup.string(),
-      city: Yup.string().required('Remplir obligatoirement le champ'),
+      password: Yup.string().required('Ce champ est obligatoire'),
+      name: Yup.string()
+        .required('Ce champ est obligatoire')
+        .min(2, 'le Nom doit contenir au minimum 2 lettres'),
+      lastName: Yup.string()
+        .required('Ce champs est obligatoire')
+        .min(2, 'le Nom de famille doit contenir au minimum 2 lettres'),
+      verifPassword: Yup.string().required('Ce champ est obligatoire'),
+      city: Yup.string().required('Ce champ est obligatoire'),
       role: Yup.string(),
-      tel: Yup.number()
+      tel: Yup.number().required('Ce champ est obligatoire'),
     }),
     onSubmit: (values) => {
       addUser(values);

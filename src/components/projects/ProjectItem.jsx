@@ -5,7 +5,7 @@ import { removeProject, updateProject } from '../../data/getData';
 import FormProjet from '../forms/FormProjet';
 import Loader from '../ui/Loader';
 
-const ProjectLine = ({ element, reloadData }) => {
+const ProjectItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
@@ -190,4 +190,4 @@ const ProjectLine = ({ element, reloadData }) => {
   );
 };
 
-export default ProjectLine;
+export default ProjectItem;

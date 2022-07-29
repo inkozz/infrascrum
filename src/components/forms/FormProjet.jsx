@@ -153,7 +153,7 @@ const FormProjet = ({
                     <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.status}
                     </div>
-                  ) : null}
+                  )}
                 </div>
               </td>
               <td className="p-3 font-medium">
@@ -176,7 +176,7 @@ const FormProjet = ({
                     <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.users}
                     </div>
-                  ) : null}
+                  )}
                 </div>
               </td>
             </tr>

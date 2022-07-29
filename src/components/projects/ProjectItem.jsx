@@ -112,11 +112,9 @@ const ProjectLine = ({ element, reloadData }) => {
             </td>
             <td className="px-5 py-5 text-sm flex items-center justify-center">
               <div className="relative z-30">
-                <img
-                  className="w-10 h-10 rounded-full"
-                  src={element.users.img}
-                  alt="Collabs"
-                />
+                {element.users.map((user) => (
+                  <img className="w-10 h-10 rounded-full" src={user.img} alt="#" />
+                ))}
                 <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-[#7FFF00] border-2 border-white dark:border-gray-800 rounded-full" />
               </div>
               {/* <div className="relative z-20 -ml-4">
@@ -126,12 +124,12 @@ const ProjectLine = ({ element, reloadData }) => {
               <div className="relative z-10 -ml-4">
                 <img className="w-10 h-10 rounded-full" src={element.logo} alt="logo" />
                 <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full" />
-              </div>
+              </div> */}
               <div className="h-10 w-10 rounded-full bg-blue-100 z-0 -ml-4">
                 <p className="text-xl font-bold text-primary pt-1 pl-2">
                   {element.users.length}
                 </p>
-              </div> */}
+              </div>
             </td>
             <td>
               <div className="flex justify-center">

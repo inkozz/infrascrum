@@ -37,7 +37,7 @@ const App = () => {
       <LoginCtx.Provider value={contextValue}>
         <Router>
           <div className="flex max-w-full w-full min-h-screen relative">
-            {isLogged ? <Sidebar /> : null}
+            {!isLogged ? null : <Sidebar />}
             <main className="flex-grow">
               <Routes>
                 <Route path="/" index element={<LoginPage />} />

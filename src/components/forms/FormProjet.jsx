@@ -6,8 +6,8 @@ const FormProjet = ({
   mode,
   name,
   description,
-  logo,
-  users,
+  // logo,
+  // users,
   startDate,
   endDate,
   status,
@@ -18,24 +18,23 @@ const FormProjet = ({
     initialValues: {
       name: name || '',
       description: description || '',
-      logo: logo || '',
+      logo: 'https://play-lh.googleusercontent.com/ahJtMe0vfOlAu1XJVQ6rcaGrQBgtrEZQefHy7SXB7jpijKhu1Kkox90XDuH8RmcBOXNn',
       startDate: startDate || '',
       endDate: endDate || '',
       status: status || '',
-      users: users || '',
+      // users: users || '',
     },
     validationSchema: Yup.object({
       name: Yup.string().required('Champ requis'),
       logo: Yup.string(),
       description: Yup.string(),
-      startDate: Yup.date(),
-      endDate: Yup.date(),
-      status: Yup.string(),
-      users,
+      startDate: Yup.date().required('Champ requis'),
+      endDate: Yup.date().required('Champ requis'),
+      status: Yup.string().required('Champ requis'),
+      // users,
     }),
     onSubmit: (projectValues) => {
       saveFunction(projectValues);
-      console.log(projectValues);
     },
   });
 
@@ -146,7 +145,7 @@ const FormProjet = ({
                   ) : null}
                 </div>
               </td>
-              <td className="p-3 font-medium capitalize">
+              {/* <td className="p-3 font-medium capitalize">
                 <div className="flex justify-center items-center">
                   <select
                     id="users"
@@ -166,7 +165,7 @@ const FormProjet = ({
                     </div>
                   ) : null}
                 </div>
-              </td>
+              </td> */}
             </tr>
           </tbody>
         </table>

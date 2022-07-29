@@ -10,7 +10,8 @@ import LoginPage from './LoginPage';
 import Loader from '../components/ui/Loader';
 
 const HomePage = () => {
-  const { data: tasks } = useQuery('tasks', getTasks);
+  // const { data: tasks } = useQuery('tasks', getTasks);
+  const { data: tasks } = useQuery('tasks');
   const [project, setProject] = useState();
   const { isLogged } = useContext(loginCtx);
   const {
@@ -30,7 +31,7 @@ const HomePage = () => {
   console.log(user);
 
   useEffect(() => {
-    console.log(`Request for value ${project}`);
+    getTasks(project);
   }, [project]);
 
   return (

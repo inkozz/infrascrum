@@ -33,8 +33,9 @@ export const addUser = async (user) => {
 //   return data;
 // };
 
-export const getTasks = async () => {
-  const { data } = await axios.get('http://localhost:8000/tasks/get_tasks', {
+export const getTasks = async (project) => {
+  console.log(`project:`, project);
+  const { data } = await axios.get('http://localhost:8000/tasks/get_tasksByProject', {
     headers: {
       authorization: localStorage.getItem('authorization'),
     },
@@ -59,6 +60,14 @@ export const updateTask = async (task) => {
 };
 export const removeTask = async (task) => {
   const { data } = await axios.delete(`http://localhost:8000/tasks/delete_tasks`, {
+    headers: {
+      authorization: localStorage.getItem('authorization'),
+    },
+  });
+  return data;
+};
+export const getAllTasksByUser = async () => {
+  const { data } = await axios.get('http://localhost:8000/tasks/get_tasksByUser', {
     headers: {
       authorization: localStorage.getItem('authorization'),
     },
@@ -93,37 +102,30 @@ export const addProject = async (projects) => {
   return data;
 };
 
-// à verfier quand il y aura la possibilité gné gné gnéééééééé /// 
+// à verfier quand il y aura la possibilité gné gné gnéééééééé ///
 export const updateProject = async (project) => {
-  const { data } = await axios
-    .patch(`http://localhost:8000/projects/patch_project`, project, {
+  const { data } = await axios.patch(
+    `http://localhost:8000/projects/patch_projects`,
+    project,
+    {
       headers: {
         authorization: localStorage.getItem('authorization'),
       },
-    })
-    .then(async (response) => {
-      console.log('updateProject /post is ok');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    },
+  );
   return data;
 };
 
 // à verfier quand il y aura la possibilité gné gné gnéééééééé
 export const removeProject = async (project) => {
-  const { data } = await axios
-    .delete(`http://localhost:8080/projects/delete_projects`, {
+  const { data } = await axios.delete(
+    `http://localhost:8000/projects/${project.id}/delete_projects`,
+    {
       headers: {
         authorization: localStorage.getItem('authorization'),
       },
-    })
-    .then(async (response) => {
-      console.log('removeProject /post is ok');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    },
+  );
   return data;
 };
 

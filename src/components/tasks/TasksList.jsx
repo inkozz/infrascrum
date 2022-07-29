@@ -52,7 +52,7 @@ const TasksList = ({ data, reloadData }) => {
       ) : (
         ''
       )}
-      {data.map((element) => (
+      {data.tasks.map((element) => (
         <TaskItem key={element.id} element={element} reloadData={reloadData} />
       ))}
       <div className="flex justify-end">

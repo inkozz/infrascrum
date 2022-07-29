@@ -25,12 +25,14 @@ const FormProjet = ({
       users,
     },
     validationSchema: Yup.object({
-      name: Yup.string(),
+      name: Yup.string()
+        .required('Ce champ est obligatoire')
+        .min(2, 'le Nom doit contenir au minimum 2 lettres'),
       logo: Yup.string(),
       description: Yup.string(),
-      startDate: Yup.date(),
-      endDate: Yup.date(),
-      status: Yup.string(),
+      startDate: Yup.date().required('Ce champ est obligatoire'),
+      endDate: Yup.date().required('Ce champ est obligatoire'),
+      status: Yup.string().required('Ce champ est obligatoire'),
       users: Yup.string(),
     }),
     onSubmit: (projectValues) => {
@@ -70,8 +72,8 @@ const FormProjet = ({
           </thead>
           <tbody>
             <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
-              <td className="p-3 font-medium capitalize">
-                <div className="flex justify-center items-center">
+              <td className="p-3 font-medium">
+                <div className="flex justify-center items-center relative">
                   <p className=" whitespace-no-wrap cursor-pointer hover:text-primary">
                     <input
                       type="text"
@@ -80,23 +82,25 @@ const FormProjet = ({
                       value={formik.values.name}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                      className="border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
                       placeholder="Nom du projet"
                     />
                     {formik.touched.name && formik.errors.name && (
-                      <div className="">{formik.errors.name}</div>
+                      <div className="absolute text-sm -bottom-5 text-red">
+                        {formik.errors.name}
+                      </div>
                     )}
                   </p>
                 </div>
               </td>
-              <td className="p-3 font-medium capitalize">
-                <div className="flex justify-center items-center">
+              <td className="p-3 font-medium">
+                <div className="flex justify-center items-center ">
                   <img src="/img/ben.jpeg" className="w-10 h-10 rounded-full" alt="" />
                   <p className="whitespace-no-wrap pl-2">ceoName</p>
                 </div>
               </td>
-              <td className="p-3 font-medium capitalize">
-                <div className="flex justify-center items-center">
+              <td className="p-3 font-medium">
+                <div className="flex justify-center items-center relative">
                   <input
                     type="date"
                     id="startDate"
@@ -107,12 +111,14 @@ const FormProjet = ({
                     className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                   />
                   {formik.touched.startDate && formik.errors.startDate && (
-                    <div className="">{formik.errors.startDate}</div>
+                    <div className="absolute text-sm -bottom-4 text-red">
+                      {formik.errors.startDate}
+                    </div>
                   )}
                 </div>
               </td>
-              <td className="p-3 font-medium capitalize">
-                <div className="flex justify-center items-center">
+              <td className="p-3 font-medium">
+                <div className="flex justify-center items-center relative">
                   <input
                     type="date"
                     id="endDate"
@@ -123,12 +129,14 @@ const FormProjet = ({
                     className="px-2 py-1 my-2 rounded focus:outline-none focus:ring-2 focus:ring-[#755342] block"
                   />
                   {formik.touched.endDate && formik.errors.endDate && (
-                    <div className="">{formik.errors.endDate}</div>
+                    <div className="absolute text-sm -bottom-4 text-red">
+                      {formik.errors.endDate}
+                    </div>
                   )}
                 </div>
               </td>
-              <td className="p-3 font-medium capitalize">
-                <div className="flex justify-center items-center">
+              <td className="p-3 font-medium">
+                <div className="flex justify-center items-center relative">
                   <select
                     id="status"
                     name="status"
@@ -136,7 +144,7 @@ const FormProjet = ({
                     value={formik.values.status}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
                     <option value="" disabled selected>
                       Select priorité
                     </option>
@@ -145,14 +153,14 @@ const FormProjet = ({
                     <option value="Urgent">En priorité</option>
                   </select>
                   {formik.touched.status && formik.errors.status && (
-                    <div className="absolute -bottom-5 text-sm text-red-600">
+                    <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.status}
                     </div>
                   )}
                 </div>
               </td>
-              <td className="p-3 font-medium capitalize">
-                <div className="flex justify-center items-center">
+              <td className="p-3 font-medium">
+                <div className="flex justify-center items-center relative">
                   <select
                     id="users"
                     name="users"
@@ -160,7 +168,7 @@ const FormProjet = ({
                     value={formik.values.users}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                    className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
                     <option value="" disabled selected>
                       Select collaborateurs
                     </option>
@@ -168,7 +176,7 @@ const FormProjet = ({
                     <option value="collab2">Collab2</option>
                   </select>
                   {formik.touched.users && formik.errors.users && (
-                    <div className="absolute -bottom-5 text-sm text-red-600">
+                    <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.users}
                     </div>
                   )}

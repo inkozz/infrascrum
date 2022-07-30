@@ -66,8 +66,8 @@ const ProjectItem = ({ element, reloadData }) => {
                 <div className="flex-shrink-0 w-10 h-10">
                   <img
                     className="w-full h-full rounded-full bg-blue-900"
-                    src={element.userCreator.img}
-                    alt="Responsable"
+                    src={element.logo}
+                    alt="project"
                   />
                 </div>
                 <td className="px-5 py-5 text-sm">
@@ -79,9 +79,9 @@ const ProjectItem = ({ element, reloadData }) => {
               <div className="flex justify-center items-center">
                 <div className="flex-shrink-0 w-10 h-10">
                   <img
-                    className="w-full h-full rounded-full"
-                    src="/img/ben.jpg"
-                    alt="sncb"
+                    className="w-full h-full rounded-full bg-blue-900"
+                    src={element.userCreator.img}
+                    alt="Responsable"
                   />
                 </div>
                 <td className="px-5 py-5 text-sm">
@@ -133,19 +133,23 @@ const ProjectItem = ({ element, reloadData }) => {
             </td>
             <td>
               <div className="flex justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2 cursor-pointer hover:text-[#7FFF00]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
-                  />
-                </svg>
+                <button
+                  type="button"
+                  onClick={() => updateProject({ id: element.id, users: [1] })}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 mr-2 cursor-pointer hover:text-[#7FFF00]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    />
+                  </svg>
+                </button>
                 <button type="button" onClick={() => setMode('edit')}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

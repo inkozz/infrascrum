@@ -169,8 +169,15 @@ export const removeUser = async (user) => {
   return data;
 };
 
-export const getTasks = async () => {
-  const { data } = await axios.get('http://localhost:8080/tasks');
+
+export const getTasks = async (project) => {
+  console.log(`project:`, project);
+  const { data } = await axios.get('http://localhost:8000/tasks/get_tasksByProject', {
+    headers: {
+      authorization: localStorage.getItem('authorization'),
+    },
+  });
+
   return data;
 };
 export const addTask = async (tasks) => {
@@ -183,6 +190,14 @@ export const updateTask = async (task) => {
 };
 export const removeTask = async (task) => {
   const { data } = await axios.delete(`http://localhost:8080/tasks/${task.id}`);
+  return data;
+};
+export const getAllTasksByUser = async () => {
+  const { data } = await axios.get('http://localhost:8000/tasks/get_tasksByUser', {
+    headers: {
+      authorization: localStorage.getItem('authorization'),
+    },
+  });
   return data;
 };
 
@@ -201,15 +216,31 @@ export const addProject = async (projects) => {
   return data;
 };
 
+
+// à verfier quand il y aura la possibilité gné gné gnéééééééé ///
 export const updateProject = async (project) => {
-  const { data } = await axios.put(
-    `http://localhost:8080/projects/${project.id}`,
+  const { data } = await axios.patch(
+    `http://localhost:8000/projects/patch_projects`,
     project,
+    {
+      headers: {
+        authorization: localStorage.getItem('authorization'),
+      },
+    },
   );
   return data;
 };
 export const removeProject = async (project) => {
-  const { data } = await axios.delete(`http://localhost:8080/projects/${project.id}`);
+
+  const { data } = await axios.delete(
+    `http://localhost:8000/projects/${project.id}/delete_projects`,
+    {
+      headers: {
+        authorization: localStorage.getItem('authorization'),
+      },
+    },
+  );
+
   return data;
 };
 

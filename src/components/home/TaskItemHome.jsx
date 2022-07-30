@@ -1,4 +1,4 @@
-const TasksCard = ({ task }) => {
+const TaskItemHome = ({ task }) => {
   console.log(task);
   return (
     <div>
@@ -18,4 +18,4 @@ const TasksCard = ({ task }) => {
   );
 };
 
-export default TasksCard;
+export default TaskItemHome;

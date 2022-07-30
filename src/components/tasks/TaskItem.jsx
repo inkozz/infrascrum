@@ -65,7 +65,7 @@ const TaskItem = ({ element, reloadData }) => {
             <td className="p-3">
               <span
                 className={`text-gray-50 rounded-md px-2 ${
-                  element.priority == 'High' ? 'bg-red' : 'bg-green-500'
+                  element.priority === 'High' ? 'bg-red' : 'bg-green-500'
                 }`}>
                 {element.priority}
               </span>

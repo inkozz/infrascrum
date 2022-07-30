@@ -15,10 +15,10 @@ const FormUser = ({ formik }) => (
             <div className="divide-y divide-gray-200">
               <div className=" text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                 <div className="flex">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex flex-col mr-3">
+                  <div className="flex items-center space-x-4 relative">
+                    <div className="flex flex-col mr-4">
                       <label htmlFor="name">
-                        Nom
+                        Prénom
                         <input
                           type="text"
                           name="name"
@@ -26,19 +26,21 @@ const FormUser = ({ formik }) => (
                           value={formik.values.name}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
-                          className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                          placeholder="Ajoutez un nom"
+                          className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+                          placeholder="Prénom"
                         />
                       </label>
                       {formik.touched.name && formik.errors.name && (
-                        <div className="absolute -bottom-3 text-sm text-red-600">
+                        <div className="absolute text-sm -bottom-5 text-red">
+
                           {formik.errors.name}
                         </div>
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex flex-col ml-3">
+                  <div className="flex items-center space-x-4 relative">
+                    <div className="flex flex-col">
+
                       <label htmlFor="lastName">
                         Nom de famille
                         <input
@@ -48,12 +50,12 @@ const FormUser = ({ formik }) => (
                           value={formik.values.lastName}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
-                          className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                          placeholder="Ajoutez un nom de famille"
+                          className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+                          placeholder="Nom de famille"
                         />
                       </label>
                       {formik.touched.lastName && formik.errors.lastName && (
-                        <div className="absolute -bottom-3 text-sm text-red-600">
+                        <div className="absolute text-sm -bottom-5 text-red">
                           {formik.errors.lastName}
                         </div>
                       )}
@@ -61,7 +63,7 @@ const FormUser = ({ formik }) => (
                   </div>
                 </div>
                 <div className="flex">
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 relative mt-4">
                     <div className="flex flex-col">
                       <label htmlFor="password">
                         Mot de passe
@@ -73,11 +75,11 @@ const FormUser = ({ formik }) => (
                             value={formik.values.password}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                            className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
                             placeholder="*******"
                           />
                           {formik.touched.password && formik.errors.password && (
-                            <div className="absolute -bottom-3 text-sm text-red-600">
+                            <div className="absolute text-sm -bottom-5 text-red">
                               {formik.errors.password}
                             </div>
                           )}
@@ -85,7 +87,8 @@ const FormUser = ({ formik }) => (
                       </label>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 relative mt-4">
+
                     <div className="flex flex-col">
                       <label htmlFor="verifPassword">
                         Vérif du mot de passe!
@@ -97,12 +100,12 @@ const FormUser = ({ formik }) => (
                             value={formik.values.verifPassword}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                            className="pr-4 pl-8 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
                             placeholder="********"
                           />
                           {formik.touched.verifPassword &&
                             formik.errors.verifPassword && (
-                              <div className="absolute -bottom-3 text-sm text-red-600">
+                              <div className="absolute text-sm -bottom-5 text-red">
                                 {formik.errors.verifPassword}
                               </div>
                             )}
@@ -111,8 +114,8 @@ const FormUser = ({ formik }) => (
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <label htmlFor="ville">
+                <div className="flex flex-col relative">
+                  <label htmlFor="ville" className="mt-4">
                     Ville
                     <input
                       type="text"
@@ -121,19 +124,18 @@ const FormUser = ({ formik }) => (
                       value={formik.values.city}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="px-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Optional"
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+                      placeholder="Belgique"
                     />
                   </label>
                   {formik.touched.city && formik.errors.city && (
-                    <div className="absolute -bottom-3 text-sm text-red-600">
+                    <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.city}
                     </div>
                   )}
                 </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="email">
+                <div className="flex flex-col relative">
+                  <label htmlFor="email" className="mt-4">
                     Adresse mail
                     <input
                       type="text"
@@ -142,18 +144,19 @@ const FormUser = ({ formik }) => (
                       value={formik.values.email}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Optional"
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+                      placeholder="jhon.doe@gmail.com"
                     />
                   </label>
                   {formik.touched.email && formik.errors.email && (
-                    <div className="absolute -bottom-3 text-sm text-red-600">
+                    <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.email}
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col">
-                  <label htmlFor="tel">
+
+                <div className="flex flex-col relative">
+                  <label htmlFor="tel" className="mt-4">
                     Téléphone
                     <input
                       type="number"
@@ -162,18 +165,19 @@ const FormUser = ({ formik }) => (
                       value={formik.values.tel}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                      placeholder="Optional"
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+                      placeholder="+32"
                     />
                   </label>
                   {formik.touched.tel && formik.errors.tel && (
-                    <div className="absolute -bottom-3 text-sm text-red-600">
+                    <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.tel}
                     </div>
                   )}
                 </div>
-                <div className="flex flex-col">
-                  <div className="col-span-3 sm:col-span-2 relative">
+                <div className="flex flex-col relative">
+                  <div className="col-span-3 sm:col-span-2 mt-4">
+
                     <label
                       htmlFor="type"
                       className="block text-sm font-medium text-gray-700">
@@ -194,9 +198,7 @@ const FormUser = ({ formik }) => (
                       </select>
                     </label>
                     {formik.touched.role && formik.errors.role && (
-                      <div className="absolute -bottom-5 text-sm text-red-600">
-                        {formik.errors.role}
-                      </div>
+                      <div className="text-sm text-red">{formik.errors.role}</div>
                     )}
                   </div>
                 </div>

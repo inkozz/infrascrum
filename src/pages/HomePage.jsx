@@ -28,8 +28,6 @@ const HomePage = () => {
 
   const { data: user } = useQuery('user', getUser);
 
-  console.log(user);
-
   useEffect(() => {
     getTasks(project);
   }, [project]);

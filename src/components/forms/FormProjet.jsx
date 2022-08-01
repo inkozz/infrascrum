@@ -18,9 +18,10 @@ const FormProjet = ({
     initialValues: {
       name: name || '',
       description: description || '',
-      logo: 'https://play-lh.googleusercontent.com/ahJtMe0vfOlAu1XJVQ6rcaGrQBgtrEZQefHy7SXB7jpijKhu1Kkox90XDuH8RmcBOXNn',
+      // logo: '',
       startDate: startDate || '',
       endDate: endDate || '',
+      update: new Date(),
       status: status || '',
       // users: users || '',
     },
@@ -28,7 +29,7 @@ const FormProjet = ({
       name: Yup.string()
         .required('Ce champ est obligatoire')
         .min(2, 'le Nom doit contenir au minimum 2 lettres'),
-      logo: Yup.string(),
+      // logo: Yup.string(),
       description: Yup.string(),
 
       startDate: Yup.date().required('Ce champ est obligatoire'),

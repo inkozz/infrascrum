@@ -10,6 +10,7 @@ const Header = () => {
   const logout = () => {
     setIsLogged(false);
     localStorage.clear('isLogged');
+    localStorage.clear('authorization');
     navigate('/');
     toast('Déconnecté !', { className: 'errorToast' });
   };

@@ -27,12 +27,10 @@ const ProjectsPage = () => {
       {isLogged ? (
         <div className="bg-white p-8 rounded-md w-full">
           <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-            <table className="table text-gray-400 w-full space-y-6 text-sm">
-              {isLoading && isFetching && <Loader />}
-              {projects && !isFetching && (
-                <ProjectsList data={projects} reloadData={reloadData} />
-              )}
-            </table>
+            {isLoading && isFetching && <Loader />}
+            {projects && !isFetching && (
+              <ProjectsList data={projects} reloadData={reloadData} />
+            )}
           </div>
         </div>
       ) : (

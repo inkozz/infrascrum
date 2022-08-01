@@ -31,20 +31,21 @@ const TasksList = ({ data, reloadData }) => {
   };
   return (
     <>
-      <thead className="text-white">
-        {isLoading && <Loader />}
-        <tr>
-          <th className="p-3 text-primary bg-gray-100 rounded-tl-lg">Projet</th>
-          <th className="p-3 w-2/5 text-primary bg-gray-100">Contenu de la tâche</th>
-          <th className="p-3 text-primary bg-gray-100">Personne responsable</th>
-          <th className="p-3 text-primary bg-gray-100">Collaborateurs</th>
-          <th className="p-3 text-primary bg-gray-100">Rôle</th>
-          <th className="p-3 text-primary bg-gray-100">Priorité</th>
-          <th className="p-3 text-primary bg-gray-100">Date de début</th>
-          <th className="p-3 text-primary bg-gray-100">Date de fin</th>
-          <th className="p-3 text-primary bg-gray-100 rounded-tr-lg">Autre</th>
-        </tr>
-      </thead>
+      {isLoading && <Loader />}
+
+      <div className="bg-white p-6 shadow-sm">
+        <div className="grid grid-cols-9 gap-x-8 border-b-2 border-primary pb-2 text-center">
+          <div className="font-semibold text-lg">Projet</div>
+          <div className="font-semibold text-lg">Description</div>
+          <div className="font-semibold text-lg">Responsable</div>
+          <div className="font-semibold text-lg">Collaborateurs</div>
+          <div className="font-semibold text-lg">Rôle</div>
+          <div className="font-semibold text-lg">Priorité</div>
+          <div className="font-semibold text-lg">Date de début</div>
+          <div className="font-semibold text-lg">Date de fin</div>
+          <div className="font-semibold text-lg">Options</div>
+        </div>
+      </div>
       {data.length === 0 ? (
         <div className="text-2xl" name="tableEmpty">
           Aucune tâche en cours

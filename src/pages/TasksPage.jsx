@@ -27,11 +27,9 @@ const TasksPage = () => {
           <div>
             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
               <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                <table className="table text-gray-400 w-full space-y-6 text-sm">
-                  {tasks && !isFetching && (
-                    <TasksList data={tasks} reloadData={reloadData} />
-                  )}
-                </table>
+                {tasks && !isFetching && (
+                  <TasksList data={tasks} reloadData={reloadData} />
+                )}
               </div>
             </div>
           </div>

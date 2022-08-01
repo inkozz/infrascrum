@@ -25,12 +25,12 @@ const FormTask = ({
   const formik = useFormik({
     initialValues: {
       name,
-      description,
-      startDate,
+      description: description || '',
+      startDate: startDate || '',
       status: status || '',
       endDate,
       priority,
-      users: users || '', // doit être un []
+      users: users || [], // doit être un []
       roles,
       project,
     },
@@ -40,16 +40,22 @@ const FormTask = ({
         .min(2, 'le Nom doit contenir au minimum 2 lettres'),
       description: Yup.string()
         .required('Ce champ est obligatoire')
-        .max(500, 'La description ne peut contenir que maximum 500 caractéres'),
+
+        .max(500, 'La description ne peut contenir que maximum 500 caractères'),
+
+        .min(5, 'La description ne peut contenir au minimum 5 caractéres'),
+
       startDate: Yup.date().required('Ce champ est obligatoire'),
       endDate: Yup.date().required('Ce champ est obligatoire'),
       priority: Yup.string().required('Ce champ est obligatoire'),
       assign: Yup.string().required('Ce champ est obligatoire'),
       roles: Yup.string().required('Ce champ est obligatoire'),
     }),
+    onSubmitFinal: (taskValues) => {
+      saveFunction(taskValues);
+    },
     onSubmit: (taskValues) => {
       saveFunction(taskValues);
-      taskValues(taskValues);
     },
   });
   const { data: projects } = useQuery('projects', getProjects);
@@ -58,6 +64,7 @@ const FormTask = ({
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
+
   return (
     <form onSubmit={formik.handleSubmit}>
       {/* {mode !== 'edit' && (
@@ -202,7 +209,6 @@ const FormTask = ({
             </div>
           )}
         </div>
-
         <div className="flex justify-around items-center">
           <button type="submit" disabled={!formik.isValid} className="btn primary">
             {mode !== 'edit' ? 'Créer' : 'Editer'}
@@ -216,7 +222,6 @@ const FormTask = ({
           </button>
         </div>
       </div>
-
       {/* <td className="p-3 font-medium capitalize">
               <div className="flex justify-center items-center">
 

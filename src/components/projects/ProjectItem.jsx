@@ -98,7 +98,7 @@ const ProjectItem = ({ element, reloadData }) => {
               <p className="text-gray-900 whitespace-no-wrap">{element.endDate}</p>
             </td>
             <td className="px-5 py-5 text-sm">
-              <p className="text-gray-900 whitespace-no-wrap">Derniere maj</p>
+              <p className="text-gray-900 whitespace-no-wrap">{element.update}</p>
             </td>
             <td className="px-5 py-5 text-sm">
               <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">

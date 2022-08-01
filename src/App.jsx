@@ -40,7 +40,11 @@ const App = () => {
             {!isLogged ? null : <Sidebar />}
             <main className="flex-grow">
               <Routes>
-                <Route path="/" index element={<LoginPage />} />
+                <Route
+                  path="/"
+                  index
+                  element={<LoginPage className="sm:bg-pink-500" />}
+                />
                 <Route
                   path="home"
                   element={

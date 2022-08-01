@@ -23,8 +23,8 @@ const LoginForm = ({ formik }) => {
         backgroundImage: `url("https://cdn.wallpapersafari.com/53/86/SkIfuB.jpg")`,
         backgroundSize: 'cover',
       }}>
-      <div className="p-6 rounded-xl bg-white w-1/4 ">
-        <div className="flex flex-col items-center justify-center mb-1">
+      <div className="p-6 rounded-xl bg-white w-1/4-max md:w-max">
+        <div className="flex flex-col items-center justify-center mb-1 tablet:justify-start">
           <img src="../public/img/LogoLogin.png" alt="logo" />
           <h2 className="text-2xl font-light italic text-primary ">Login</h2>
         </div>

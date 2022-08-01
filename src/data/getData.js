@@ -140,6 +140,7 @@ export const postLogin = async (login) => {
     .post('http://localhost:8000/users/login', login)
     .then(async (response) => {
       localStorage.setItem('authorization', `bearer: ${response.data.jwtToken}`);
+      return response
     });
   return data;
 };

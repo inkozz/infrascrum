@@ -32,18 +32,19 @@ const ProjectsList = ({ data, reloadData }) => {
   return (
     <>
       {isLoading && <Loader />}
-      <thead className="text-white">
-        <tr>
-          <th className="p-3 text-primary bg-gray-100">Projet</th>
-          <th className="p-3 text-primary bg-gray-100">Responsable</th>
-          <th className="p-3 text-primary bg-gray-100">Date du début</th>
-          <th className="p-3 text-primary bg-gray-100">Date de fin</th>
-          <th className="p-3 text-primary bg-gray-100">Maj</th>
-          <th className="p-3 text-primary bg-gray-100">Status</th>
-          <th className="p-3 text-primary bg-gray-100">Collaborateurs</th>
-          <th className="p-3 text-primary bg-gray-100">Options</th>
-        </tr>
-      </thead>
+      <div className="bg-white p-6 shadow-sm">
+        <div className="grid grid-cols-8 gap-x-8 border-b-2 border-primary pb-2 text-center">
+          <div className="font-semibold text-lg">Projet</div>
+          <div className="font-semibold text-lg">Responsable</div>
+          <div className="font-semibold text-lg">Date du début</div>
+          <div className="font-semibold text-lg">Date de fin</div>
+          <div className="font-semibold text-lg">Mise à jour</div>
+          <div className="font-semibold text-lg">Status</div>
+          <div className="font-semibold text-lg">Collaborateurs</div>
+          <div className="font-semibold text-lg">Options</div>
+        </div>
+      </div>
+      {/* Projet Responsable Date du début Date de fin Maj Status Collaborateurs Options */}
       {data.length === 0 ? (
         <div className="text-2xl" name="tableEmpty">
           Aucun projet dans la BDD

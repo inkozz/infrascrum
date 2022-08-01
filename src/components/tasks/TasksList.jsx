@@ -33,7 +33,7 @@ const TasksList = ({ data, reloadData }) => {
     <>
       {isLoading && <Loader />}
 
-      <div className="bg-primary text-white bg-primary text-white border-2 border-black rounded-xl p-6 shadow-sm rounded-xl p-6 shadow-sm">
+      <div className="bg-primary text-white border-2 border-black rounded-xl p-6 shadow-sm">
         <div className="grid grid-cols-9 gap-x-8 border-b-2 border-primary pb-2 text-center">
           <div className="font-semibold text-lg">Projet</div>
           <div className="font-semibold text-lg">Description</div>

@@ -30,7 +30,7 @@ const FormTask = ({
       status: status || '',
       endDate,
       priority,
-      users: users || '', // doit être un []
+      users: users || [], // doit être un []
       roles,
       project,
     },
@@ -40,7 +40,7 @@ const FormTask = ({
         .min(2, 'le Nom doit contenir au minimum 2 lettres'),
       description: Yup.string()
         .required('Ce champ est obligatoire')
-        .max(500, 'La description ne peut contenir que maximum 500 caractéres'),
+        .min(5, 'La description ne peut contenir au minimum 5 caractéres'),
       startDate: Yup.date().required('Ce champ est obligatoire'),
       endDate: Yup.date().required('Ce champ est obligatoire'),
       priority: Yup.string().required('Ce champ est obligatoire'),
@@ -148,7 +148,6 @@ const FormTask = ({
                   {formik.touched.assign && formik.errors.assign && (
                     <div className="absolute text-sm -bottom-5 text-red">
                       {formik.errors.assign}
-
                     </div>
                   )}
                 </div>

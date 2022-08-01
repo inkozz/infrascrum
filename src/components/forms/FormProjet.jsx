@@ -45,33 +45,35 @@ const FormProjet = ({
   return (
     <div className="w-full">
       <form onSubmit={formik.handleSubmit} className="border-2 border-primary">
-        <table className="table w-full space-y-6 text-sm">
+        <table className="w-full space-y-6 text-sm">
           <thead className="text-white">
-            <tr>
-              <th className="p- text-primary bg-gray-100">
+            <th>
+              <td className="p-3 text-primary bg-gray-100">
                 <label htmlFor="name"> Nom du projet </label>
-              </th>
-              <th className="p-3 text-primary bg-gray-100">
+              </td>
+              <td className="p-3 text-primary bg-gray-100">
                 <label htmlFor="responsable">Nom du responsable </label>
-              </th>
-              <th className="p-3 text-primary bg-gray-100">
+              </td>
+              <td className="p-3 text-primary bg-gray-100">
                 <label htmlFor="startDate">Date du début </label>
-              </th>
-              <th className="p-3 text-primary bg-gray-100">
+              </td>
+              <td className="p-3 text-primary bg-gray-100">
                 <label htmlFor="endDate">Date de fin</label>
-              </th>
-              <th className="p-3 text-primary bg-gray-100">
+              </td>
+              <td className="p-3 text-primary bg-gray-100">
                 <label htmlFor="status">Status</label>
-              </th>
-              <th className="p-3 text-primary bg-gray-100">
+              </td>
+              <td className="p-3 text-primary bg-gray-100">
                 <label htmlFor="users">Collaborateurs</label>
-              </th>
-            </tr>
+              </td>
+            </th>
           </thead>
-          <tbody>
+        </table>
+        <tbody>
+          <table>
             <tr className=" lg:text-black border-b-2 border-gray-200 hover:bg-blue-100">
               <td className="p-3 font-medium">
-                <div className="flex justify-center items-center relative">
+                <div className="grid justify-center items-center relative">
                   <p className=" whitespace-no-wrap cursor-pointer hover:text-primary">
                     <input
                       type="text"
@@ -183,8 +185,8 @@ const FormProjet = ({
                 </div>
               </td> */}
             </tr>
-          </tbody>
-        </table>
+          </table>
+        </tbody>
         <div className="flex justify-end p-4">
           <button type="submit" disabled={!formik.isValid} className="btn primary mr-4">
             {mode !== 'edit' ? 'Créer' : 'Editer'}

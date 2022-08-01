@@ -31,8 +31,8 @@ const TasksList = ({ data, reloadData }) => {
   };
   return (
     <>
-      {isLoading && <Loader />}
       <thead className="text-white">
+        {isLoading && <Loader />}
         <tr>
           <th className="p-3 text-primary bg-gray-100 rounded-tl-lg">Projet</th>
           <th className="p-3 w-2/5 text-primary bg-gray-100">Contenu de la tâche</th>

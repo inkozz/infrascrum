@@ -25,8 +25,8 @@ const FormTask = ({
   const formik = useFormik({
     initialValues: {
       name,
-      description,
-      startDate,
+      description: description || '',
+      startDate: startDate || '',
       status: status || '',
       endDate,
       priority,
@@ -40,16 +40,22 @@ const FormTask = ({
         .min(2, 'le Nom doit contenir au minimum 2 lettres'),
       description: Yup.string()
         .required('Ce champ est obligatoire')
+
+        .max(500, 'La description ne peut contenir que maximum 500 caractères'),
+
         .min(5, 'La description ne peut contenir au minimum 5 caractéres'),
+
       startDate: Yup.date().required('Ce champ est obligatoire'),
       endDate: Yup.date().required('Ce champ est obligatoire'),
       priority: Yup.string().required('Ce champ est obligatoire'),
       assign: Yup.string().required('Ce champ est obligatoire'),
       roles: Yup.string().required('Ce champ est obligatoire'),
     }),
+    onSubmitFinal: (taskValues) => {
+      saveFunction(taskValues);
+    },
     onSubmit: (taskValues) => {
       saveFunction(taskValues);
-      taskValues(taskValues);
     },
   });
   const { data: projects } = useQuery('projects', getProjects);
@@ -58,6 +64,7 @@ const FormTask = ({
       toast('Il y a une erreur', { className: 'errorToast' });
     }
   }, [isError]);
+
   return (
     <div>
       <form onSubmit={formik.handleSubmit} className="border-2 border-primary">
@@ -140,7 +147,7 @@ const FormTask = ({
                     onBlur={formik.handleBlur}
                     className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
                     <option value="" disabled selected>
-                      Select priorité
+                      Collaborateur
                     </option>
                     <option value="collab1">Collab1</option>
                     <option value="collab2">Collab2</option>
@@ -242,7 +249,10 @@ const FormTask = ({
           </tbody>
         </table>
         <div className="flex justify-end p-4">
-          <button type="submit" disabled={!formik.isValid} className="btn primary mr-4">
+          <button
+            type="submit"
+            // disabled={!formik.isValid}
+            className="btn primary mr-4">
             {mode !== 'edit' ? 'Créer' : 'Editer'}
           </button>
           <button

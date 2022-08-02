@@ -13,7 +13,6 @@ const SelectForm = ({ data, formik, name }) => (
           </option>
         ))}
     </select>
-    {console.log(data)}
   </div>
 );
 

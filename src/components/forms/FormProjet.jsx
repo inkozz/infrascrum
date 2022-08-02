@@ -159,7 +159,7 @@ const FormProjet = ({
             </option>
             <option value="En attente">En attente</option>
             <option value="En cours">En cours</option>
-            <option value="Urgent">En priorité</option>
+            <option value="Urgent">Urgent</option>
           </select>
           {formik.touched.status && formik.errors.status && (
             <div className="absolute text-sm -bottom-5 text-red">
@@ -170,13 +170,14 @@ const FormProjet = ({
 
         <div className="flex flex-col justify-around">
           <select
+            disabled
             id="users"
             name="users"
             autoComplete="users"
             value={formik.values.users}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
+            className="btn border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
             <option value="" disabled selected>
               Select collaborateur
             </option>

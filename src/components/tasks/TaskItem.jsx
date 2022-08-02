@@ -7,9 +7,6 @@ import Loader from '../ui/Loader';
 
 const TaskItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
-  const cancelTask = () => {
-    setMode(false);
-  };
   const { isLoading, mutate: deleteTask } = useMutation(
     '/tasks',
     async (taskValues) => removeTask(taskValues),
@@ -29,6 +26,7 @@ const TaskItem = ({ element, reloadData }) => {
     {
       onSuccess: () => {
         toast('Tâche mise à jour', { className: 'successToast' });
+        setMode(false);
         reloadData();
       },
       onError: () => {
@@ -36,6 +34,9 @@ const TaskItem = ({ element, reloadData }) => {
       },
     },
   );
+  const cancelTask = () => {
+    setMode(false);
+  };
   return (
     <>
       {isLoading || (isLoadingUpdate && <Loader />)}

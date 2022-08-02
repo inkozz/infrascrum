@@ -14,7 +14,7 @@ const FormTask = ({
   startDate,
   endDate,
   priority,
-  users,
+  // users,
   status,
   roles,
   project,
@@ -22,6 +22,7 @@ const FormTask = ({
   cancelFunction,
   isError,
 }) => {
+  const { data: projects } = useQuery('projects', getProjects);
   const formik = useFormik({
     initialValues: {
       name,
@@ -30,7 +31,7 @@ const FormTask = ({
       status: status || '',
       endDate,
       priority,
-      users: users || [], // doit être un []
+      // users: users || [], // doit être un []
       roles,
       project,
     },
@@ -47,14 +48,13 @@ const FormTask = ({
       assign: Yup.string().required('Ce champ est obligatoire'),
       roles: Yup.string().required('Ce champ est obligatoire'),
     }),
-    onSubmitFinal: (taskValues) => {
-      saveFunction(taskValues);
-    },
     onSubmit: (taskValues) => {
+      console.log('ok');
+      console.log(taskValues);
       saveFunction(taskValues);
     },
   });
-  const { data: projects } = useQuery('projects', getProjects);
+
   useEffect(() => {
     if (isError) {
       toast('Il y a une erreur', { className: 'errorToast' });
@@ -78,7 +78,9 @@ const FormTask = ({
       <div className="grid grid-cols-9 p-8 gap-8 text-center items-center mt-4 border hover:border-primary hover:shadow-xl">
         <div className="flex flex-col justify-around">
           <div className="flex justify-center items-center">
-            <SelectForm data={projects} name="project" id={projects.id} formik={formik} />
+            <SelectForm data={projects} name="project" formik={formik} />
+
+            {console.log('toto')}
           </div>
           {formik.touched.name && formik.errors.name && (
             <div className="absolute text-sm -bottom-5 text-red">
@@ -92,10 +94,18 @@ const FormTask = ({
             name="description"
             id="description"
             value={formik.values.description}
-            className="btn disabled border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className=" border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
             placeholder="Description"
           />
         </div>
+        {formik.touched.description && formik.errors.description && (
+          <div className="absolute text-sm -bottom-5 text-red">
+            {formik.errors.description}
+          </div>
+        )}
+
         <div className="flex flex-col justify-around">
           <input
             disabled
@@ -187,7 +197,6 @@ const FormTask = ({
             </div>
           )}
         </div>
-
         <div className="flex flex-col justify-around">
           <input
             type="date"
@@ -206,7 +215,7 @@ const FormTask = ({
           )}
         </div>
         <div className="flex justify-around items-center">
-          <button type="submit" disabled={!formik.isValid} className="btn primary">
+          <button type="submit" className="btn primary">
             {mode !== 'edit' ? 'Créer' : 'Editer'}
           </button>
           <button

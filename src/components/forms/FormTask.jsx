@@ -14,7 +14,7 @@ const FormTask = ({
   startDate,
   endDate,
   priority,
-  // users,
+  users,
   status,
   roles,
   project,
@@ -25,15 +25,15 @@ const FormTask = ({
   const { data: projects } = useQuery('projects', getProjects);
   const formik = useFormik({
     initialValues: {
-      name,
+      name: name || '',
       description: description || '',
       startDate: startDate || '',
       status: status || '',
-      endDate,
-      priority,
-      // users: users || [], // doit être un []
-      roles,
-      project,
+      endDate: endDate || '',
+      priority: priority || '',
+      users: users || [], // doit être un []
+      roles: roles || '',
+      project: project || '',
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -79,8 +79,6 @@ const FormTask = ({
         <div className="flex flex-col justify-around">
           <div className="flex justify-center items-center">
             <SelectForm data={projects} name="project" formik={formik} />
-
-            {console.log('toto')}
           </div>
           {formik.touched.name && formik.errors.name && (
             <div className="absolute text-sm -bottom-5 text-red">
@@ -215,7 +213,7 @@ const FormTask = ({
           )}
         </div>
         <div className="flex justify-around items-center">
-          <button type="submit" className="btn primary">
+          <button type="submit" disabled={formik.isValid} className="btn primary">
             {mode !== 'edit' ? 'Créer' : 'Editer'}
           </button>
           <button

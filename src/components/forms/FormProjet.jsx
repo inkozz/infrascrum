@@ -170,13 +170,14 @@ const FormProjet = ({
 
         <div className="flex flex-col justify-around">
           <select
+            disabled
             id="users"
             name="users"
             autoComplete="users"
             value={formik.values.users}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
+            className="btn border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
             <option value="" disabled selected>
               Select collaborateur
             </option>

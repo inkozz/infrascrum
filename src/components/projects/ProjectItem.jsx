@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
+import { format, parseISO } from 'date-fns';
 import { removeProject, updateProject } from '../../data/getData';
 import FormProjet from '../forms/FormProjet';
 import Loader from '../ui/Loader';
 
 const ProjectItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
+  // format(parseISO(element.update), 'MM/dd/yyyy HH:mm:ss');
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
     async (projectValues) => removeProject(projectValues),
@@ -84,7 +86,9 @@ const ProjectItem = ({ element, reloadData }) => {
             <p className="text-gray-900">{element.endDate}</p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.update}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.update), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
             <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">

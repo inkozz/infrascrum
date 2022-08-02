@@ -159,7 +159,7 @@ const FormProjet = ({
             </option>
             <option value="En attente">En attente</option>
             <option value="En cours">En cours</option>
-            <option value="Urgent">En priorité</option>
+            <option value="Urgent">Urgent</option>
           </select>
           {formik.touched.status && formik.errors.status && (
             <div className="absolute text-sm -bottom-5 text-red">

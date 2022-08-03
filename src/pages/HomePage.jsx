@@ -11,8 +11,8 @@ import Loader from '../components/ui/Loader';
 
 const HomePage = () => {
   // const { data: tasks } = useQuery('tasks', getTasks);
-  const { data: tasks } = useQuery('tasks');
   const [project, setProject] = useState();
+  const [test, setTest] = useState([]);
   const { isLogged } = useContext(loginCtx);
   const {
     data: projects,
@@ -29,8 +29,11 @@ const HomePage = () => {
   const { data: user } = useQuery('user', getUser);
 
   useEffect(() => {
-    getTasks(project);
+    console.log('ici connard');
+    getTasks(project).then((x) => setTest(x.tasks));
   }, [project]);
+
+  console.log(test);
 
   return (
     <>
@@ -43,7 +46,7 @@ const HomePage = () => {
 
           <div className="flex justify-between p-3">
             <div className=" rounded-lg p-3 h-[20vh]">
-              <h2 className="ml-4 text-3xl font-bold text-left mr-6 mb-8">Projets</h2>
+              <h2 className="ml-4 text-3xl font-bold text-left mr-6 mb-8">Projet</h2>
               {projects && !isFetching && (
                 <Select
                   data={projects}
@@ -57,7 +60,7 @@ const HomePage = () => {
             <div />
             <div className="rounded-lg p-3 w-full h-full border border-zinc-400">
               <h2 className="ml-4 text-3xl font-bold text-left">Tâches</h2>
-              {tasks && !isFetching && <TasksListHome data={tasks} />}
+              {test && !isFetching && <TasksListHome data={test} />}
             </div>
           </div>
         </div>

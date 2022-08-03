@@ -80,10 +80,14 @@ const ProjectItem = ({ element, reloadData }) => {
             <p className="text-gray-900">{element.userCreator.name}</p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.startDate}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.startDate), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.endDate}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.endDate), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">

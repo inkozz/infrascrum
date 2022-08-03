@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useMutation } from 'react-query';
+import { format, parseISO } from 'date-fns';
 import { removeTask, updateTask } from '../../data/getData';
 import FormTask from '../forms/FormTask';
 import Loader from '../ui/Loader';
@@ -47,7 +48,7 @@ const TaskItem = ({ element, reloadData }) => {
           startDate={element.startDate}
           endDate={element.endDate}
           priority={element.priority}
-          assign={element.assign}
+          project={element.project}
           roles={element.roles}
           saveFunction={taskUpdate}
           cancelFunction={cancelTask}
@@ -56,7 +57,7 @@ const TaskItem = ({ element, reloadData }) => {
       ) : (
         <div className="grid grid-cols-9 gap-x- border-b-2 border-gray-200 pb-2 text-center hover:bg-blue-100  sm:rounded-md">
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.name}</p>
+            <p className="text-gray-900">{element.project.name}</p>
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">{element.description}</p>
@@ -65,7 +66,7 @@ const TaskItem = ({ element, reloadData }) => {
             <p className="text-gray-900">CeoName</p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.assign}</p>
+            <p className="text-gray-900">{element.name}</p>
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">{element.roles}</p>
@@ -79,10 +80,14 @@ const TaskItem = ({ element, reloadData }) => {
             </span>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.startDate}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.startDate), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.endDate}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.endDate), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex justify-center">
             <svg

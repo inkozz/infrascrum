@@ -5,10 +5,8 @@ import { useMutation } from 'react-query';
 import { removeProject, updateProject, getAllUsers } from '../../data/getData';
 import SelectCheckBox from '../forms/selects/SelectCheckBox';
 import { format, parseISO } from 'date-fns';
-import { removeProject, updateProject } from '../../data/getData';
 import FormProjet from '../forms/FormProjet';
 import Loader from '../ui/Loader';
-import FormProjet from '../forms/FormProjet';
 
 const ProjectItem = ({ element, reloadData }) => {
   const [isAdd, setIsAdd] = useState(false);

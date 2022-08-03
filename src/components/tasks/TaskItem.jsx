@@ -81,12 +81,12 @@ const TaskItem = ({ element, reloadData }) => {
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">
-              {format(parseISO(element.startDate), 'dd/MM/yyyy HH:mm:ss')}
+              {/* {format(parseISO(element.startDate), 'dd/MM/yyyy HH:mm:ss')} */}
             </p>
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">
-              {format(parseISO(element.endDate), 'dd/MM/yyyy HH:mm:ss')}
+              {/* {format(parseISO(element.endDate), 'dd/MM/yyyy HH:mm:ss')} */}
             </p>
           </div>
           <div className="flex justify-center">

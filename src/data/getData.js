@@ -11,7 +11,6 @@ export const getUser = async () => {
   });
   return data;
 };
-
 export const getAllUsers = async () => {
   const { data } = await axios.get(`http://localhost:8000/users/allUsers`, {
     headers: {

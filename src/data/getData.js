@@ -12,6 +12,15 @@ export const getUser = async () => {
   return data;
 };
 
+export const getAllUsers = async () => {
+  const { data } = await axios.get(`http://localhost:8000/users/allUsers`, {
+    headers: {
+      authorization: localStorage.getItem('authorization'),
+    },
+  });
+  return data;
+};
+
 export const addUser = async (user) => {
   const { data } = await axios.post('http://localhost:8000/users/newUser', user);
   return data;
@@ -140,7 +149,7 @@ export const postLogin = async (login) => {
     .post('http://localhost:8000/users/login', login)
     .then(async (response) => {
       localStorage.setItem('authorization', `bearer: ${response.data.jwtToken}`);
-      return response
+      return response;
     });
   return data;
 };

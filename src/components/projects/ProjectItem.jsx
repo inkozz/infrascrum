@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useQuery } from 'react-query';
 import { useMutation } from 'react-query';
-import { removeProject, updateProject } from '../../data/getData';
-import FormProjet from '../forms/FormProjet';
+import { removeProject, updateProject, getAllUsers } from '../../data/getData';
+import SelectCheckBox from '../forms/selects/SelectCheckBox';
 import Loader from '../ui/Loader';
 
 const ProjectItem = ({ element, reloadData }) => {
+  const [isAdd, setIsAdd] = useState(false);
   const [mode, setMode] = useState(false);
+  const { data: allUsers } = useQuery('allUsers', getAllUsers);
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
     async (projectValues) => removeProject(projectValues),
@@ -121,7 +124,8 @@ const ProjectItem = ({ element, reloadData }) => {
           <div className="flex justify-center">
             <button
               type="button"
-              onClick={() => updateProject({ id: element.id, users: [1] })}>
+              // onClick={() => updateProject({ id: element.id, users: [1] })}>
+              onClick={() => setIsAdd(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 mr-2 cursor-pointer hover:text-[#7FFF00]"
@@ -172,6 +176,12 @@ const ProjectItem = ({ element, reloadData }) => {
               </svg>
             </button>
           </div>
+          {allUsers && (
+            <div className="">
+              <SelectCheckBox data={allUsers} element={element.id} />
+              {console.log(allUsers, 'dddd')}
+            </div>
+          )}
         </div>
       )}
     </>

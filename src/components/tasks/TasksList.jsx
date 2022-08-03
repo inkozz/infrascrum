@@ -38,7 +38,7 @@ const TasksList = ({ data, reloadData }) => {
           <div className="font-semibold text-lg">Projet</div>
           <div className="font-semibold text-lg">Description</div>
           <div className="font-semibold text-lg">Responsable</div>
-          <div className="font-semibold text-lg">Collaborateurs</div>
+          <div className="font-semibold text-lg">Nom de Tâche</div>
           <div className="font-semibold text-lg">Rôle</div>
           <div className="font-semibold text-lg">Priorité</div>
           <div className="font-semibold text-lg">Date de début</div>

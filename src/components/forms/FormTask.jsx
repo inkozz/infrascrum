@@ -9,13 +9,11 @@ import { getProjects } from '../../data/getData';
 
 const FormTask = ({
   mode,
-  name,
   description,
   startDate,
   endDate,
   priority,
-  users,
-  status,
+  name,
   roles,
   project,
   saveFunction,
@@ -25,32 +23,29 @@ const FormTask = ({
   const { data: projects } = useQuery('projects', getProjects);
   const formik = useFormik({
     initialValues: {
+      id: '',
       name: name || '',
       description: description || '',
       startDate: startDate || '',
-      status: status || '',
       endDate: endDate || '',
       priority: priority || '',
-      users: users || [], // doit être un []
       roles: roles || '',
       project: project || '',
     },
     validationSchema: Yup.object({
-      name: Yup.string()
-        .required('Ce champ est obligatoire')
-        .min(2, 'le Nom doit contenir au minimum 2 lettres'),
       description: Yup.string()
         .required('Ce champ est obligatoire')
         .max(500, 'La description ne peut contenir que maximum 500 caractères'),
       startDate: Yup.date().required('Ce champ est obligatoire'),
+      name: Yup.string().required('Ce champ est obligatoire'),
       endDate: Yup.date().required('Ce champ est obligatoire'),
       priority: Yup.string().required('Ce champ est obligatoire'),
-      assign: Yup.string().required('Ce champ est obligatoire'),
+      project: Yup.string().required('Ce champ est obligatoire'),
+      // users: Yup.string().required('Ce champ est obligatoire'),
       roles: Yup.string().required('Ce champ est obligatoire'),
     }),
     onSubmit: (taskValues) => {
-      console.log('ok');
-      console.log(taskValues);
+      taskValues.id = projects.find((p) => p.name === taskValues.project).id;
       saveFunction(taskValues);
     },
   });
@@ -116,22 +111,19 @@ const FormTask = ({
           />
         </div>
         <div className="flex flex-col justify-around">
-          <select
-            id="users"
-            name="users"
-            autoComplete="users"
-            value={formik.values.users}
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={formik.values.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className="border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm block">
-            <option value="" disabled selected>
-              Select collaborateur
-            </option>
-            <option value="Collaborateur">Collaborateur</option>
-          </select>
-          {formik.touched.users && formik.errors.users && (
+            className=" border text-center focus:ring-gray-500 focus:border-gray-900 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600 block"
+            placeholder="Nom de tâche"
+          />
+          {formik.touched.name && formik.errors.name && (
             <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.users}
+              {formik.errors.name}
             </div>
           )}
         </div>
@@ -213,7 +205,7 @@ const FormTask = ({
           )}
         </div>
         <div className="flex justify-around items-center">
-          <button type="submit" disabled={formik.isValid} className="btn primary">
+          <button type="submit" disabled={!formik.isValid} className="btn primary">
             {mode !== 'edit' ? 'Créer' : 'Editer'}
           </button>
           <button

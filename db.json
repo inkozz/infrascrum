@@ -1,0 +1,167 @@
+{
+  "users": [
+    {
+      "Name": "test",
+      "LastName": "test",
+      "Birthday": "232",
+      "Adress": "test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 22,
+      "Role": "",
+      "id": 1
+    },
+    {
+      "Name": "Test3",
+      "LastName": "Test3",
+      "Birthday": "2",
+      "Adress": "Test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 2,
+      "Role": "",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Sncbb",
+      "description": "",
+      "logo": "",
+      "startDate": "2022-07-20",
+      "endDate": "2022-08-07",
+      "priority": "En cours"
+    },
+    {
+      "id": 2,
+      "name": "Babouin",
+      "description": "",
+      "logo": "",
+      "startDate": "2022-07-28",
+      "endDate": "2022-10-21",
+      "priority": "Waiting"
+    },
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Header",
+      "description": "Faire le Headerr",
+      "startDate": "2022-07-24",
+      "endDate": "2022-07-25",
+      "priority": "Low",
+      "assign": "collab2",
+      "roles": "Front-End",
+      "idProjet": "2"
+    },
+    {
+      "name": "Sncbb",
+      "description": "dddddd",
+      "priority": "Mid",
+      "assign": "collab1",
+      "roles": "Front-End",
+      "id": 3
+    },
+    {
+      "name": "Babouin",
+      "description": "ddd",
+      "startDate": "2022-07-06",
+      "endDate": "2022-07-31",
+      "priority": "High",
+      "assign": "collab2",
+      "roles": "Front-End",
+      "id": 4
+    },
+    {
+      "priority": "Low",
+      "id": 5
+    }
+  ],
+  "tampon": [
+    {
+      "idUser": 1,
+      "idProject": 1,
+      "update": "Il y a 2j"
+    }
+  ],
+  "login": [
+    {
+      "Email": "test@gmail.com",
+      "Password": "azerty",
+      "id": 1
+    },
+    {
+      "Email": "test2@gmail.com",
+      "Password": "azerty",
+      "id": 2
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "rzrezrezer",
+      "password": "zrezreezzera",
+      "id": 4
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "email": "test",
+      "password": "test",
+      "id": 6
+    },
+    {
+      "email": "test",
+      "password": "test",
+      "id": 7
+    },
+    {
+      "email": "test",
+      "password": "test",
+      "id": 8
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 10
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 11
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 12
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 13
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 14
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 15
+    }
+  ]
+}

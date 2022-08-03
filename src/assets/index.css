@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply w-screen h-screen bg-gray-100;
+}
+
+.btn {
+  @apply px-3 py-1 rounded-md duration-200;
+}
+.btn.primary {
+  @apply bg-primary text-white hover:bg-white hover:drop-shadow hover:text-primary;
+}
+.btn.cancel {
+  @apply bg-rose-600 text-white hover:bg-rose-900 hover:drop-shadow;
+}
+.btn.warning {
+  @apply bg-amber-600 text-white hover:bg-amber-900 hover:drop-shadow;
+}
+.btn:disabled {
+  @apply cursor-not-allowed bg-gray-300 hover:drop-shadow-none hover:bg-gray-300;
+}
+
+.AssigPeople {
+  @apply border-b border-gray-300 p-4  flex justify-between;
+}
+/* .toastStyle {
+  @apply cursor-pointer font-semibold;
+  background-color: green !important;
+  color: white !important;
+} */
+
+.errorToast {
+  @apply cursor-pointer font-semibold;
+  background-color: rgba(224, 10, 10, 0.87) !important;
+  color: white !important;
+}
+.successToast {
+  @apply cursor-pointer font-semibold;
+  background-color: rgb(9, 155, 9) !important;
+  color: white !important;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  opacity: 0.5;
+  /* background-color: #82979f; */
+}
+
+::-webkit-scrollbar:hover {
+  width: 12px;
+  opacity: 1;
+}
+
+/* /* Handle / */
+::-webkit-scrollbar-thumb {
+  background: #82979f;
+  border-radius: 10px;
+}

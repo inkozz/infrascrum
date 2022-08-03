@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "Name": "test",
+      "LastName": "test",
+      "Birthday": "232",
+      "Adress": "test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 22,
+      "Role": "",
+      "id": 1
+    },
+    {
+      "Name": "Test3",
+      "LastName": "Test3",
+      "Birthday": "2",
+      "Adress": "Test",
+      "Number": "22",
+      "Postal": "22",
+      "Email": "test@gmail.com",
+      "Tel": 2,
+      "Role": "",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Boa",
+      "ceoName": "Olivia",
+      "ceoPic": "/img/oli.jpeg",
+      "pic": "/img/snake.jpg",
+      "colPic1": "/img/oli.jpeg",
+      "colPic2": "/img/max.jpg",
+      "colPic3": "/img/dog.jpg",
+
+      "dateB": "2022-08-10",
+      "dateE": "2022-08-12",
+
+      "status": "Dans les temps",
+      "idUser": 1,
+      "idTask": 1,
+      "update": "Hier",
+
+      "describe": ""
+    },
+    {
+      "id": 2,
+      "name": "Goulagwe",
+
+      "describe": "test2",
+      "startDate": "2022-08-02",
+      "endDate": "2022-08-04"
+    },
+    {
+      "id": 2,
+      "name": "Test21",
+      "ceoName": "Ben",
+      "ceoPic": "/img/ben.jpg",
+      "pic": "/img/max.jpg",
+      "colPic1": "/img/max.jpg",
+      "colPic2": "/img/ben.jpeg",
+      "colPic3": "/img/alex.jpg",
+      "dateB": "2022-08-04",
+      "dateE": "2022-08-05",
+      "status": "En retard",
+      "idUser": 1,
+      "idTask": 1,
+      "update": "1sem",
+      "describe": "test"
+    },
+    {
+      "name": "Test22",
+      "logo": "",
+      "describe": "Testtt",
+      "dateB": "2022-07-22",
+      "dateE": "2022-07-23",
+      "priority": "",
+      "id": 3
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Test2",
+      "dateB": "26 Mai, 2022",
+      "dateE": "3 Juin, 2022",
+      "goal": "Terminer les formulaires",
+      "ceoName": "Maxime",
+      "ceoPic": "/img/max.jpg",
+      "colPic2": "/img/ben.jpeg",
+      "colPic1": "/img/alex.jpg",
+      "status": "En cours",
+      "post": "Front-End",
+      "idProject": 1,
+      "idUser": 1,
+      "update": "2h."
+    },
+    {
+      "id": 2,
+      "name": "Goulagwe",
+      "dateB": "25 Mai, 2022",
+      "dateE": "2 Juin, 2022",
+      "goal": "Terminer la devanture du site en respectant les exigeances du client. Ne pas oublier de remplir tout les champs disponibles et de respecter les couleurs imposées.",
+      "ceoName": "Olivia",
+      "ceoPic": "/img/oli.jpeg",
+      "colPic2": "/img/max.jpeg",
+      "colPic1": "/img/ben.jpg",
+      "post": "Back-End",
+      "status": "Priorité",
+      "idProject": 1,
+      "idUser": 1,
+      "update": "5min."
+    }
+  ],
+  "tampon": [
+    {
+      "idUser": 1,
+      "idProject": 1,
+      "update": "Il y a 2j"
+    }
+  ],
+  "login": [
+    {
+      "Email": "test@gmail.com",
+      "Password": "azerty",
+      "id": 1
+    },
+    {
+      "Email": "test2@gmail.com",
+      "Password": "azerty",
+      "id": 2
+    }
+  ]
+}

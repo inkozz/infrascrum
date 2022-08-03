@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useQuery } from 'react-query';
 import { useMutation } from 'react-query';
+import { removeProject, updateProject, getAllUsers } from '../../data/getData';
+import SelectCheckBox from '../forms/selects/SelectCheckBox';
 import { format, parseISO } from 'date-fns';
 import { removeProject, updateProject } from '../../data/getData';
 import FormProjet from '../forms/FormProjet';
 import Loader from '../ui/Loader';
+import FormProjet from '../forms/FormProjet';
 
 const ProjectItem = ({ element, reloadData }) => {
+  const [isAdd, setIsAdd] = useState(false);
   const [mode, setMode] = useState(false);
+
+  const { data: allUsers } = useQuery('allUsers', getAllUsers);
   // format(parseISO(element.update), 'MM/dd/yyyy HH:mm:ss');
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
@@ -117,6 +124,7 @@ const ProjectItem = ({ element, reloadData }) => {
               </p>
             </div>
           </div>
+
           {/* <div className="relative z-20 -ml-4">
                 <img className="w-10 h-10 rounded-full" src={element.logo} alt="logo" />
                 <span className="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-red border-2 border-white dark:border-gray-800 rounded-full" />
@@ -127,9 +135,7 @@ const ProjectItem = ({ element, reloadData }) => {
               </div> */}
 
           <div className="flex justify-center">
-            <button
-              type="button"
-              onClick={() => updateProject({ id: element.id, users: [1] })}>
+            <button type="button" onClick={() => setIsAdd(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 mr-2 cursor-pointer hover:text-[#7FFF00]"
@@ -144,6 +150,7 @@ const ProjectItem = ({ element, reloadData }) => {
                 />
               </svg>
             </button>
+
             <button type="button" onClick={() => setMode('edit')}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -181,6 +188,13 @@ const ProjectItem = ({ element, reloadData }) => {
             </button>
           </div>
         </div>
+      )}
+      {isAdd ? (
+        <div className="flex flex-row justify-around">
+          <SelectCheckBox data={allUsers} element={element} reloadData={reloadData} />
+        </div>
+      ) : (
+        ''
       )}
     </>
   );

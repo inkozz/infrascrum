@@ -4,13 +4,18 @@ import { useQuery } from 'react-query';
 import { useMutation } from 'react-query';
 import { removeProject, updateProject, getAllUsers } from '../../data/getData';
 import SelectCheckBox from '../forms/selects/SelectCheckBox';
+import { format, parseISO } from 'date-fns';
+import { removeProject, updateProject } from '../../data/getData';
+import FormProjet from '../forms/FormProjet';
 import Loader from '../ui/Loader';
 import FormProjet from '../forms/FormProjet';
 
 const ProjectItem = ({ element, reloadData }) => {
   const [isAdd, setIsAdd] = useState(false);
   const [mode, setMode] = useState(false);
+
   const { data: allUsers } = useQuery('allUsers', getAllUsers);
+  // format(parseISO(element.update), 'MM/dd/yyyy HH:mm:ss');
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
     async (projectValues) => removeProject(projectValues),
@@ -82,13 +87,19 @@ const ProjectItem = ({ element, reloadData }) => {
             <p className="text-gray-900">{element.userCreator.name}</p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.startDate}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.startDate), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.endDate}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.endDate), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">{element.update}</p>
+            <p className="text-gray-900">
+              {format(parseISO(element.update), 'dd/MM/yyyy HH:mm:ss')}
+            </p>
           </div>
           <div className="flex items-center justify-center">
             <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">

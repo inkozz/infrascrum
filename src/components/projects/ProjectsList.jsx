@@ -32,16 +32,17 @@ const ProjectsList = ({ data, reloadData }) => {
   return (
     <>
       {isLoading && <Loader />}
-
-      <div className=" bg-white p-6 shadow-md grid grid-cols-8 gap-x-8 border-b-2 border-primary pb-4 text-center">
-        <div className="font-semibold text-lg">Projet</div>
-        <div className="font-semibold text-lg">Responsable</div>
-        <div className="font-semibold text-lg">Date du début</div>
-        <div className="font-semibold text-lg">Date de fin</div>
-        <div className="font-semibold text-lg">Mise à jour</div>
-        <div className="font-semibold text-lg">Status</div>
-        <div className="font-semibold text-lg">Collaborateurs</div>
-        <div className="font-semibold text-lg">Options</div>
+      <div className="bg-primary text-white border-2 border-black rounded-xl p-6 shadow-sm">
+        <div className=" grid grid-cols-8 gap-x-8 border-b-2 border-primary pb-2 text-center">
+          <div className="font-semibold text-lg">Projet</div>
+          <div className="font-semibold text-lg">Responsable</div>
+          <div className="font-semibold text-lg">Date du début</div>
+          <div className="font-semibold text-lg">Date de fin</div>
+          <div className="font-semibold text-lg">Mise à jour</div>
+          <div className="font-semibold text-lg">Status</div>
+          <div className="font-semibold text-lg">Collaborateurs</div>
+          <div className="font-semibold text-lg">Options</div>
+        </div>
       </div>
 
       {data.length === 0 ? (

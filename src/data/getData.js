@@ -40,10 +40,10 @@ export const addUser = async (user) => {
 //   return data;
 // };
 
-export const getTasks = async (project) => {
-  console.log(`project:`, project);
+export const getTasks = async (projectId) => {
+  // console.log(`project:`, project);
   const { data } = await axios.get(
-    `http://localhost:8000/tasks//get_tasksByProject/${project.id}`,
+    `http://localhost:8000/tasks/get_tasksByProject/${projectId}`,
     {
       headers: {
         authorization: localStorage.getItem('authorization'),
@@ -56,21 +56,27 @@ export const getTasks = async (project) => {
 export const addTask = async (project) => {
   const { data } = await axios.post(
     `http://localhost:8000/tasks/new_task/${project.id}`,
+    project,
     {
       headers: {
         authorization: localStorage.getItem('authorization'),
       },
     },
   );
+  console.log(data);
   return data;
 };
 
 export const updateTask = async (task) => {
-  const { data } = await axios.put(`http://localhost:8000/tasks/patch_task/${task.id}`, {
-    headers: {
-      authorization: localStorage.getItem('authorization'),
+  const { data } = await axios.patch(
+    `http://localhost:8000/tasks/patch_task/${task.id}`,
+    task,
+    {
+      headers: {
+        authorization: localStorage.getItem('authorization'),
+      },
     },
-  });
+  );
   return data;
 };
 

@@ -1,6 +1,6 @@
 const FormUser = ({ formik }) => (
   <div className="w-full h-full bg-slate-200 flex flex-col justify-center sm:py-12">
-    <div className="relative w-1/2 mx-96 h-[825px] flex">
+    <div className="relative w-1/2 mx-96 h-[825px] m-auto flex">
       <img
         src="https://cdn.wallpapersafari.com/53/86/SkIfuB.jpg"
         alt=""
@@ -191,6 +191,9 @@ const FormUser = ({ formik }) => (
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         className="mt-1 block w-[60vh] py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm">
+                        <option value="role" disabled selected>
+                          Select rôle
+                        </option>
                         <option value="front">Front-End</option>
                         <option value="back">Back-End</option>
                         <option value="full">FullStack</option>

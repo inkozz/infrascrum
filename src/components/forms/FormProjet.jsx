@@ -69,9 +69,7 @@ const FormProjet = ({
             placeholder="Nom du projet"
           />
           {formik.touched.name && formik.errors.name && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.name}
-            </div>
+            <div className=" text-sm text-red">{formik.errors.name}</div>
           )}
         </div>
 
@@ -101,9 +99,7 @@ const FormProjet = ({
             placeholder="Nom du projet"
           />
           {formik.touched.startDate && formik.errors.startDate && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.startDate}
-            </div>
+            <div className="text-sm text-red">{formik.errors.startDate}</div>
           )}
         </div>
 
@@ -120,9 +116,7 @@ const FormProjet = ({
             placeholder="Nom du projet"
           />
           {formik.touched.endDate && formik.errors.endDate && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.endDate}
-            </div>
+            <div className="text-sm text-red">{formik.errors.endDate}</div>
           )}
         </div>
 
@@ -138,9 +132,7 @@ const FormProjet = ({
             placeholder="Nom du projet"
           />
           {formik.touched.update && formik.errors.update && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.status}
-            </div>
+            <div className=" text-sm  text-red">{formik.errors.status}</div>
           )}
         </div>
 
@@ -162,9 +154,7 @@ const FormProjet = ({
             <option value="Urgent">Urgent</option>
           </select>
           {formik.touched.status && formik.errors.status && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.status}
-            </div>
+            <div className=" text-sm  text-red">{formik.errors.status}</div>
           )}
         </div>
 
@@ -184,9 +174,7 @@ const FormProjet = ({
             <option value="Collaborateur">Collaborateur</option>
           </select>
           {formik.touched.users && formik.errors.users && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.users}
-            </div>
+            <div className="text-sm  text-red">{formik.errors.users}</div>
           )}
         </div>
         <div className="flex justify-around items-center">

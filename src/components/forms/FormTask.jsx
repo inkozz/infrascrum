@@ -33,9 +33,7 @@ const FormTask = ({
       project: project || '',
     },
     validationSchema: Yup.object({
-      description: Yup.string()
-        .required('Ce champ est obligatoire')
-        .max(500, 'La description ne peut contenir que maximum 500 caractères'),
+      description: Yup.string(),
       startDate: Yup.date().required('Ce champ est obligatoire'),
       name: Yup.string().required('Ce champ est obligatoire'),
       endDate: Yup.date().required('Ce champ est obligatoire'),
@@ -76,9 +74,7 @@ const FormTask = ({
             <SelectForm data={projects} name="project" formik={formik} />
           </div>
           {formik.touched.name && formik.errors.name && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.name}
-            </div>
+            <div className="text-sm  text-red">{formik.errors.name}</div>
           )}
         </div>
         <div className="flex flex-col justify-around">
@@ -94,9 +90,7 @@ const FormTask = ({
           />
         </div>
         {formik.touched.description && formik.errors.description && (
-          <div className="absolute text-sm -bottom-5 text-red">
-            {formik.errors.description}
-          </div>
+          <div className="">{formik.errors.description}</div>
         )}
 
         <div className="flex flex-col justify-around">
@@ -122,9 +116,7 @@ const FormTask = ({
             placeholder="Nom de tâche"
           />
           {formik.touched.name && formik.errors.name && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.name}
-            </div>
+            <div className="text-sm  text-red">{formik.errors.name}</div>
           )}
         </div>
         <div className="flex flex-col justify-around">
@@ -143,9 +135,7 @@ const FormTask = ({
             <option value="manager">Manager</option>
           </select>
           {formik.touched.roles && formik.errors.roles && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.roles}
-            </div>
+            <div className="text-sm  text-red">{formik.errors.roles}</div>
           )}
         </div>
         <div className="flex flex-col justify-around">
@@ -165,9 +155,7 @@ const FormTask = ({
             <option value="Urgent">En priorité</option>
           </select>
           {formik.touched.priority && formik.errors.priority && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.priority}
-            </div>
+            <div className="text-sm  text-red">{formik.errors.priority}</div>
           )}
         </div>
         <div className="flex flex-col justify-around">
@@ -182,9 +170,7 @@ const FormTask = ({
             placeholder="Nom du projet"
           />
           {formik.touched.startDate && formik.errors.startDate && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.startDate}
-            </div>
+            <div className="text-sm  text-red">{formik.errors.startDate}</div>
           )}
         </div>
         <div className="flex flex-col justify-around">
@@ -199,9 +185,7 @@ const FormTask = ({
             placeholder="Nom du projet"
           />
           {formik.touched.endDate && formik.errors.endDate && (
-            <div className="absolute text-sm -bottom-5 text-red">
-              {formik.errors.endDate}
-            </div>
+            <div className=" text-sm  text-red">{formik.errors.endDate}</div>
           )}
         </div>
         <div className="flex justify-around items-center">

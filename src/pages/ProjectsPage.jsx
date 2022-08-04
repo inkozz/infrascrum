@@ -25,8 +25,8 @@ const ProjectsPage = () => {
   return (
     <>
       {isLogged ? (
-        <div className="bg-white p-8 rounded-md w-full">
-          <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+        <div className="bg-transparent p-8 w-full">
+          <div className="inline-block min-w-full shadow overflow-hidden">
             {isLoading && isFetching && <Loader />}
             {projects && !isFetching && (
               <ProjectsList data={projects} reloadData={reloadData} />

@@ -23,10 +23,10 @@ const TasksPage = () => {
   return (
     <>
       {isLogged ? (
-        <div className="bg-white p-8 rounded-md w-full">
+        <div className="bg-transparent p-8 rounded-md w-full">
           <div>
             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-              <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+              <div className="inline-block min-w-full bg-white shadow rounded-lg overflow-hidden">
                 {tasks && !isFetching && (
                   <TasksList data={tasks} reloadData={reloadData} />
                 )}

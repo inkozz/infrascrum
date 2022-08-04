@@ -32,8 +32,8 @@ const ProjectsList = ({ data, reloadData }) => {
   return (
     <>
       {isLoading && <Loader />}
-      <div className="bg-primary text-white border-2 border-black rounded-xl p-6 shadow-sm">
-        <div className=" grid grid-cols-8 gap-x-8 border-b-2 border-primary pb-2 text-center">
+      <div className="bg-primary text-white border-1 rounded-t-md p-6 shadow-sm">
+        <div className=" grid grid-cols-8 gap-x-8 border-b-1 border-primary pb-2 text-center">
           <div className="font-semibold text-lg">Projet</div>
           <div className="font-semibold text-lg">Responsable</div>
           <div className="font-semibold text-lg">Date du début</div>
@@ -55,7 +55,7 @@ const ProjectsList = ({ data, reloadData }) => {
       {data.map((element) => (
         <ProjectItem key={element.id} element={element} reloadData={reloadData} />
       ))}
-      <div className="flex justify-end">
+      <div className="flex justify-end bg-white rounded-b-md">
         {!isAdd ? (
           <div className="flex justify-end p-4">
             <button type="button" className="btn primary" onClick={() => setIsAdd(true)}>

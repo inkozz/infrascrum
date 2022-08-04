@@ -64,7 +64,7 @@ const ProjectItem = ({ element, reloadData }) => {
           />
         </div>
       ) : (
-        <div className="grid grid-cols-8 gap-8 border-b-2 border-gray-200 p-8 text-center hover:bg-blue-100 sm:rounded-md">
+        <div className="grid grid-cols-8 gap-8 border-b-2 bg-white border-gray-200 p-8 text-center hover:bg-blue-100">
           <div className="flex justify-center items-center">
             <div className="flex-shrink-0 w-10 h-10 mr-8">
               <img

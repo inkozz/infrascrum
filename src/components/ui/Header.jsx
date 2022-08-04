@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import loginCtx from '../../loginCtx';
@@ -22,18 +22,22 @@ const Header = () => {
             <div className="flex justify-between items-center w-1/2">
               {/* <!-- logo --> */}
               <div className=" md:w-48 pb-3 flex-shrink-0">
-                <img className="h-10 md:h-12" src="/img/logo.png" alt="Infrascrum" />
+                <NavLink
+                  to="/home"
+                  className={({ isActive }) => (isActive ? 'active' : '')}>
+                  <img className="h-10 md:h-12" src="/img/logo.png" alt="Infrascrum" />
+                </NavLink>
               </div>
 
               {/* <!-- search --> */}
               <div className="w-full xl:max-w-md  rounded-md hidden xl:flex items-center justify-end">
                 <input
-                  className="border-l border-primary ml-20 bg-transparent font-semibold rounded-3xl text-sm pl-4"
+                  className="border-l border-primary  ml-20 bg-white font-semibold rounded-3xl text-sm pl-4"
                   type="text"
                   placeholder="Recherche ..."
                 />
                 <svg
-                  className=" h-5 px-4 text-primary"
+                  className=" h-5 px-4 text-primary hover:text-pink-500 cursor-pointer"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="far"
@@ -53,7 +57,7 @@ const Header = () => {
               <nav className="contents">
                 <ul className="ml-4 xl:w-48 flex items-center justify-end">
                   <Link to="/home/notifications">
-                    <li className="ml-2 lg:ml-4 relative inline-block">
+                    <li className="ml-2 lg:ml-4 relative flex text-primary hover:text-pink-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -67,13 +71,14 @@ const Header = () => {
                           d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         />
                       </svg>
+                      <span className="mx-1">Notifications</span>
                     </li>
                   </Link>
                   <Link to="/taches">
-                    <li className="ml-2 lg:ml-4 relative inline-block">
+                    <li className="ml-2 lg:ml-4 relative flex text-primary hover:text-pink-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
+                        className="h-6 w-6 "
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -84,13 +89,14 @@ const Header = () => {
                           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                         />
                       </svg>
+                      <span className="mx-1">Tâches</span>
                     </li>
                   </Link>
                   <Link to="/projets">
-                    <li className="ml-2 lg:ml-4 relative inline-block">
+                    <li className="ml-2 lg:ml-4 relative flex text-primary hover:text-pink-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
+                        className="h-6 w-6 "
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -101,6 +107,7 @@ const Header = () => {
                           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
                         />
                       </svg>
+                      <span className="mx-1">Projets</span>
                     </li>
                   </Link>
                 </ul>
@@ -113,7 +120,7 @@ const Header = () => {
                   <button
                     type="submit"
                     onClick={logout}
-                    className="w-full sm:w-auto px-5 py-2 text-base font-semibold focus:ring-2 focus:ring-offset-2px focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200ms rounded-full block bg-transparent hover:bg-primary border border-primary text-primary hover:text-white">
+                    className="w-full sm:w-auto px-5 py-2 text-base font-semibold focus:ring-2 focus:ring-offset-2px focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200ms rounded-full block bg-primary hover:bg-pink-500   text-white hover:text-white">
                     Log Out
                   </button>
                 </Link>

@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/ui/Header';
-import Sidebar from './components/ui/SideBar';
+// import Sidebar from './components/ui/SideBar';
 import LoginCtx from './loginCtx';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
@@ -36,9 +36,14 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <LoginCtx.Provider value={contextValue}>
         <Router>
-          <div className="flex max-w-full w-full min-h-screen relative">
-            {!isLogged ? null : <Sidebar />}
-            <main className="flex-grow">
+          <div className="flex max-w-full w-full min-h-screen relative bg-sky-200">
+            {/* {!isLogged ? null : <Sidebar />} */}
+            <main
+              className="flex-grow"
+              style={{
+                backgroundImage: `url("https://cdn.wallpapersafari.com/53/86/SkIfuB.jpg")`,
+                backgroundSize: 'cover',
+              }}>
               <Routes>
                 <Route path="/" index element={<LoginPage />} />
                 <Route

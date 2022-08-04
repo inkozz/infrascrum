@@ -29,7 +29,6 @@ const HomePage = () => {
   const { data: user } = useQuery('user', getUser);
 
   useEffect(() => {
-    console.log('ici connard');
     getTasks(project).then((x) => setTest(x.tasks));
   }, [project]);
 

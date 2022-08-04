@@ -15,7 +15,7 @@ const App = () => {
   const [isLogged, setIsLogged] = useState(false);
   useEffect(() => {
     if (localStorage.getItem('isLogged')) {
-      setIsLogged(true);
+      localStorage.clear('isLogged');
     }
   }, []);
   const contextValue = useMemo(

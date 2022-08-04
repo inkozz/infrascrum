@@ -12,7 +12,7 @@ const ProjectItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
 
   const { data: allUsers } = useQuery('allUsers', getAllUsers);
-  // format(parseISO(element.update), 'MM/dd/yyyy HH:mm:ss');
+  format(parseISO(element.update), 'MM/dd/yyyy HH:mm:ss');
   const { isLoading, mutate: deleteProject } = useMutation(
     '/projects',
     async (projectValues) => removeProject(projectValues),
@@ -42,6 +42,9 @@ const ProjectItem = ({ element, reloadData }) => {
   );
   const cancelProject = () => {
     setMode(false);
+  };
+  const cancelAddUser = () => {
+    setIsAdd(false);
   };
   return (
     <>
@@ -188,7 +191,12 @@ const ProjectItem = ({ element, reloadData }) => {
       )}
       {isAdd ? (
         <div className="flex flex-row justify-around">
-          <SelectCheckBox data={allUsers} element={element} reloadData={reloadData} />
+          <SelectCheckBox
+            data={allUsers}
+            element={element}
+            reloadData={reloadData}
+            cancelFunction={cancelAddUser}
+          />
         </div>
       ) : (
         ''

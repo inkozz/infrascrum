@@ -1,13 +1,8 @@
-import { useEffect, useState } from 'react';
-import { updateProject } from '../../../data/getData';
+import { useState, useEffect } from 'react';
+import { updateTask } from '../../../data/getData';
 
-const SelectCheckBox = ({ data, element, reloadData, cancelFunction }) => {
-  console.log(data, 'woooo');
-  const [isChecked, setIsChecked] = useState(
-    element.users.length
-      ? element.users.map((e) => `${e.id}`).filter((id) => element.userCreator.id !== id)
-      : [],
-  );
+const SelectAssignUser = ({ data, cancelFunction, reloadData }) => {
+  const [isChecked, setIsChecked] = useState([]);
   const toggle = (e) => {
     const isCheckedEvent = e.target.checked;
     const { value } = e.target;
@@ -20,8 +15,8 @@ const SelectCheckBox = ({ data, element, reloadData, cancelFunction }) => {
   };
   const confirmValue = async () => {
     console.log('isChecked :::', isChecked);
-    await updateProject({ id: element.id, users: isChecked });
-    await reloadData();
+    // await updateTask({ users: isChecked });
+    // await reloadData();
   };
   useEffect(() => {
     console.log(isChecked);
@@ -30,22 +25,20 @@ const SelectCheckBox = ({ data, element, reloadData, cancelFunction }) => {
     <>
       {data.users.map((user) => (
         <div key={user.id}>
-          {element.userCreator.id !== user.id && (
-            <div className="flex items-center">
-              <input
-                className="mr-4"
-                value={user.id}
-                defaultChecked={isChecked.includes(`${user.id}`)}
-                onChange={toggle}
-                type="checkbox"
-              />
-              <label>{user.name}</label>
-            </div>
-          )}
+          <div className="flex items-center">
+            <input
+              className="mr-2"
+              value={user.id}
+              // defaultChecked={isChecked.includes(`${user.id}`)}
+              onChange={toggle}
+              type="checkbox"
+            />
+            <label>{user.name}</label>
+          </div>
         </div>
       ))}
       <div className="flex justify-around">
-        <button type="submit" className="btn  bg-green-500" onClick={confirmValue}>
+        <button type="submit" className="btn bg-green-500" onClick={confirmValue}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 text-white"
@@ -56,7 +49,7 @@ const SelectCheckBox = ({ data, element, reloadData, cancelFunction }) => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </button>
-        <button onClick={cancelFunction} type="button" className="btn cancel">
+        <button onClick={cancelFunction} type="submit" className="btn cancel">
           <svg
             className="h-4 w-4 text-white"
             fill="none"
@@ -70,4 +63,5 @@ const SelectCheckBox = ({ data, element, reloadData, cancelFunction }) => {
     </>
   );
 };
-export default SelectCheckBox;
+
+export default SelectAssignUser;

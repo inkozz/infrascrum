@@ -88,12 +88,12 @@ const ProjectItem = ({ element, reloadData }) => {
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">
-              {format(parseISO(element.startDate), 'dd/MM/yyyy HH:mm:ss')}
+              {format(parseISO(element.startDate), 'dd/MM/yyyy')}
             </p>
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">
-              {format(parseISO(element.endDate), 'dd/MM/yyyy HH:mm:ss')}
+              {format(parseISO(element.endDate), 'dd/MM/yyyy')}
             </p>
           </div>
           <div className="flex items-center justify-center">
@@ -190,7 +190,7 @@ const ProjectItem = ({ element, reloadData }) => {
         </div>
       )}
       {isAdd ? (
-        <div className="flex flex-row justify-around">
+        <div className="flex flex-row justify-around bg-white">
           <SelectCheckBox
             data={allUsers}
             element={element}

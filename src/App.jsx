@@ -10,6 +10,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import LoginPage from './pages/LoginPage';
 import TasksPage from './pages/TasksPage';
 import AddUserPage from './pages/AddUserPage';
+import Notification from './components/others/Notification';
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -83,7 +84,15 @@ const App = () => {
                     </>
                   }
                 />
-                <Route path="/home/notifications" element={<Header />} />
+                <Route
+                  path="/home/notifications"
+                  element={
+                    <>
+                      <Header />
+                      <Notification />
+                    </>
+                  }
+                />
               </Routes>
             </main>
             <Toaster

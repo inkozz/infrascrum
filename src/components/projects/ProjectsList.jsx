@@ -46,7 +46,7 @@ const ProjectsList = ({ data, reloadData }) => {
       </div>
 
       {data.length === 0 ? (
-        <div className="text-2xl" name="tableEmpty">
+        <div className="text-2xl text-center bg-white" name="tableEmpty">
           Aucun projet dans la BDD
         </div>
       ) : (

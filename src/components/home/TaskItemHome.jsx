@@ -14,17 +14,20 @@ const TaskItemHome = ({ data }) => {
     <div>
       <div className="bg-sky-200 w-64 h-40 m-4 rounded-lg">
         <div className="bg-white w-64 h-40 mt-2 hover:m-0 absolute rounded-lg shadow-lg hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
-          <div className="text-sm font-semibold text-gray-700 m-4 leading-6">
-            <p>{data.name}</p>
-            <p>{data.priority}</p>
+          <h1 className="text-end text-xl p-2 font-bold">{data.priority}</h1>
+          <div className=" font-semibold text-primary m-4">
+            <p className="text-2xl">{data.name}</p>
             <p>{data.description}</p>
           </div>
           {!isAdd ? (
-            <div className="flex justify-end h-2">
-              <button type="button" onClick={() => setIsAdd(true)}>
+            <div className="flex justify-end">
+              <button
+                className="p-0 h-5 w-5 mr-5"
+                type="button"
+                onClick={() => setIsAdd(true)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2 cursor-pointer hover:text-[#7FFF00]"
+                  className="h-6 w-6 cursor-pointer hover:text-[#7FFF00]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

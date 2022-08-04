@@ -10,7 +10,7 @@ const TaskItem = ({ element, reloadData }) => {
   const [mode, setMode] = useState(false);
   const { isLoading, mutate: deleteTask } = useMutation(
     '/tasks',
-    async (taskValues) => removeTask(taskValues),
+    async (taskValues) => removeTask({ id: taskValues.id }),
     {
       onSuccess: () => {
         toast('Tâche supprimée', { className: 'successToast' });

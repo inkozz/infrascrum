@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { updateTask } from '../../../data/getData';
 
-const SelectAssignUser = ({ data, cancelFunction, reloadData }) => {
+const SelectAssignUser = ({ data, project, cancelFunction, reloadData }) => {
   const [isChecked, setIsChecked] = useState([]);
   const toggle = (e) => {
     const isCheckedEvent = e.target.checked;
@@ -15,8 +15,8 @@ const SelectAssignUser = ({ data, cancelFunction, reloadData }) => {
   };
   const confirmValue = async () => {
     console.log('isChecked :::', isChecked);
-    // await updateTask({ users: isChecked });
-    // await reloadData();
+    await updateTask({ id: project.id, users: isChecked });
+    reloadData();
   };
   useEffect(() => {
     console.log(isChecked);

@@ -63,7 +63,6 @@ export const addTask = async (project) => {
       },
     },
   );
-  console.log(data);
   return data;
 };
 

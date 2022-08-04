@@ -45,6 +45,7 @@ const TaskItemHome = ({ data }) => {
             <div className="flex flex-row justify-around">
               <SelectAssignUser
                 data={allUsers}
+                projects={data}
                 cancelFunction={cancelAddUser}
                 reloadData={reloadData}
               />

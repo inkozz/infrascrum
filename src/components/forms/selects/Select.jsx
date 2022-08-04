@@ -1,7 +1,7 @@
 const Select = ({ data, value, setValue, name, id }) => (
   <div>
     <select
-      className="rounded-md text-gray-700"
+      className="rounded-md  bg-white text-primary border-primary"
       name={name}
       id={id}
       value={value}
@@ -14,9 +14,9 @@ const Select = ({ data, value, setValue, name, id }) => (
           </option>
         ))}
     </select>
-    <p>
+    {/* <p>
       Selected {name} : {value}
-    </p>
+    </p> */}
   </div>
 );
 export default Select;

@@ -63,7 +63,7 @@ const TaskItem = ({ element, reloadData }) => {
             <p className="text-gray-900">{element.description}</p>
           </div>
           <div className="flex items-center justify-center">
-            <p className="text-gray-900">CeoName</p>
+            {/* <p className="text-gray-900">{element.project.userCreator}</p> */}
           </div>
           <div className="flex items-center justify-center">
             <p className="text-gray-900">{element.name}</p>
